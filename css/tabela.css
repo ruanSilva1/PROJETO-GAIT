@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div .conteudo {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #a8a39d;
+}
+div .conteudo .tabela {
+  background-color: #a8a39d;
+  transform: translate(40px, 20px);
+  width: 95%;
+  height: 85vh;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+div .conteudo .tabela table {
+  width: 170%;
+  height: 80vh;
+  background-color: whitesmoke;
+  max-height: 80vh;
+  transform: translate(0, 20px);
+  border-radius: 5px;
+}
+div .conteudo .tabela table table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+div .conteudo .tabela table th,
+div .conteudo .tabela table td {
+  text-align: center;
+  padding: 10px;
+  width: 110px;
+}
+div .conteudo .tabela table th {
+  background-color: white;
+  top: 0px;
+}
+div .conteudo .tabela table td {
+  background-color: whitesmoke;
+}
+div .conteudo .tabela table td a {
+  text-decoration: none;
+}
+div .conteudo .tabela table td a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=tabela.css.map */
