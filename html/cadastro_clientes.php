@@ -10,6 +10,7 @@
     $squery->execute();
 
     $tipoPessoa = $squery->fetchAll();
+
 ?>
 
 <!DOCTYPE html>

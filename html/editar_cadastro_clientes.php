@@ -1,9 +1,10 @@
 <?php
     include('../php/conexao.php');
-    $query = $dbh->prepare('select * from cat');
+    
+    $query = $dbh->prepare('SELECT * FROM cliente');
     $query->execute();
     
-    $categorias = $query->fetchAll();
+    $cliente = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +22,8 @@
 
 <body>
     <form action="../php/update_cliente.php" method="post">
-    <input type="hidden" name="cod_cliente" value="<?php echo $_GET['cod_cliente'];?>">
         <input type="submit" value="Editar">
+        <input type="hidden" name="cod_cliente" value= "<?php  echo $_GET['cod_cliente'];?>">
         <div class="column-1">
            <label for="nome">Nome/ Fantasia</label>
            <input type="text" name="nome" id="nome"> 

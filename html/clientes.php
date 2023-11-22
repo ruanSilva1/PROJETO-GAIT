@@ -55,7 +55,7 @@
                     echo '<td>'.$cliente['email'].'</td>';
                     echo '<td>'.$cliente['tipo_pessoa'].'</td>';
                     echo '<td><a href="editar_cadastro_clientes.php?cod_cliente='.$cliente['cod_cliente'].'">Editar</a></td>';
-                    echo '<td><a href="../php/delete_clientes.php?cod_cliente='.$cliente['cod_cliente'].'">Excluir</a></td>';
+                    echo '<td><a href="../php/delete_cliente.php?cod_cliente='.$cliente['cod_cliente'].'">Excluir</a></td>';
                     echo '</tr>';
                 }
                 ?>

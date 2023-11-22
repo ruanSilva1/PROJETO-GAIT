@@ -1,7 +1,7 @@
 <?php
     include('../php/conexao.php');
 
-    $query = $dbh->prepare('SELECT cod_orcamento, nome_fantasia, descricao, email, pedido, status_orcamento FROM orcamento');
+    $query = $dbh->prepare('SELECT cod_orcamento, nome_fantasia, descricao, telefone, pedido, status_orcamento FROM orcamento');
     $query->execute();
 
     $orcamento = $query->fetchAll();
@@ -39,7 +39,7 @@
                         <th>Cod</th>
                         <th>Nome</th>
                         <th>Descrição</th>
-                        <th>Email</th>
+                        <th>Telefone</th>
                         <th>Pedido</th>
                         <th>Status Orçamento</th>
                         <th>Editar</th>
@@ -53,7 +53,7 @@
                     echo '<td>'.$orcamento['cod_orcamento'].'</td>';
                     echo '<td>'.$orcamento['nome_fantasia'].'</td>';
                     echo '<td>'.$orcamento['descricao'].'</td>';
-                    echo '<td>'.$orcamento['email'].'</td>';
+                    echo '<td>'.$orcamento['telefone'].'</td>';
                     echo '<td>'.$orcamento['pedido'].'</td>';
                     echo '<td>'.$orcamento['status_orcamento'].'</td>';
                     echo '<td><a href="editar_cadastro_orcamento.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Editar</a></td>';

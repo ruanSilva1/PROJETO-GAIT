@@ -3,7 +3,7 @@ include('conexao.php');
 
     if(isset($_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['rg'],
         $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro']) && ($_POST['nome']!='')
-        && ($_POST['data_nascimento']!='') && ($_POST['cpf']!='') && ($_POST['cnpj']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep'])
+        && ($_POST['data_nascimento']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep'])
         && ($_POST['rg']!='') && ($_POST['endereco']!='') && ($_POST['cidade']!='') && ($_POST['n_endereco']!='') && ($_POST['bairro']!='')){
 
         $nome = $_POST['nome'];
@@ -47,9 +47,14 @@ include('conexao.php');
             ':tipo_pessoa' => $tipo_pessoa
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        //if($query->rowCont() > 0){
+            echo "<script>alert('Cadastro realizado com sucesso!')</script>";
+            header('Location: ../html/clientes.php');
+        //}else{
+            //echo "<script>alert('Ops! Cliente não cadastrado..')</script>";
+        //}
 
     }catch(PDOException $e){
-        echo "<script>alert('Cadastro não realizado')</script>";
+        echo $e;
     }
 ?>
