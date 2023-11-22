@@ -1,6 +1,6 @@
 <?php
 include('../php/conexao.php');
-$query = $dbh->prepare('select cod_venda, nome_fantasia,descricao,email from vendas');
+$query = $dbh->prepare('select cod_venda, nome_fantasia,descricao,email, status_venda, status_orcamento from vendas');
 $query->execute();
 
 $vendas = $query->fetchAll();
@@ -37,8 +37,8 @@ $vendas = $query->fetchAll();
                         <th>Nome</th>
                         <th>Descrição</th>
                         <th>Email</th>
-                        <th>Editar</th>
-                        <th>Excluir</th>
+                        <th>Status Vendas</th>
+                        <th>Status Orçamentos</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +49,8 @@ $vendas = $query->fetchAll();
                     echo '<td>'.$venda['nome_fantasia'].'</td>';
                     echo '<td>'.$venda['descricao'].'</td>';
                     echo '<td>'.$venda['email'].'</td>';
-                    echo '<td><a href="telamais.html">...</a></td>';
+                    echo '<td>'.$venda['status_venda'].'</td>';
+                    echo '<td>'.$venda['status_orcamento'].'</td>';
                     echo '</tr>';
                 }
                 ?>

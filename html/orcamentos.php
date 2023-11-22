@@ -1,5 +1,10 @@
 <?php
     include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT cod_orcamento, nome_fantasia, descricao, email, pedido, status_orcamento FROM orcamento');
+    $query->execute();
+
+    $orcamento = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -36,12 +41,26 @@
                         <th>Descrição</th>
                         <th>Email</th>
                         <th>Pedido</th>
+                        <th>Status Orçamento</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                <?php
+                foreach($orcamento as $orcamento){
+                    echo '<tr>';
+                    echo '<td>'.$orcamento['cod_orcamento'].'</td>';
+                    echo '<td>'.$orcamento['nome_fantasia'].'</td>';
+                    echo '<td>'.$orcamento['descricao'].'</td>';
+                    echo '<td>'.$orcamento['email'].'</td>';
+                    echo '<td>'.$orcamento['pedido'].'</td>';
+                    echo '<td>'.$orcamento['status_orcamento'].'</td>';
+                    echo '<td><a href="editar_cadastro_orcamento.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Editar</a></td>';
+                    echo '<td><a href="../php/delete_orcamento.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Excluir</a></td>';
+                    echo '</tr>';
+                }
+                ?>
                 </tbody>
             </table>
         </div>

@@ -1,3 +1,12 @@
+<?php
+    include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT cod_cliente, nome, telefone, email, tipo_pessoa FROM cliente');
+    $query->execute();
+
+    $clientes = $query->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,12 +40,25 @@
                         <th>Nome</th>
                         <th>Telefone</th>
                         <th>Email</th>
+                        <th>Tipo Pessoa</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                <?php
+                foreach($clientes as $cliente){
+                    echo '<tr>';
+                    echo '<td>'.$cliente['cod_cliente'].'</td>';
+                    echo '<td>'.$cliente['nome'].'</td>';
+                    echo '<td>'.$cliente['telefone'].'</td>';
+                    echo '<td>'.$cliente['email'].'</td>';
+                    echo '<td>'.$cliente['tipo_pessoa'].'</td>';
+                    echo '<td><a href="editar_cadastro_clientes.php?cod_cliente='.$cliente['cod_cliente'].'">Editar</a></td>';
+                    echo '<td><a href="../php/delete_clientes.php?cod_cliente='.$cliente['cod_cliente'].'">Excluir</a></td>';
+                    echo '</tr>';
+                }
+                ?>
                 </tbody>
             </table>
         </div>
