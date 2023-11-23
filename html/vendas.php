@@ -33,12 +33,23 @@ $vendas = $query->fetchAll();
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
+                        <th>Cód</th>
                         <th>Nome</th>
-                        <th>Descrição</th>
+                        <th>Data Nascimento</th>
+                        <th>CPF</th>
+                        <th>CNPJ</th>
+                        <th>Telefone</th>
                         <th>Email</th>
-                        <th>Status Vendas</th>
-                        <th>Status Orçamentos</th>
+                        <th>CEP</th>
+                        <th>Endereço</th>
+                        <th>Nº Endereço</th>
+                        <th>Forma Pagamento</th>
+                        <th>Tipo Pessoa</th>
+                        <th>Valor</th>
+                        <th>Status Venda</th>
+                        <th>Status Orçamento</th>
+                        <th>Descrição</th>
+                        <th>Data</th>
                     </tr>
                 </thead>
                 <tbody>

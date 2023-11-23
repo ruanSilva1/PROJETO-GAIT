@@ -3,9 +3,8 @@ include('conexao.php');
 
     if(isset($_POST['nome_fantasia'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['telefone'], $_POST['email'], $_POST['cep'], 
     $_POST['endereco'], $_POST['n_endereco'],$_POST['forma_pagamento'], $_POST['tipo_pessoa'], $_POST['valor'],$_POST['status_venda'], $_POST['status_orcamento'], 
-    $_POST['descricao'], $_POST['pedido']) && ($_POST['nome_fantasia']!= '') && ($_POST['data_nascimento']!= '') && ($_POST['cpf']!= '') && ($_POST['telefone']!= '') && ($_POST['email']!= '') && ($_POST['cep']!= '') && ($_POST['endereco']!= '') && ($_POST['n_endereco']!= '') && 
-     ($_POST['forma_pagamento']!= '') && ($_POST['tipo_pessoa']!= '') && ($_POST['valor']!= '') && ($_POST['status_venda']!= '') && ($_POST['status_orcamento']!= '')
-      && ($_POST['descricao']!= '') && ($_POST['pedido'])){
+    $_POST['descricao'], $_POST['pedido']) && ($_POST['nome_fantasia']!= '') && ($_POST['cpf']!= '') && ($_POST['forma_pagamento']!= '') && ($_POST['valor']!= '') && 
+($_POST['descricao']!= '') && ($_POST['pedido'])){
 
         $nome_fantasia = $_POST['nome_fantasia'];
         $data_nascimento = $_POST['data_nascimento'];

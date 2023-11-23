@@ -4,7 +4,7 @@
     try{
         if(isset($_POST['cod_cliente'], $_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'],
         $_POST['cep'], $_POST['rg'], $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro'])
-         && $_POST['nome']!='' && $_POST['data_nascimento']!='' && $_POST['cpf']!=''){
+         && ($_POST['nome']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cpf']!='') && ($_POST['cep'])){
 
             $cod_cliente = $_POST['cod_cliente'];
             $nome = $_POST['nome'];

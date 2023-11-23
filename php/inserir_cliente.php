@@ -2,9 +2,8 @@
 include('conexao.php');
 
     if(isset($_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['rg'],
-        $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro']) && ($_POST['nome']!='')
-        && ($_POST['data_nascimento']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep'])
-        && ($_POST['rg']!='') && ($_POST['endereco']!='') && ($_POST['cidade']!='') && ($_POST['n_endereco']!='') && ($_POST['bairro']!='')){
+        $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro']) && ($_POST['nome']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='')
+        && ($_POST['email']!='') && ($_POST['cep'])){
 
         $nome = $_POST['nome'];
         $data_nascimento = $_POST['data_nascimento'];

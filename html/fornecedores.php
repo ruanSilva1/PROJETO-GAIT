@@ -1,9 +1,10 @@
 <?php
-include('../php/conexao.php');
-$query = $dbh->prepare('select cod_fornecedor, nome_fantasia, razao_social,telefone, email, status_fornecedor from fornecedor');
-$query->execute();
+    include('../php/conexao.php');
+    
+    $query = $dbh->prepare('SELECT * FROM fornecedor');
+    $query->execute();
 
-$fornecedor = $query->fetchAll();
+    $fornecedor = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -35,12 +36,20 @@ $fornecedor = $query->fetchAll();
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
-                        <th>Nome Fantasia</th>
+                        <th>Cód</th>
+                        <th>Nome/ Fantasia</th>
                         <th>Razão Social</th>
-                        <th>Email</th>
+                        <th>CNPJ</th>
                         <th>Telefone</th>
+                        <th>Email</th>
+                        <th>CEP</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>UF</th>
+                        <th>Nº Endereço</th>
+                        <th>Bairro</th>
                         <th>Status</th>
+                        <th>Data</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
@@ -52,9 +61,17 @@ $fornecedor = $query->fetchAll();
                     echo '<td>'.$f['cod_fornecedor'].'</td>';
                     echo '<td>'.$f['nome_fantasia'].'</td>';
                     echo '<td>'.$f['razao_social'].'</td>';
+                    echo '<td>'.$f['cnpj'].'</td>';
                     echo '<td>'.$f['telefone'].'</td>';
                     echo '<td>'.$f['email'].'</td>';
+                    echo '<td>'.$f['cep'].'</td>';
+                    echo '<td>'.$f['endereco'].'</td>';
+                    echo '<td>'.$f['cidade'].'</td>';
+                    echo '<td>'.$f['uf'].'</td>';
+                    echo '<td>'.$f['n_endereco'].'</td>';
+                    echo '<td>'.$f['bairro'].'</td>';
                     echo '<td>'.$f['status_fornecedor'].'</td>';
+                    echo '<td>'.$f['data'].'</td>';
                     echo '<td><a href="editar_cadastro_fornecedores.php?cod_fornecedor='.$f['cod_fornecedor'].'">Editar</a></td>';
                     echo '<td><a href="../php/delete.php?cod_fornecedor='.$f['cod_fornecedor'].'">Excluir</a></td>';
                     echo '</tr>';

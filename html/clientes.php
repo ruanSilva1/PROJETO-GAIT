@@ -1,7 +1,7 @@
 <?php
     include('../php/conexao.php');
 
-    $query = $dbh->prepare('SELECT cod_cliente, nome, telefone, email, tipo_pessoa FROM cliente');
+    $query = $dbh->prepare('SELECT * FROM cliente');
     $query->execute();
 
     $clientes = $query->fetchAll();

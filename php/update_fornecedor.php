@@ -1,6 +1,9 @@
 <?php
-include('./conexao/conexao.php');
-    if(isset($_POST['cod_fornecedor'], $_POST['nome_fantasia'], $_POST['razao_social'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['uf'], $_POST['bairro']) && ($_POST['nome_fantasia']!= '') && ($_POST['razao_social']!= '') && ($_POST['cnpj']!= '') && ($_POST['telefone']!= '') && ($_POST['email']!= '') && ($_POST['cep']!= '') && ($_POST['endereco']!= '') && ($_POST['cidade']!= '') && ($_POST['n_endereco']!= '') && ($_POST['uf']!= '') && ($_POST['bairro']!= '')){
+include('conexao.php');
+
+    //try{
+
+    if(isset($_POST['cod_fornecedor'], $_POST['nome_fantasia'], $_POST['razao_social'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['uf'], $_POST['bairro']) && ($_POST['nome_fantasia']!= '') && ($_POST['razao_social']!= '') && ($_POST['cnpj']!= '') && ($_POST['telefone']!= '') && ($_POST['email']!= '') && ($_POST['cep']!= '')){
 
         $cod_fornecedor = $_POST['cod_fornecedor'];
         $nome_fantasia = $_POST['nome_fantasia'];
@@ -14,16 +17,25 @@ include('./conexao/conexao.php');
         $uf = $_POST['uf'];
         $n_endereco = $_POST['n_endereco'];
         $bairro = $_POST['bairro'];
+        $status_fornecedor = $_POST['status_fornecedor'];
 
-    }else{
-        echo "<script>alert('Variaveis não definidas')</script>";
-        die();
+    //}else{
+    //    echo "<script>alert('Variaveis não definidas')</script>";
+    //    die();
     }
 
+    //}catch(PDOExeption $e){
+    //    throw new MyDatabaseException($Exception->getMessage(), (int)$Exception->getCode());
+
+    //    echo 'Erro isset';
+    //}
+    
+
     try{
+
         $query = $dbh->prepare('UPDATE fornecedor SET nome_fantasia=:nome_fantasia, razao_social=:razao_social, cnpj=:cnpj,
         telefone=:telefone, email=:email, cep=:cep, endereco=:endereco, cidade=:cidade, uf=:uf, n_endereco=:n_endereco, 
-        bairro=:bairro WHERE cod_fornecedor=:cod_fornecedor');
+        bairro=:bairro, status_fornecedor=:status_fornecedor WHERE cod_fornecedor=:cod_fornecedor');
 
         $query->execute(array(
             ':nome_fantasia' => $nome_fantasia,
@@ -36,12 +48,15 @@ include('./conexao/conexao.php');
             ':cidade' =>$cidade,
             ':uf' => $uf,
             ':n_endereco' => $n_endereco,
-            ':bairro' => $bairro
+            ':bairro' => $bairro,
+            ':status_fornecedor' => $status_fornecedor,
             ':cod_fornecedor' => $cod_fornecedor
         ));
 
-        echo "<script>alert('Seu cadastro foi atualizado com sucesso!')</script>";
+        echo 'Atualizado com sucesso';
+        header('Location: ../html/fornecedores.php');
+
     }catch(PDOException $e){
-        echo "<script>alert('Cadastro não atualizado')</script>";
+        echo 'erro ao executar query : -> ' .$e;
     }
 ?>

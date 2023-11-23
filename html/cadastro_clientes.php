@@ -30,7 +30,7 @@
     <form action="../php/inserir_cliente.php" method="post">
         <input type="submit" value="Salvar">
         <div class="column-1">
-           <label for="nome">Nome/ Fantasia</label>
+           <label for="nome">Nome/ Fantasia *</label>
            <input type="text" name="nome" id="nome"> 
         </div>
         <div class="column-2">
@@ -38,7 +38,7 @@
             <input type="date" name="data_nascimento" id="data_nascimento">
         </div>
         <div class="column-3">
-            <label for="cpf">CPF</label>
+            <label for="cpf">CPF *</label>
             <input type="number" name="cpf" id="cpf">
         </div>
         <div class="column-3-2">
@@ -46,15 +46,15 @@
             <input type="number" name="cnpj" id="cnpj">
         </div>
         <div class="column-4">
-            <label for="telefone">Telefone</label>
+            <label for="telefone">Telefone *</label>
             <input type="tel" name="telefone" id="telefone">
         </div>
         <div class="column-5">
-            <label for="email">Email</label>
+            <label for="email">Email *</label>
             <input type="email" name="email" id="email">
         </div>
         <div class="column-6">
-            <label for="cep">CEP</label>
+            <label for="cep">CEP *</label>
             <input type="number" name="cep" id="cep">
         </div>
         <div class="column-7">

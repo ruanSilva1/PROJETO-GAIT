@@ -1,7 +1,7 @@
 <?php
     include('../php/conexao.php');
 
-    $query = $dbh->prepare('SELECT cod_materia, nome, descricao, quantidade, status, categoria FROM materia_prima');
+    $query = $dbh->prepare('SELECT * FROM materia_prima');
 
     $query->execute();
     $materia_prima = $query->fetchAll();
@@ -36,12 +36,15 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
+                        <th>Cód</th>
                         <th>Nome</th>
                         <th>Descrição</th>
                         <th>Quantidade</th>
+                        <th>Valor</th>
                         <th>Status</th>
                         <th>Categoria</th>
+                        <th>Observação</th>
+                        <th>Data</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
@@ -54,10 +57,13 @@
                             echo '<td>'.$materia['nome'].'</td>';
                             echo '<td>'.$materia['descricao'].'</td>';
                             echo '<td>'.$materia['quantidade'].'</td>';
+                            echo '<td>'.$materia['valor'].'</td>';
                             echo '<td>'.$materia['status'].'</td>';
                             echo '<td>'.$materia['categoria'].'</td>';
-                            echo '<td><a href="editar_cadastro_funcionario.php?cod_funcionario='.$materia['cod_materia'].'">Editar</a></td>';
-                            echo '<td><a href="../php/delete.php?cod_funcionario='.$materia['cod_materia'].'">Excluir</a></td>';
+                            echo '<td>'.$materia['observacao'].'</td>';
+                            echo '<td>'.$materia['data'].'</td>';
+                            echo '<td><a href="editar_cadastro_materia_prima.php?cod_materia='.$materia['cod_materia'].'">Editar</a></td>';
+                            echo '<td><a href="../php/delete_materia.php?cod_materia='.$materia['cod_materia'].'">Excluir</a></td>';
                             echo '</tr>';
                         }
                     ?>

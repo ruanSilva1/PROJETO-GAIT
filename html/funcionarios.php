@@ -1,6 +1,6 @@
 <?php
     include('../php/conexao.php');
-    $query = $dbh->prepare('SELECT cod_funcionario, nome, cpf,telefone, email, status_funcionario FROM funcionario');
+    $query = $dbh->prepare('SELECT * FROM funcionario');
 
     $query->execute();
     $funcionario = $query->fetchAll();
@@ -35,12 +35,22 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
+                        <th>Cód</th>
                         <th>Nome</th>
+                        <th>Data Nascimento</th>
                         <th>CPF</th>
-                        <th>Email</th>
                         <th>Telefone</th>
+                        <th>Email</th>
+                        <th>CEP</th>
+                        <th>RG</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Nº Endereço</th>
+                        <th>Bairro</th>
                         <th>Status</th>
+                        <th>Usuário</th>
+                        <th>Senha</th>
+                        <th>Data</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
@@ -51,10 +61,20 @@
                             echo '<tr>';
                             echo '<td>'.$f['cod_funcionario'].'</td>';
                             echo '<td>'.$f['nome'].'</td>';
+                            echo '<td>'.$f['data_nascimento'].'</td>';
                             echo '<td>'.$f['cpf'].'</td>';
-                            echo '<td>'.$f['email'].'</td>';
                             echo '<td>'.$f['telefone'].'</td>';
+                            echo '<td>'.$f['email'].'</td>';
+                            echo '<td>'.$f['cep'].'</td>';
+                            echo '<td>'.$f['rg'].'</td>';
+                            echo '<td>'.$f['endereco'].'</td>';
+                            echo '<td>'.$f['cidade'].'</td>';
+                            echo '<td>'.$f['n_endereco'].'</td>';
+                            echo '<td>'.$f['bairro'].'</td>';
                             echo '<td>'.$f['status_funcionario'].'</td>';
+                            echo '<td>'.$f['usuario'].'</td>';
+                            echo '<td>'.$f['senha'].'</td>';
+                            echo '<td>'.$f['data'].'</td>';
                             echo '<td><a href="editar_cadastro_funcionario.php?cod_funcionario='.$f['cod_funcionario'].'">Editar</a></td>';
                             echo '<td><a href="../php/delete.php?cod_funcionario='.$f['cod_funcionario'].'">Excluir</a></td>';
                             echo '</tr>';

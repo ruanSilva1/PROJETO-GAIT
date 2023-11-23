@@ -1,6 +1,6 @@
 <?php
     include('../php/conexao.php');
-    $query = $dbh->prepare('SELECT cod_produto, nome, categoria, valor FROM produto');
+    $query = $dbh->prepare('SELECT * FROM produto');
     
     $query->execute();
     $produto = $query->fetchAll();
@@ -35,10 +35,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
+                        <th>Imagem</th>
+                        <th>Cód</th>
                         <th>Nome</th>
-                        <th>Categoria</th>
+                        <th>Descrição</th>
+                        <th>Quantidade</th>
                         <th>Valor</th>
+                        <th>Status</th>
+                        <th>Categoria</th>
+                        <th>Observação</th>
+                        <th>Data</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
@@ -47,10 +53,16 @@
                 <?php
                 foreach($produto as $p){
                     echo '<tr>';
+                    echo '<td>'.$p['imagem'].'</td>';
                     echo '<td>'.$p['cod_produto'].'</td>';
                     echo '<td>'.$p['nome'].'</td>';
-                    echo '<td>'.$p['categoria'].'</td>';
+                    echo '<td>'.$p['descricao'].'</td>';
+                    echo '<td>'.$p['quantidade'].'</td>';
                     echo '<td>'.$p['valor'].'</td>';
+                    echo '<td>'.$p['status_produto'].'</td>';
+                    echo '<td>'.$p['categoria'].'</td>';
+                    echo '<td>'.$p['observacoes'].'</td>';
+                    echo '<td>'.$p['data'].'</td>';
                     echo '<td><a href="editar_cadastro_produto.php?idProd='.$p['cod_produto'].'">Editar</a></td>';
                     echo '<td><a href="../php/delete.php?idProd='.$p['cod_produto'].'">Excluir</a></td>';
                     echo '</tr>';

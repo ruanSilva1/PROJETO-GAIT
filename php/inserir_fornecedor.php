@@ -3,8 +3,7 @@ include('conexao.php');
 
     if(isset($_POST['nome_fantasia'], $_POST['razao_social'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['cidade'],
         $_POST['uf'], $_POST['n_endereco'], $_POST['bairro'], $_POST['status_fornecedor']) && ($_POST['nome_fantasia']!='') && ($_POST['razao_social']!='') && ($_POST['cnpj']!='') &&
-        ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='') && ($_POST['endereco']) && ($_POST['cidade']!='') && ($_POST['uf']!='') && ($_POST['n_endereco']!='') &&
-        ($_POST['bairro']!='') && ($_POST['status_fornecedor']!='')){
+        ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='')){
 
         $nome_fantasia = $_POST['nome_fantasia'];
         $razao_social = $_POST['razao_social'];
@@ -51,6 +50,7 @@ include('conexao.php');
         }
         */
         echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        header('Location: ../html/fornecedores.php');
 
     }catch(PDOException $e){
         echo "<script>alert('Cadastro não realizado')</script>";

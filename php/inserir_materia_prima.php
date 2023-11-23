@@ -2,8 +2,7 @@
 include('conexao.php');
 
     if(isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['valor'], $_POST['status'], $_POST['categoria'], $_POST['observacao']) &&
-    ($_POST['nome']!='') && ($_POST['descricao']!='') && ($_POST['quantidade']!='') && ($_POST['valor']!='') && ($_POST['status']!='') && ($_POST['categoria']!='') && 
-    ($_POST['observacao']!='')){
+    ($_POST['nome']!='') && ($_POST['descricao']!='') && ($_POST['quantidade']!='') && ($_POST['valor']!='') && ($_POST['status']!='') && ($_POST['categoria']!='') && ){
 
         $nome = $_POST['nome'];
         $descricao = $_POST['descricao'];

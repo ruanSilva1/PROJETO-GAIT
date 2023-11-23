@@ -29,27 +29,27 @@
     <form action="../php/inserir_fornecedor.php" method="post">
         <input type="submit" value="Salvar">
         <div class="column-1">
-            <label for="nome_fantasia">Nome/ Fantasia</label>
+            <label for="nome_fantasia">Nome/ Fantasia *</label>
             <input type="text" name="nome_fantasia" id="nome_fantasia">
         </div>
         <div class="column-2">
-            <label for="razao_social">Razão social</label>
+            <label for="razao_social">Razão social *</label>
             <input type="text" name="razao_social" id="razao_social">
         </div>
         <div class="column-3">
-            <label for="cnpj">CNPJ</label>
+            <label for="cnpj">CNPJ *</label>
             <input type="number" name="cnpj" id="cnpj">
         </div>
         <div class="column-4">
-            <label for="telefone">Telefone</label>
+            <label for="telefone">Telefone *</label>
             <input type="tel" name="telefone" id="telefone">
         </div>
         <div class="column-5">
-            <label for="email">Email</label>
+            <label for="email">Email *</label>
             <input type="email" name="email" id="email">
         </div>
         <div class="column-6">
-            <label for="cep">CEP</label>
+            <label for="cep">CEP *</label>
             <input type="number" name="cep" id="cep">
         </div>
         <div class="column-7">

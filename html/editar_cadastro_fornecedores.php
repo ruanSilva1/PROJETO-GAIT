@@ -1,3 +1,17 @@
+<?php
+    include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT * FROM sigla');
+    $query->execute();
+
+    $sigla = $query->fetchAll();
+
+    $squery = $dbh->prepare('SELECT * FROM sts_fornecedor');
+    $squery->execute();
+
+    $status = $squery->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,8 +26,8 @@
 </head>
 
 <body>
-    <form action="../php/inserir_fornecedor.php" method="post">
-        <input type="submit" value="Salvar">
+    <form action="../php/update_fornecedor.php" method="post">
+        <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
             <input type="text" name="nome_fantasia" id="nome_fantasia">
@@ -51,8 +65,14 @@
             <input type="number" name="n_endereco" id="n_endereco">
         </div>
         <div class="column-10">
-            <label for="uf">UF</label>
-            <input type="text" name="uf" id="uf">
+        <label for="uf">UF</label>
+        <select name="uf" id="uf">
+                <?php
+                    foreach($sigla as $sigla){
+                        echo '<option value="'.$sigla['sigla_estado'].'">'.$sigla['uf_estado'].'</option>';
+                    }
+                ?>
+            </select>
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
