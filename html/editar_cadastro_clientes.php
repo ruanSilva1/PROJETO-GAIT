@@ -1,10 +1,23 @@
 <?php
     include('../php/conexao.php');
     
-    $query = $dbh->prepare('SELECT * FROM cliente');
-    $query->execute();
+    $cod_clientes = $_GET['cod_cliente'];
+    $query = $dbh->prepare('SELECT * FROM cliente WHERE cod_cliente = :cod_cliente;');
+    $query->execute(array(
+        ':cod_cliente' => $cod_clientes
+    ));
     
-    $cliente = $query->fetchAll();
+    $cliente = $query->fetch();
+
+    $query = $dbh->prepare('SELECT * FROM clienteSTS');
+    $query->execute();
+
+    $status = $query->fetchAll();
+
+    $squery = $dbh->prepare('SELECT * FROM pessoaTIPO');
+    $squery->execute();
+
+    $tipoPessoa = $squery->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -23,67 +36,72 @@
 <body>
     <form action="../php/update_cliente.php" method="post">
         <input type="submit" value="Editar">
-        <input type="hidden" name="cod_cliente" value= "<?php  echo $_GET['cod_cliente'];?>">
         <div class="column-1">
            <label for="nome">Nome/ Fantasia</label>
-           <input type="text" name="nome" id="nome"> 
+           <input type="text" name="nome" id="nome" value="<?php echo $cliente['nome']; ?>"> 
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data Nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento">
+            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $cliente['data_nascimento']; ?>">
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf">
+            <input type="number" name="cpf" id="cpf" value="<?php echo $cliente['cpf']; ?>">
         </div>
         <div class="column-3-2">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj">
+            <input type="number" name="cnpj" id="cnpj" value="<?php echo $cliente['cnpj']; ?>">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone">
+            <input type="tel" name="telefone" id="telefone" value="<?php echo $cliente['telefone']; ?>">
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="<?php echo $cliente['email']; ?>">
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep">
+            <input type="number" name="cep" id="cep" value="<?php echo $cliente['cep']; ?>">
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg">
+            <input type="number" name="rg" id="rg" value="<?php echo $cliente['rg']; ?>">
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
+            <input type="text" name="endereco" id="endereco" value="<?php echo $cliente['endereco']; ?>">
         </div>
         <div class="column-9">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade"x>
+            <input type="text" name="cidade" id="cidade" value="<?php echo $cliente['cidade']; ?>">
         </div>
         <div class="column-10">
             <label for="n_endereco">Nº endereço</label>
-            <input type="text" name="n_endereco" id="n_endereco">
+            <input type="text" name="n_endereco" id="n_endereco" value="<?php echo $cliente['n_endereco']; ?>">
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro">
+            <input type="text" name="bairro" id="bairro" value="<?php echo $cliente['bairro']; ?>">
         </div>
         <div class="column-12">
             <label for="status_cliente">Status cliente</label>
             <select name="status_cliente" id="status_cliente">
-                <option value="ativado">Ativado</option>
-                <option value="desativado">Desativado</option>
+                <?php
+                    foreach($status as $status){
+                        echo '<option value="'.$status['cod'].'">'.$status['sts'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="column-13">
             <label for="tipo_pessoa">Tipo Pessoa</label>
             <select name="tipo_pessoa" id="tipo_pessoa">
-                <option value="juridica">Júridica</option>
-                <option value="fisica">Física</option>
+                <?php
+                    foreach($tipoPessoa as $tipoPessoa){
+                        echo '<option value="'.$tipoPessoa['cod'].'">'.$tipoPessoa['tipo'].'</option>';
+                    }
+                ?>
             </select>
         </div>
     </form>

@@ -1,3 +1,12 @@
+<?php
+    include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT * FROM cliente');
+    $query->execute();
+
+    $clientes = $query->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,15 +36,49 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
+                        <th>Cód</th>
                         <th>Nome</th>
+                        <th>Data Nascimento</th>
+                        <th>CPF</th>
+                        <th>CNPJ</th>
                         <th>Telefone</th>
                         <th>Email</th>
+                        <th>CEP</th>
+                        <th>RG</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Nº Endereço</th>
+                        <th>Status Cliente</th>
+                        <th>Bairro</th>
+                        <th>Tipo Pessoa</th>
+                        <th>Data</th>
                         <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                <?php
+                foreach($clientes as $cliente){
+                    echo '<tr>';
+                    echo '<td>'.$cliente['cod_cliente'].'</td>';
+                    echo '<td>'.$cliente['nome'].'</td>';
+                    echo '<td>'.$cliente['data_nascimento'].'</td>';
+                    echo '<td>'.$cliente['cpf'].'</td>';
+                    echo '<td>'.$cliente['cnpj'].'</td>';
+                    echo '<td>'.$cliente['telefone'].'</td>';
+                    echo '<td>'.$cliente['email'].'</td>';
+                    echo '<td>'.$cliente['cep'].'</td>';
+                    echo '<td>'.$cliente['rg'].'</td>';
+                    echo '<td>'.$cliente['endereco'].'</td>';
+                    echo '<td>'.$cliente['cidade'].'</td>';
+                    echo '<td>'.$cliente['n_endereco'].'</td>';
+                    echo '<td>'.$cliente['status_cliente'].'</td>';
+                    echo '<td>'.$cliente['bairro'].'</td>';
+                    echo '<td>'.$cliente['tipo_pessoa'].'</td>';
+                    echo '<td>'.$cliente['data'].'</td>';
+                    echo '<td><a href="editar_cadastro_clientes.php?cod_cliente='.$cliente['cod_cliente'].'">Editar</a></td>';
+                    echo '</tr>';
+                }
+                ?>
                 </tbody>
             </table>
         </div>

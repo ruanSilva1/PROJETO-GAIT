@@ -1,3 +1,12 @@
+<?php
+    include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT * FROM orcamento');
+    $query->execute();
+
+    $orcamento = $query->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,15 +36,53 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
+                        <th>Cód</th>
+                        <th>Nome/ Fantasia</th>
+                        <th>Data Nascimento</th>
+                        <th>CPF</th>
+                        <th>CNPJ</th>
+                        <th>Telefone</th>
                         <th>Email</th>
+                        <th>CEP</th>
+                        <th>Endereço</th>
+                        <th>Nº Endereço</th>
+                        <th>Forma Pagamento</th>
+                        <th>Tipo Pessoa</th>
+                        <th>Valor</th>
+                        <th>Status Venda</th>
+                        <th>Status Orçamento</th>
+                        <th>Descrição</th>
+                        <th>Pedido</th>
+                        <th>Data</th>
                         <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                <?php
+                foreach($orcamento as $orcamento){
+                    echo '<tr>';
+                    echo '<td>'.$orcamento['cod_orcamento'].'</td>';
+                    echo '<td>'.$orcamento['nome_fantasia'].'</td>';
+                    echo '<td>'.$orcamento['data_nascimento'].'</td>';
+                    echo '<td>'.$orcamento['cpf'].'</td>';
+                    echo '<td>'.$orcamento['cnpj'].'</td>';
+                    echo '<td>'.$orcamento['telefone'].'</td>';
+                    echo '<td>'.$orcamento['email'].'</td>';
+                    echo '<td>'.$orcamento['cep'].'</td>';
+                    echo '<td>'.$orcamento['endereco'].'</td>';
+                    echo '<td>'.$orcamento['n_endereco'].'</td>';
+                    echo '<td>'.$orcamento['forma_pagamento'].'</td>';
+                    echo '<td>'.$orcamento['tipo_pessoa'].'</td>';
+                    echo '<td>'.$orcamento['valor'].'</td>';
+                    echo '<td>'.$orcamento['status_venda'].'</td>';
+                    echo '<td>'.$orcamento['status_orcamento'].'</td>';
+                    echo '<td>'.$orcamento['descricao'].'</td>';
+                    echo '<td>'.$orcamento['pedido'].'</td>';
+                    echo '<td>'.$orcamento['data'].'</td>';
+                    echo '<td><a href="editar_cadastro_orcamento.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Editar</a></td>';
+                    echo '</tr>';
+                }
+                ?>
                 </tbody>
             </table>
         </div>

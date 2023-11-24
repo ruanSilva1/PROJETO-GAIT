@@ -10,6 +10,15 @@
     $squery->execute();
 
     $status = $squery->fetchAll();
+
+
+    $id_fornecedor = $_GET['cod_fornecedor'];
+    $rquery = $dbh->prepare('SELECT * FROM fornecedor WHERE cod_fornecedor = :id_fornecedor');
+    $rquery->execute(array(
+        ':id_fornecedor' => $id_fornecedor
+    ));
+    $fornecedor = $rquery->fetch();
+    //print_r($fornecedor);
 ?>
 
 <!DOCTYPE html>
@@ -30,53 +39,57 @@
         <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <input type="text" name="nome_fantasia" id="nome_fantasia">
+            <input type="text" name="nome_fantasia" id="nome_fantasia" value="<?php echo $fornecedor['nome_fantasia']; ?>">
         </div>
         <div class="column-2">
             <label for="razao_social">Razão social</label>
-            <input type="text" name="razao_social" id="razao_social">
+            <input type="text" name="razao_social" id="razao_social" value="<?php echo $fornecedor['razao_social']; ?>">
         </div>
         <div class="column-3">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj">
+            <input type="number" name="cnpj" id="cnpj" value="<?php echo $fornecedor['cnpj']; ?>">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone">
+            <input type="tel" name="telefone" id="telefone" value="<?php echo $fornecedor['telefone']; ?>">
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="<?php echo $fornecedor['email']; ?>">
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep">
+            <input type="number" name="cep" id="cep" value="<?php echo $fornecedor['cep']; ?>">
         </div>
         <div class="column-7">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
+            <input type="text" name="endereco" id="endereco" value="<?php echo $fornecedor['endereco']; ?>">
         </div>
         <div class="column-8">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade">
+            <input type="text" name="cidade" id="cidade" value="<?php echo $fornecedor['cidade']; ?>">
         </div>
         <div class="column-9">
             <label for="n_endereco">Nº endereço</label>
-            <input type="number" name="n_endereco" id="n_endereco">
+            <input type="number" name="n_endereco" id="n_endereco" value="<?php echo $fornecedor['n_endereco']; ?>">
         </div>
         <div class="column-10">
         <label for="uf">UF</label>
         <select name="uf" id="uf">
                 <?php
                     foreach($sigla as $sigla){
-                        echo '<option value="'.$sigla['sigla_estado'].'">'.$sigla['uf_estado'].'</option>';
+                        $estado = '';
+                        if($sigla['sigla_estado'] == $fornecedor['uf']){
+                            $estado = 'selected';
+                        }
+                        echo '<option value="'.$sigla['sigla_estado'].'" '.$estado.'>'.$sigla['uf_estado'].'</option>';
                     }
                 ?>
             </select>
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro">
+            <input type="text" name="bairro" id="bairro" value="<?php echo $fornecedor['bairro']; ?>">
         </div>
         <div class="column-12">
             <label for="status_fornecedor">Status fornecedor</label>

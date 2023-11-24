@@ -13,7 +13,7 @@
 
 <body>
     <form action="../php/update_orcamento.php" method="post">
-    <input type="submit" value="Salvar">
+    <input type="submit" value="Editar">
         <div class="c1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
             <input type="text" name="nome_fantasia" id="nome">

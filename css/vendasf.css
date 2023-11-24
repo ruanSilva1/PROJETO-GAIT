@@ -173,7 +173,7 @@
 }
 .main-conteudo .div-tabela table {
   border-collapse: collapse;
-  width: 100%;
+  width: 220%;
   overflow: auto;
   font-family: Arial, Helvetica, sans-serif;
 }

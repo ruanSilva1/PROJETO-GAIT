@@ -24,8 +24,8 @@
     <div class="main-conteudo">
         <div class="pesquisa">
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Search">
-            <button class="bt-pesquisa"><a href="#"><img src="../imagem/lupa.png" alt="lupa"
-                        class="lupa-pesquisa"></a></button>
+            <button class="bt-pesquisa"><img src="../imagem/lupa.png" alt="lupa"
+                        class="lupa-pesquisa"></button>
         </div>
 
         <div class="new-button">
@@ -36,11 +36,22 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Cod</th>
+                        <th>Cód</th>
                         <th>Nome</th>
+                        <th>Data Nascimento</th>
+                        <th>CPF</th>
+                        <th>CNPJ</th>
                         <th>Telefone</th>
                         <th>Email</th>
+                        <th>CEP</th>
+                        <th>RG</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Nº Endereço</th>
+                        <th>Status Cliente</th>
+                        <th>Bairro</th>
                         <th>Tipo Pessoa</th>
+                        <th>Data</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
@@ -51,9 +62,20 @@
                     echo '<tr>';
                     echo '<td>'.$cliente['cod_cliente'].'</td>';
                     echo '<td>'.$cliente['nome'].'</td>';
+                    echo '<td>'.$cliente['data_nascimento'].'</td>';
+                    echo '<td>'.$cliente['cpf'].'</td>';
+                    echo '<td>'.$cliente['cnpj'].'</td>';
                     echo '<td>'.$cliente['telefone'].'</td>';
                     echo '<td>'.$cliente['email'].'</td>';
+                    echo '<td>'.$cliente['cep'].'</td>';
+                    echo '<td>'.$cliente['rg'].'</td>';
+                    echo '<td>'.$cliente['endereco'].'</td>';
+                    echo '<td>'.$cliente['cidade'].'</td>';
+                    echo '<td>'.$cliente['n_endereco'].'</td>';
+                    echo '<td>'.$cliente['status_cliente'].'</td>';
+                    echo '<td>'.$cliente['bairro'].'</td>';
                     echo '<td>'.$cliente['tipo_pessoa'].'</td>';
+                    echo '<td>'.$cliente['data'].'</td>';
                     echo '<td><a href="editar_cadastro_clientes.php?cod_cliente='.$cliente['cod_cliente'].'">Editar</a></td>';
                     echo '<td><a href="../php/delete_cliente.php?cod_cliente='.$cliente['cod_cliente'].'">Excluir</a></td>';
                     echo '</tr>';

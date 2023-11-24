@@ -1,7 +1,7 @@
 <?php
-include('./phpghost/conexao.php');
+include('conexao.php');
 
-    if($_POST['cod_orcamento'], $_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['n_endereco'], $_POST['forma_pagamento'], $_POST['tipo_pessoa'], $_POST['valor'], $_POST['status_venda'], $_POST['status_orcamento'], $_POST['pedido'], $_POST['descricao'] && $_POST['nome']!='' && $_POST['data_nascimento']!='' && $_POST['cpf']!='' && $_POST['cnpj']!='' && $_POST['telefone']!='' && $_POST['email']!='' && $_POST['cep']!='' && $_POST['endereco']!='' && $_POST['n_endereco']!='' && $_POST['forma_pagamento']!='' && $_POST['tipo_pessoa']!='' && $_POST['valor']!='' && $_POST['status_venda']!='' && $_POST['status_orcamento']!='' && $_POST['pedido']!='' && $_POST['descricao']!=''){
+    if(isset($_POST['cod_orcamento'], $_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['n_endereco'], $_POST['forma_pagamento'], $_POST['tipo_pessoa'], $_POST['valor'], $_POST['status_venda'], $_POST['status_orcamento'], $_POST['pedido'], $_POST['descricao']) && ($_POST['nome']!='') && ($_POST['data_nascimento']!='') && ($_POST['cpf']!='') && ($_POST['cnpj']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='') && ($_POST['endereco']!='') && ($_POST['n_endereco']!='') && ($_POST['forma_pagamento']!='') && ($_POST['tipo_pessoa']!='') && ($_POST['valor']!='') && ($_POST['status_venda']!='') && ($_POST['status_orcamento']!='') && ($_POST['pedido']!='') && ($_POST['descricao']!='')){
         $cod_orcamento = $_POST['cod_orcamento'];
         $nome = $_POST['nome'];
         $data_nascimento = $_POST['data_nascimento'];
@@ -49,6 +49,7 @@ include('./phpghost/conexao.php');
         ));
         
         echo "<script>alert('Seu cadastro foi atualizado com sucesso!')</script>";
+        header('Location: ../html/orcamento.php');
     }catch(PDOException $e){
         echo "<script>alert('Cadastro não atualizado')</script>";
     }

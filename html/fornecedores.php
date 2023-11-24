@@ -1,8 +1,16 @@
 <?php
     include('../php/conexao.php');
+
+    $fantasia = '';
+    if(isset($_POST['fantasia'])){
+       $fantasia = $_POST['fantasia']; 
+    }
     
-    $query = $dbh->prepare('SELECT * FROM fornecedor');
-    $query->execute();
+    
+    $query = $dbh->prepare("SELECT * FROM fornecedor WHERE nome_fantasia LIKE :fantasia;");
+    $query->execute(array(
+        ':fantasia' => "%$fantasia%"
+    ));
 
     $fornecedor = $query->fetchAll();
 ?>
@@ -23,9 +31,11 @@
 <body>
     <div class="main-conteudo">
         <div class="pesquisa">
-            <input type="text" name="pesquisar" id="pesquisar" placeholder="Search">
-            <button class="bt-pesquisa"><a href="#"><img src="../imagem/lupa.png" alt="lupa"
-                        class="lupa-pesquisa"></a></button>
+            <form action="" method="post">
+                <input type="text" name="fantasia" id="pesquisar" placeholder="Search">
+                <input type="submit" class="bt-pesquisa" value="pesquisar"><img src="../imagem/lupa.png" alt="lupa"
+                            class="lupa-pesquisa"></input>
+            </form>
         </div>
 
         <div class="new-button">
