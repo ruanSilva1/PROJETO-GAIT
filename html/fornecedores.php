@@ -33,8 +33,7 @@
         <div class="pesquisa">
             <form action="" method="post">
                 <input type="text" name="fantasia" id="pesquisar" placeholder="Search">
-                <input type="submit" class="bt-pesquisa" value="pesquisar"><img src="../imagem/lupa.png" alt="lupa"
-                            class="lupa-pesquisa"></input>
+                <input type="submit" class="bt-pesquisa" value="Pesquisar"></input>
             </form>
         </div>
 

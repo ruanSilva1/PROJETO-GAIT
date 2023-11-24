@@ -89,7 +89,12 @@
             <select name="status_cliente" id="status_cliente">
                 <?php
                     foreach($status as $status){
-                        echo '<option value="'.$status['cod'].'">'.$status['sts'].'</option>';
+                        $sts = '';
+                        if($status['cod'] == $cliente['status_cliente']){
+                            $sts = 'selected';
+                        }
+                        echo '<option value="'.$status['cod'].'" '.$sts.'>'.$status['sts'].'</option>';
+                        
                     }
                 ?>
             </select>
@@ -99,6 +104,10 @@
             <select name="tipo_pessoa" id="tipo_pessoa">
                 <?php
                     foreach($tipoPessoa as $tipoPessoa){
+                        $tip = '';
+                        if($tipoPessoa['cod'] == $cliente['tipo_pessoa']){
+                            $tip = 'selected';
+                        }
                         echo '<option value="'.$tipoPessoa['cod'].'">'.$tipoPessoa['tipo'].'</option>';
                     }
                 ?>

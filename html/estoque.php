@@ -35,7 +35,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Imagem</th>
                         <th>Cód</th>
                         <th>Nome</th>
                         <th>Descrição</th>
@@ -52,8 +51,6 @@
                 <tbody>
                 <?php
                 foreach($produto as $p){
-                    echo '<tr>';
-                    echo '<td>'.$p['imagem'].'</td>';
                     echo '<td>'.$p['cod_produto'].'</td>';
                     echo '<td>'.$p['nome'].'</td>';
                     echo '<td>'.$p['descricao'].'</td>';
