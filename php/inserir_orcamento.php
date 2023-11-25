@@ -1,10 +1,7 @@
 <?php
 include('conexao.php');
 
-    if(isset($_POST['nome_fantasia'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['telefone'], $_POST['email'], $_POST['cep'], 
-    $_POST['endereco'], $_POST['n_endereco'],$_POST['forma_pagamento'], $_POST['tipo_pessoa'], $_POST['valor'],$_POST['status_venda'], $_POST['status_orcamento'], 
-    $_POST['descricao'], $_POST['pedido']) && ($_POST['nome_fantasia']!= '') && ($_POST['cpf']!= '') && ($_POST['forma_pagamento']!= '') && ($_POST['valor']!= '') && 
-    ($_POST['descricao']!= '') && ($_POST['pedido'])){
+    if(isset($_POST['nome_fantasia'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['n_endereco'],$_POST['forma_pagamento'], $_POST['tipo_pessoa'], $_POST['valor'],$_POST['status_venda'], $_POST['status_orcamento'], $_POST['descricao'], $_POST['pedido']) && ($_POST['nome_fantasia']!= '') && ($_POST['cpf']!= '') && ($_POST['forma_pagamento']!= '') && ($_POST['valor']!= '') && ($_POST['descricao']!= '') && ($_POST['pedido'])){
 
         $nome_fantasia = $_POST['nome_fantasia'];
         $data_nascimento = $_POST['data_nascimento'];
@@ -24,15 +21,12 @@ include('conexao.php');
         $pedido = $_POST['pedido'];
 
     }else{
-        echo "<script>alert('Variaveis não definidas')</script>";
+        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
         die();
     }
 
     try{
-        $query = $dbh->prepare('INSERT INTO orcamento(nome_fantasia, data_nascimento, cpf, cnpj, telefone, email, cep, endereco, n_endereco,
-        forma_pagamento, tipo_pessoa, valor, status_venda, status_orcamento, descricao, pedido)VALUES(
-        :nome_fantasia, :data_nascimento, :cpf, :cnpj, :telefone, :email, :cep, :endereco, :n_endereco, :forma_pagamento, :tipo_pessoa, :valor,
-        :status_venda, :status_orcamento, :descricao, :pedido)');
+        $query = $dbh->prepare('INSERT INTO orcamento(nome_fantasia, data_nascimento, cpf, cnpj, telefone, email, cep, endereco, n_endereco,forma_pagamento, tipo_pessoa, valor, status_venda, status_orcamento, descricao, pedido)VALUES(:nome_fantasia, :data_nascimento, :cpf, :cnpj, :telefone, :email, :cep, :endereco, :n_endereco, :forma_pagamento, :tipo_pessoa, :valor,:status_venda, :status_orcamento, :descricao, :pedido)');
 
         $query->execute(array(
             ':nome_fantasia' => $nome_fantasia,
@@ -54,6 +48,7 @@ include('conexao.php');
         ));
 
         echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        header('Location: ../html/orcamentos.php');
 
     }catch(PDOException $e){
         echo "<script>alert('Cadastro não realizado')</script>";

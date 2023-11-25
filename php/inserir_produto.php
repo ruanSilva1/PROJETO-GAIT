@@ -15,20 +15,21 @@ include('conexao.php');
             $observacoes = $_POST['observacao'];
 
         }else{
-            echo 'algo está errado';
+            echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
+            die();
         }
 
     }catch(PDOException $e){
-        throw new MyDatabaseException($Exception->getMessage(), (int)$Exception->getCode());
 
-        echo 'Erro isset';
+        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
+        die();
     }
 
     try{
-        $query = $dbh->prepare('INSERT INTO produto(nome, descricao, quantidade, valor, status_produto, categoria, observacoes)VALUES(
-        :nome_produto, :descricao, :quantidade, :valor,:status_produto, :categoria, :observacao)');
+        $query = $dbh->prepare('INSERT INTO produto(nome, descricao, quantidade, valor, status_produto, categoria, observacoes)VALUES(:nome_produto, :descricao, :quantidade, :valor,:status_produto, :categoria, :observacao)');
 
         $query->execute(array(
+
             ':nome_produto' => $nome,
             ':descricao' => $descricao,
             ':quantidade' => $quantidade,
@@ -36,13 +37,13 @@ include('conexao.php');
             ':status_produto' => $status_produto,
             ':categoria' => $categoria,
             ':observacao' => $observacoes
+
         ));
 
         echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
         header('Location: ../html/estoque.php');
 
     }catch(PDOException $e){
-        //echo "<script>alert('Cadastro não realizado')</script>";
-        echo $e;
+        echo "<script>alert('Cadastro não realizado')</script>";
     }
 ?>

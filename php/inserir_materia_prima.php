@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+    include('conexao.php');
 
     if(isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['valor'], $_POST['status'], $_POST['categoria'], $_POST['observacao']) &&($_POST['nome']!='') && ($_POST['descricao']!='') && ($_POST['quantidade']!='') && ($_POST['valor']!='') && ($_POST['status']!='') && ($_POST['categoria']!='')){
 
@@ -12,7 +12,7 @@ include('conexao.php');
         $observacao = $_POST['observacao'];
 
     }else{
-        echo "<script>alert('Variaveis não definidas')</script>";
+        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
         die();
     }
 
@@ -31,6 +31,7 @@ include('conexao.php');
         ));
 
         echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        header('Location: ../html/materiaprima.php');
 
     }catch(PDOException $e){
         echo "<script>alert('Cadastro não realizado')</script>";

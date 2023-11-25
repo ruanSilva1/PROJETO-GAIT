@@ -85,7 +85,7 @@
                             echo '<td>'.$f['senha'].'</td>';
                             echo '<td>'.$f['data'].'</td>';
                             echo '<td><a href="editar_cadastro_funcionario.php?cod_funcionario='.$f['cod_funcionario'].'">Editar</a></td>';
-                            echo '<td><a href="../php/delete.php?cod_funcionario='.$f['cod_funcionario'].'">Excluir</a></td>';
+                            echo '<td><a href="../php/delete_funcionario.php?cod_funcionario='.$f['cod_funcionario'].'">Excluir</a></td>';
                             echo '</tr>';
                         }
                     ?>

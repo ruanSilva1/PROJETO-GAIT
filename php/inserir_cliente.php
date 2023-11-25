@@ -1,9 +1,7 @@
 <?php
-include('conexao.php');
+    include('conexao.php');
 
-    if(isset($_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['rg'],
-        $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro']) && ($_POST['nome']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='')
-        && ($_POST['email']!='') && ($_POST['cep'])){
+    if(isset($_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['rg'],$_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro']) && ($_POST['nome']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='')){
 
         $nome = $_POST['nome'];
         $data_nascimento = $_POST['data_nascimento'];
@@ -21,15 +19,15 @@ include('conexao.php');
         $tipo_pessoa = $_POST['tipo_pessoa'];
 
     }else{
-        echo "<script>alert('Variaveis não definidas')</script>";
+        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
         die();
     }
 
     try{
-        $query = $dbh->prepare('INSERT INTO cliente(nome, data_nascimento, cpf, cnpj, telefone, email, cep, rg, endereco, cidade, n_endereco,status_cliente, bairro, tipo_pessoa)VALUES(
-        :nome, :data_nascimento, :cpf, :cnpj, :telefone, :email, :cep, :rg, :endereco, :cidade, :n_endereco,:status_cliente, :bairro, :tipo_pessoa)');
+        $query = $dbh->prepare('INSERT INTO cliente(nome, data_nascimento, cpf, cnpj, telefone, email, cep, rg, endereco, cidade, n_endereco,status_cliente, bairro, tipo_pessoa)VALUES(:nome, :data_nascimento, :cpf, :cnpj, :telefone, :email, :cep, :rg, :endereco, :cidade, :n_endereco,:status_cliente, :bairro, :tipo_pessoa)');
 
         $query->execute(array(
+
             ':nome' => $nome,
             ':data_nascimento' => $data_nascimento,
             ':cpf' => $cpf,
@@ -44,16 +42,13 @@ include('conexao.php');
             ':status_cliente' => $status_cliente,
             ':bairro' => $bairro,
             ':tipo_pessoa' => $tipo_pessoa
+
         ));
 
-        //if($query->rowCont() > 0){
-            echo "<script>alert('Cadastro realizado com sucesso!')</script>";
-            header('Location: ../html/clientes.php');
-        //}else{
-            //echo "<script>alert('Ops! Cliente não cadastrado..')</script>";
-        //}
-
+        echo "<script>alert('Cadastro realizado com sucesso!')</script>";
+        header('Location: ../html/clientes.php');
+      
     }catch(PDOException $e){
-        echo $e;
+        echo "<script>alert('Cadastro não realizado')</script>";
     }
 ?>

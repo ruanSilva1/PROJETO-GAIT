@@ -82,7 +82,7 @@
                     echo '<td>'.$f['status_fornecedor'].'</td>';
                     echo '<td>'.$f['data'].'</td>';
                     echo '<td><a href="editar_cadastro_fornecedores.php?cod_fornecedor='.$f['cod_fornecedor'].'">Editar</a></td>';
-                    echo '<td><a href="../php/delete.php?cod_fornecedor='.$f['cod_fornecedor'].'">Excluir</a></td>';
+                    echo '<td><a href="../php/delete_fornecedor.php?cod_fornecedor='.$f['cod_fornecedor'].'">Excluir</a></td>';
                     echo '</tr>';
                 }
                 ?>

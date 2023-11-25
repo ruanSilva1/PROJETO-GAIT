@@ -17,7 +17,8 @@
             $tipo_pessoa = $_POST['tipo_pessoa'];
             $cod_cliente = $_POST['cod_cliente'];
         }else{
-            echo 'error';
+            echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
+            die();
         }
 
     try{

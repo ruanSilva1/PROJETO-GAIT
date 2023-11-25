@@ -47,6 +47,8 @@
 
         ));
 
+        header('Location: ../html/funcionarios.php');
+
     }catch(PDOException $e){
 
         throw new MyDatabaseException($Exception -> getMessage(), (int)$Exception -> getCode());

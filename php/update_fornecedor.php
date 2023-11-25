@@ -1,8 +1,6 @@
 <?php
 include('conexao.php');
 
-    //try{
-
     if(isset($_POST['cod_fornecedor'], $_POST['nome_fantasia'], $_POST['razao_social'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['uf'], $_POST['bairro']) && ($_POST['nome_fantasia']!= '') && ($_POST['razao_social']!= '') && ($_POST['cnpj']!= '') && ($_POST['telefone']!= '') && ($_POST['email']!= '') && ($_POST['cep']!= '')){
 
         $cod_fornecedor = $_POST['cod_fornecedor'];
@@ -19,17 +17,10 @@ include('conexao.php');
         $bairro = $_POST['bairro'];
         $status_fornecedor = $_POST['status_fornecedor'];
 
-    //}else{
-    //    echo "<script>alert('Variaveis não definidas')</script>";
-    //    die();
+    }else{
+        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
+        die();
     }
-
-    //}catch(PDOExeption $e){
-    //    throw new MyDatabaseException($Exception->getMessage(), (int)$Exception->getCode());
-
-    //    echo 'Erro isset';
-    //}
-    
 
     try{
 

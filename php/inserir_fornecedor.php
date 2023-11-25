@@ -1,9 +1,7 @@
 <?php
-include('conexao.php');
+    include('conexao.php');
 
-    if(isset($_POST['nome_fantasia'], $_POST['razao_social'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['cidade'],
-        $_POST['uf'], $_POST['n_endereco'], $_POST['bairro'], $_POST['status_fornecedor']) && ($_POST['nome_fantasia']!='') && ($_POST['razao_social']!='') && ($_POST['cnpj']!='') &&
-        ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='')){
+    if(isset($_POST['nome_fantasia'], $_POST['razao_social'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['cidade'], $_POST['uf'], $_POST['n_endereco'], $_POST['bairro'], $_POST['status_fornecedor']) && ($_POST['nome_fantasia']!='') && ($_POST['razao_social']!='') && ($_POST['cnpj']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='')){
 
         $nome_fantasia = $_POST['nome_fantasia'];
         $razao_social = $_POST['razao_social'];
@@ -19,15 +17,15 @@ include('conexao.php');
         $status_fornecedor = $_POST['status_fornecedor'];
 
     }else{
-        echo "<script>alert('Variaveis não definidas')</script>";
+        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
         die();
     }
 
     try{
-        $query = $dbh->prepare('INSERT INTO fornecedor(nome_fantasia, razao_social, cnpj, telefone, email, cep, endereco, cidade, uf, n_endereco, bairro, status_fornecedor)VALUES(
-        :nome_fantasia, :razao_social, :cnpj, :telefone, :email, :cep, :endereco, :cidade, :uf, :n_endereco, :bairro, :status_fornecedor)');
+        $query = $dbh->prepare('INSERT INTO fornecedor(nome_fantasia, razao_social, cnpj, telefone, email, cep, endereco, cidade, uf, n_endereco, bairro, status_fornecedor)VALUES(:nome_fantasia, :razao_social, :cnpj, :telefone, :email, :cep, :endereco, :cidade, :uf, :n_endereco, :bairro, :status_fornecedor)');
 
         $query->execute(array(
+
             ':nome_fantasia' => $nome_fantasia,
             ':razao_social' => $razao_social,
             ':cnpj' => $cnpj,
@@ -40,19 +38,13 @@ include('conexao.php');
             ':n_endereco' => $n_endereco,
             ':bairro' => $bairro,
             ':status_fornecedor' => $status_fornecedor
+
         ));
 
-        /*$resultado = $query->fetch();
-
-        if(empty($resultado)){
-            header('location: cadastro_orcamento.php');
-            echo "<script>alert('Seu cadastro não foi salvo!')</script>";
-        }
-        */
         echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
         header('Location: ../html/fornecedores.php');
 
     }catch(PDOException $e){
         echo "<script>alert('Cadastro não realizado')</script>";
-}
+    }
 ?>

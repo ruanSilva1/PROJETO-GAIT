@@ -5,7 +5,7 @@
     $senha = $_POST['senha'];
 
     if(empty($usuario) || empty($senha)){
-        echo "<script>alert('Campos obrigadorios vazios')</script>";
+        echo "<script>alert('Campos obrigadorios não preenchidos!')</script>";
         //header('location: ../login.php');
     }else{
 

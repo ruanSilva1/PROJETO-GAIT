@@ -1,9 +1,13 @@
 <?php
-include('conexao.php');
-$cod_materia = $_GET['cod_materia'];
-$query = $dbh->prepare('DELETE FROM materia_prima WHERE cod_materia = :cod_materia');
+    include('conexao.php');
 
-$query->execute(array(
-    ':cod_materia' => $cod_materia
-))
+    $cod_materia = $_GET['cod_materia'];
+    $query = $dbh->prepare('DELETE FROM materia_prima WHERE cod_materia = :cod_materia');
+
+    $query->execute(array(
+        ':cod_materia' => $cod_materia
+    ));
+
+    header('Location: ../html/materiaprima.php');
+    echo "<script>alert('Excluido com sucesso!')</script>";
 ?>
