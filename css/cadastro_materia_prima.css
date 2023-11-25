@@ -96,7 +96,7 @@ form .column-7 label[for=observacao], form .column-6 label[for=status], form .co
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
 }
-form .column-7 textarea[name=observacao]:hover, form .column-6 select[id=status]:hover, form .column-5 select[name=categoria]:hover, form .column-4 input[name=descricao]:hover, form .column-3 input[name=quantidade]:hover, form .column-2 input[name=valor]:hover, form .column-1 input[name=nome]:hover {
+form .column-7 input[name=observacao]:hover, form .column-6 select[id=status]:hover, form .column-5 select[name=categoria]:hover, form .column-4 input[name=descricao]:hover, form .column-3 input[name=quantidade]:hover, form .column-2 input[name=valor]:hover, form .column-1 input[name=nome]:hover {
   transition: 0.4s;
   background-color: rgb(237, 235, 233);
 }
@@ -197,7 +197,7 @@ form .column-7 {
   transform: translate(0, 40px);
   margin-left: 5%;
 }
-form .column-7 textarea[id=observacao] {
+form .column-7 input[id=observacao] {
   width: 97.5%;
   height: 25vh;
   border-radius: 10px;

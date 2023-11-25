@@ -1,8 +1,15 @@
 <?php
     include('../php/conexao.php');
 
-    $query = $dbh->prepare('SELECT * FROM orcamento');
-    $query->execute();
+    $fantasia = '';
+    if(isset($_POST['nome_fantasia']))
+    {
+        $fantasia = $_POST['nome_fantasia'];
+    }
+    $query = $dbh->prepare('SELECT * FROM orcamento WHERE nome_fantasia LIKE :nome_fantasia;');
+    $query->execute(array(
+        ':nome_fantasia' => "%$fantasia%"
+    ));
 
     $orcamento = $query->fetchAll();
 ?>
@@ -23,9 +30,10 @@
 <body>
     <div class="main-conteudo">
         <div class="pesquisa">
-            <input type="text" name="pesquisar" id="pesquisar" placeholder="Search">
-            <button class="bt-pesquisa"><a href="#"><img src="../imagem/lupa.png" alt="lupa"
-                        class="lupa-pesquisa"></a></button>
+            <form action="" method="post">
+                <input type="text" name="nome_fantasia" id="pesquisar" placeholder="Pesquisar clientes">
+                <input type="submit" class="bt-pesquisa" value="Pesquisar"></input>
+            </form>
         </div>
 
         <div class="new-button">
@@ -51,8 +59,8 @@
                         <th>Valor</th>
                         <th>Status Venda</th>
                         <th>Status Orçamento</th>
-                        <th>Descrição</th>
                         <th>Pedido</th>
+                        <th>Descrição</th>
                         <th>Data</th>
                         <th>Editar</th>
                         <th>Excluir</th>
@@ -77,8 +85,8 @@
                     echo '<td>'.$orcamento['valor'].'</td>';
                     echo '<td>'.$orcamento['status_venda'].'</td>';
                     echo '<td>'.$orcamento['status_orcamento'].'</td>';
-                    echo '<td>'.$orcamento['descricao'].'</td>';
                     echo '<td>'.$orcamento['pedido'].'</td>';
+                    echo '<td>'.$orcamento['descricao'].'</td>';
                     echo '<td>'.$orcamento['data'].'</td>';
                     echo '<td><a href="editar_cadastro_orcamento.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Editar</a></td>';
                     echo '<td><a href="../php/delete_orcamento.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Excluir</a></td>';

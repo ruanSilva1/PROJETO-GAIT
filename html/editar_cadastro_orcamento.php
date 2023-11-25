@@ -1,3 +1,31 @@
+<?php
+    include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT * FROM pagForma');
+    $query->execute();
+    $formaPagamento = $query->fetchAll();
+
+    $query1 = $dbh->prepare('SELECT * FROM pTIPO');
+    $query1->execute();
+    $tipoPessoa = $query1->fetchAll();
+
+    $query2 = $dbh->prepare('SELECT * FROM vendaSTATUS');
+    $query2->execute();
+    $statusVenda = $query2->fetchAll();
+
+    $query3 = $dbh->prepare('SELECT * FROM orcamentoSTATUS');
+    $query3->execute();
+    $statusOrcamento = $query3->fetchAll();
+
+    $cod_orcamento = $_GET['cod_orcamento'];
+    $query_origin = $dbh->prepare('SELECT * FROM orcamento WHERE cod_orcamento = :cod_orcamento');
+
+    $query_origin->execute(array(
+        ':cod_orcamento' => $cod_orcamento
+    ));
+    $orcamento = $query_origin->fetch();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,80 +44,109 @@
     <input type="submit" value="Editar">
         <div class="c1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <input type="text" name="nome_fantasia" id="nome">
+            <input type="text" name="nome_fantasia" id="nome" value="<?php echo $orcamento['nome_fantasia'] ?>">
         </div>
         <div class="cl2">
             <label for="data_nascimento">Data nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento">
+            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $orcamento['data_nascimento']; ?>">
         </div>
         <div class="cl3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf">
+            <input type="number" name="cpf" id="cpf" value="<?php echo $orcamento['cpf']; ?>">
         </div>
         <div class="cl4">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj">
+            <input type="number" name="cnpj" id="cnpj" value="<?php echo $orcamento['cnpj']; ?>">
         </div>
         <div class="cl5">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone">
+            <input type="tel" name="telefone" id="telefone" value="<?php echo $orcamento['telefone']; ?>">
         </div>
         <div class="cl6">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="<?php echo $orcamento['email']; ?>">
         </div>
         <div class="cl7">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep">
+            <input type="number" name="cep" id="cep" value="<?php echo $orcamento['cep']; ?>">
         </div>
         <div class="cl8">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
+            <input type="text" name="endereco" id="endereco" value="<?php echo $orcamento['endereco']; ?>">
         </div>
         <div class="cl9">
             <label for="n_endereco">Nº endereço</label>
-            <input type="text" name="n_endereco" id="n_endereco">
+            <input type="text" name="n_endereco" id="n_endereco" value="<?php echo $orcamento['n_endereco']; ?>">
         </div>
         <div class="cl10">
             <label for="forma_pagamento">Forma pagamento</label>
             <select name="forma_pagamento" id="forma_pagamento">
-                <option value="a_vista">Á vista</option>
-                <option value="dinheiro">Dinheiro</option>
-                <option value="credito_2x">Crédito 2x</option>
-                <option value="credito_3x">Crédito 3x</option>
-                <option value="debito">Débito</option>
+                <?php
+                    foreach($formaPagamento as $forma){
+                        $pagamento = '';
+                        if($forma['cod'] == $orcamento['forma_pagamento'])
+                        {
+                            $pagamento = 'selected';
+                        }
+                        echo '<option value="'.$forma['cod'].'" '.$pagamento.'>'.$forma['forma'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="cl11">
             <label for="tipo_pessoa">Tipo pessoa</label>
             <select name="tipo_pessoa" id="tipo_pessoa">
-                <option value="pessoa_fisica">Pessoa física</option>
-                <option value="pessoa_juridica">Pessoa júridica</option>
+                <?php
+                    foreach($tipoPessoa as $tipo){
+                        $pessoa = '';
+                        if($tipoPessoa['cod'] == $orcamento['tipo_pessoa'])
+                        {
+                            $pessoa = 'selected';
+                        }
+                        echo '<option value="'.$tipo['cod'].'" '.$pessoa.'>'.$tipo['tipo'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="cl12">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" id="valor">
+            <input type="text" name="valor" id="valor" value="<?php echo $orcamento['valor']; ?>">
         </div>
         <div class="cl13">
             <label for="status_venda">Status venda</label>
             <select name="status_venda" id="status_venda">
-                <option value="vendido">Vendido</option>
-                <option value="nao_vendido">Não vendido</option>
+                <?php
+                    foreach($statusVenda as $statusVenda){
+                        $venda = '';
+                        if($statusVenda['cod'] == $orcamento['status_venda'])
+                        {
+                            $venda = 'selected';
+                        }
+                        echo '<option value="'.$statusVenda['cod'].'" '.$venda.'>'.$statusVenda['sts'].'</option>';
+                    }
+                ?>
             </select>
             <label for="status_orcamento">Status orçamento</label>
             <select name="status_orcamento" id="status_orcamento">
-                <option value="ativo">Ativo</option>
-                <option value="desativo">Desativo</option>
+                <?php
+                    foreach($statusOrcamento as $statusOrcamento){
+                        $status_o = '';
+                        if($statusOrcamento['cod'] == $orcamento['status_orcamento'])
+                        {
+                            $status_o = 'selected';
+                        }
+                        echo '<option value="'.$statusOrcamento['cod'].'" '.$status_o.'>'.$statusOrcamento['sts'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="div-cl14">
             <label for="pedido">Pedido</label>
-            <textarea name="pedido" id="pedido"></textarea>
+            <input name="pedido" id="pedido" value="<?php echo $orcamento['pedido']; ?>"></input>
         </div>
         <div class="div-cl15">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao"></textarea>
+            <input name="descricao" id="descricao" value="<?php echo $orcamento['descricao']; ?>"></input>
         </div>
     </form>
 

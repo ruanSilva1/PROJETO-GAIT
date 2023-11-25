@@ -3,7 +3,7 @@ include('conexao.php');
 
     if(isset($_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['rg'], $_POST['endereco'],
         $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro'], $_POST['status_funcionario'], $_POST['usuario'], $_POST['senha']) && ($_POST['nome']!='')
-        && ($_POST['data_nascimento']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='') && ($_POST['rg'])
+        && ($_POST['data_nascimento']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='') && ($_POST['rg']!='')
         && ($_POST['endereco']!='') && ($_POST['cidade']!='') && ($_POST['n_endereco']!='') && ($_POST['bairro']!='') && ($_POST['status_funcionario']!='') && ($_POST['usuario']!='') && ($_POST['senha']!='')){
 
         $nome = $_POST['nome'];

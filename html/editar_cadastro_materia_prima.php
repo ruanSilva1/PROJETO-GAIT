@@ -1,3 +1,22 @@
+<?php
+    include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT * FROM cat');
+    $query->execute();
+    $categoria = $query->fetchAll();
+
+    $squery = $dbh->prepare('SELECT * FROM sts_mat');
+    $squery->execute();
+    $status = $squery->fetchAll();
+
+    $cod_materia = $_GET['cod_materia'];
+    $query_origin = $dbh->prepare('SELECT * FROM materia_prima WHERE cod_materia = :cod_materia');
+    $query_origin->execute(array(
+        ':cod_materia' => $cod_materia
+    ));
+    $materia_prima = $query_origin->fetch();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,45 +31,56 @@
 </head>
 
 <body>
-    <form action="#" method="post">
-        <input type="submit" value="Salvar">
+    <form action="../php/update_materia_prima.php" method="post">
+        <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome">Nome matéria</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" value="<?php echo $materia_prima['nome']; ?>">
         </div>
         <div class="column-2">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" id="valor">
+            <input type="text" name="valor" id="valor" value="<?php echo $materia_prima['valor']; ?>">
         </div>
         <div class="column-3">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade">
+            <input type="number" name="quantidade" id="quantidade" value="<?php echo $materia_prima['quantidade']; ?>">
         </div>
         <div class="column-4">
             <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" id="descricao">
+            <input type="text" name="descricao" id="descricao" value="<?php echo $materia_prima['descricao']; ?>">
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
             <select name="categoria" id="categoria">
-                <option value="#">lorem</option>
-                <option value="#">lorem</option>
-                <option value="#">lorem</option>
-                <option value="#">lorem</option>
+                <?php
+                    foreach($categoria as $c){
+                        $cat = '';
+                        if($c['cod'] == $materia_prima['categoria']){
+                            $cat = 'selected';
+                        }
+                        echo '<option value="'.$c['cod'].'" '.$cat.'>'.$c['categoria_materia'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="column-6">
             <label for="status">Status matéria</label>
             <select name="status" id="status">
-                <option value="#">lorem</option>
-                <option value="#">lorem</option>
-                <option value="#">lorem</option>
-                <option value="#">lorem</option>
+                <?php
+                    foreach($status as $status){
+                        $sts = '';
+                        if($status['cod'] == $materia_prima['status'])
+                        {
+                            $sts = 'selected';
+                        }
+                        echo '<option value="'.$status['cod'].'" '.$sts.'>'.$status['sts'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="column-7">
             <label for="observacao">Observações</label>
-            <textarea name="observacao" id="observacao"></textarea>
+            <input name="observacao" id="observacao" value="<?php echo $materia_prima['observacao'] ?>"></input>
         </div>
     </form>
 

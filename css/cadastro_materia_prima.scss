@@ -260,7 +260,7 @@ form {
             @extend %label;
         }
 
-        textarea[id="observacao"]{
+        input[id="observacao"]{
             width: 97.5%;
             height: 25vh;
             border-radius: 10px;
@@ -268,7 +268,7 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        textarea[name="observacao"]:hover{
+        input[name="observacao"]:hover{
             @extend %input;
         }
     }

@@ -114,11 +114,11 @@
         </div>
         <div class="div-cl14">
             <label for="pedido">Pedido</label>
-            <textarea name="pedido" id="pedido"></textarea>
+            <input name="pedido" id="pedido"></input>
         </div>
         <div class="div-cl15">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao"></textarea>
+            <input name="descricao" id="descricao"></input>
         </div>
     </form>
 
