@@ -1,7 +1,16 @@
 <?php
 include('../php/conexao.php');
-$query = $dbh->prepare('SELECT * FROM vendas');
-$query->execute();
+
+$fantasia = '';
+if(isset($_POST['nome_fantasia']))
+{
+    $fantasia = $_POST['nome_fantasia'];
+}
+
+$query = $dbh->prepare('SELECT * FROM vendas WHERE nome_fantasia LIKE :nome_fantasia;');
+$query->execute(array(
+    ':nome_fantasia' => "%$fantasia%"
+));
 
 $vendas = $query->fetchAll();
 ?>
@@ -22,9 +31,10 @@ $vendas = $query->fetchAll();
 <body>
     <div class="main-conteudo">
         <div class="pesquisa">
-            <input type="text" name="pesquisar" id="pesquisar" placeholder="Search">
-            <button class="bt-pesquisa"><a href="#"><img src="../imagem/lupa.png" alt="lupa"
-                        class="lupa-pesquisa"></a></button>
+            <form action="" method="post">
+                <input type="text" name="nome_fantasia" id="pesquisar" placeholder="Pesquisar">
+                <input type="submit" class="bt-pesquisa" value="Pesquisar"></input>
+            </form>
         </div>
 
         <div class="new-button"></div>

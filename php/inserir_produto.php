@@ -1,10 +1,7 @@
 <?php
 include('conexao.php');
 
-    try{
-
-        if(isset($_POST['nome_produto'], $_POST['descricao'], $_POST['quantidade'], $_POST['valor'], $_POST['status_produto'], $_POST['categoria'], $_POST['observacao']) &&
-            ($_POST['nome_produto']!='') && ($_POST['descricao']!='') && ($_POST['quantidade']!='') && ($_POST['valor']!='') && ($_POST['categoria']!='')){
+        if(isset($_POST['nome_produto'], $_POST['descricao'], $_POST['quantidade'], $_POST['valor'], $_POST['status_produto'], $_POST['categoria'], $_POST['observacao']) && ($_POST['nome_produto']!='') && ($_POST['descricao']!='') && ($_POST['quantidade']!='') && ($_POST['valor']!='')){
 
             $nome = $_POST['nome_produto'];
             $descricao = $_POST['descricao'];
@@ -18,12 +15,6 @@ include('conexao.php');
             echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
             die();
         }
-
-    }catch(PDOException $e){
-
-        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
-        die();
-    }
 
     try{
         $query = $dbh->prepare('INSERT INTO produto(nome, descricao, quantidade, valor, status_produto, categoria, observacoes)VALUES(:nome_produto, :descricao, :quantidade, :valor,:status_produto, :categoria, :observacao)');
@@ -44,6 +35,6 @@ include('conexao.php');
         header('Location: ../html/estoque.php');
 
     }catch(PDOException $e){
-        echo "<script>alert('Cadastro não realizado')</script>";
+        echo $e;
     }
 ?>

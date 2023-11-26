@@ -35,6 +35,7 @@
 
 <body>
     <form action="../php/update_cliente.php" method="post">
+    <input type="hidden" name="cod_cliente" value="<?php echo $_GET['cod_cliente'];?>">
         <input type="submit" value="Editar">
         <div class="column-1">
            <label for="nome">Nome/ Fantasia</label>

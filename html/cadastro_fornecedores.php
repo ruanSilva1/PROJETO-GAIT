@@ -30,35 +30,35 @@
         <input type="submit" value="Salvar">
         <div class="column-1">
             <label for="nome_fantasia">Nome/ Fantasia *</label>
-            <input type="text" name="nome_fantasia" id="nome_fantasia">
+            <input type="text" name="nome_fantasia" id="nome_fantasia" minlength="1" maxlength="50">
         </div>
         <div class="column-2">
             <label for="razao_social">Razão social *</label>
-            <input type="text" name="razao_social" id="razao_social">
+            <input type="text" name="razao_social" id="razao_social" minlength="1" maxlength="50">
         </div>
         <div class="column-3">
             <label for="cnpj">CNPJ *</label>
-            <input type="number" name="cnpj" id="cnpj">
+            <input type="number" name="cnpj" id="cnpj"  minlength="14" maxlength="14">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone *</label>
-            <input type="tel" name="telefone" id="telefone">
+            <input type="tel" name="telefone" id="telefone" minlength="1" maxlength="11">
         </div>
         <div class="column-5">
             <label for="email">Email *</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" minlength="1" maxlength="30">
         </div>
         <div class="column-6">
             <label for="cep">CEP *</label>
-            <input type="number" name="cep" id="cep">
+            <input type="number" name="cep" id="cep" minlength="1" maxlength="8">
         </div>
         <div class="column-7">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
+            <input type="text" name="endereco" id="endereco" minlength="1" maxlength="50">
         </div>
         <div class="column-8">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade">
+            <input type="text" name="cidade" id="cidade" minlength="1" maxlength="50">
         </div>
         <div class="column-9">
             <label for="n_endereco">Nº endereço</label>
@@ -76,7 +76,7 @@
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro">
+            <input type="text" name="bairro" id="bairro" minlength="1" maxlength="50">
         </div>
         <div class="column-12">
             <label for="status_fornecedor">Status fornecedor</label>

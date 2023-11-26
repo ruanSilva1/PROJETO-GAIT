@@ -1,8 +1,6 @@
 <?php
     include('conexao.php');
 
-        if(isset($_POST['nome'], $_POST['data_nascimento'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'],$_POST['cep'], $_POST['rg'], $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro'])&& ($_POST['nome']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cpf']!='') && ($_POST['cep']!='')){
-
             $nome = $_POST['nome'];
             $data_nascimento = $_POST['data_nascimento'];
             $cnpj = $_POST['cnpj'];
@@ -16,10 +14,6 @@
             $bairro = $_POST['bairro'];
             $tipo_pessoa = $_POST['tipo_pessoa'];
             $cod_cliente = $_POST['cod_cliente'];
-        }else{
-            echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
-            die();
-        }
 
     try{
 

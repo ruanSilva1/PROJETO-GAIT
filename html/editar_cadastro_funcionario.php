@@ -39,58 +39,65 @@
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento">
+            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $funcionario_origin['data_nascimento']; ?>">
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf">
+            <input type="number" name="cpf" id="cpf" value="<?php echo $funcionario_origin['cpf']; ?>">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone">
+            <input type="tel" name="telefone" id="telefone" value="<?php echo $funcionario_origin['telefone']; ?>">
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="<?php echo $funcionario_origin['email']; ?>">
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep">
+            <input type="number" name="cep" id="cep" value="<?php echo $funcionario_origin['cep']; ?>">
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg">
+            <input type="number" name="rg" id="rg" value="<?php echo $funcionario_origin['rg']; ?>">
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
+            <input type="text" name="endereco" id="endereco" value="<?php echo $funcionario_origin['endereco']; ?>">
         </div>
         <div class="column-9">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade"x>
+            <input type="text" name="cidade" id="cidade" value="<?php echo $funcionario_origin['cidade']; ?>">
         </div>
         <div class="column-10">
             <label for="n_endereco">Nº endereço</label>
-            <input type="text" name="n_endereco" id="n_endereco">
+            <input type="text" name="n_endereco" id="n_endereco" value="<?php echo $funcionario_origin['n_endereco']; ?>">
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro">
+            <input type="text" name="bairro" id="bairro" value="<?php echo $funcionario_origin['bairro']; ?>">
         </div>
         <div class="column-12">
             <label for="status_funcionario">Status funcionário</label>
             <select name="status_funcionario" id="status_funcionario">
-                <option value="ativado">Ativado</option>
-                <option value="desativado">Desativado</option>
+                <?php
+                    foreach($funcionario as $f){
+                        $status = '';
+                        if($f['cod'] == $funcionario_origin['status_funcionario']){
+                            $status = 'selected';
+                        }
+                        echo '<option value="'.$f['cod'].'" '.$status.'>'.$f['sts'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="column-13">
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" id="usuario">
+            <input type="text" name="usuario" id="usuario" value="<?php echo $funcionario_origin['usuario']; ?>">
         </div>
         <div class="column-14">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha" value="<?php echo $funcionario_origin['senha']; ?>">
         </div>
     </form>
 
