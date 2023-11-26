@@ -26,7 +26,7 @@ $categoria = $query->fetchAll();
 </head>
 
 <body>
-    <form action="../php/inserir_produto.php" method="post">
+    <form action="../php/inserir_produtof.php" method="post">
         <input type="submit" value="Salvar">
         <div class="column-1">
             <label for="imagem">Imagem</label>

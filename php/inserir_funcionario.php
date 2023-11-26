@@ -45,7 +45,7 @@
 
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        //echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
         header('../html/funcionarios.php');
 
     }catch(PDOException $e){

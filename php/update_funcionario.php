@@ -1,9 +1,6 @@
 <?php
     include('conexao.php');
 
-    if(isset($_POST['cod_funcionario'], $_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['rg'], $_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro'], $_POST['status_funcionario'], $_POST['usuario'], $_POST['senha']) && ($_POST['nome']!='') && ($_POST['data_nascimento']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='') && ($_POST['rg']!='') && ($_POST['endereco']!='') && ($_POST['cidade']!='') && ($_POST['n_endereco']!='') && ($_POST['bairro']!='') && ($_POST['status_funcionario']!='') && ($_POST['usuario']!='') && ($_POST['senha']!='')){
-
-        $cod_funcionario = $_POST['cod_funcionario'];
         $nome = $_POST['nome'];
         $data_nascimento = $_POST['data_nascimento'];
         $cpf = $_POST['cpf'];
@@ -18,10 +15,7 @@
         $status_funcionario = $_POST['status_funcionario'];
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
-
-    }else{
-        echo 'Variaveis não definidas';
-    }
+        $cod_funcionario = $_POST['cod_funcionario'];
 
     try{
 

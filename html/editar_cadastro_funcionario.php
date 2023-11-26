@@ -1,3 +1,21 @@
+<?php
+    include('../php/conexao.php');
+
+    $query = $dbh->prepare('SELECT * FROM  funcionarioStatus');
+    $query->execute();
+
+    $funcionario = $query->fetchAll();
+
+    $cod_funcionario = $_GET['cod_funcionario'];
+    $query_origin = $dbh->prepare('SELECT * FROM funcionario WHERE cod_funcionario = :cod_funcionario');
+
+    $query_origin->execute(array(
+        ':cod_funcionario' => $cod_funcionario
+    ));
+
+    $funcionario_origin = $query_origin->fetch();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,11 +30,12 @@
 </head>
 
 <body>
-    <form action="#" method="post">
-        <input type="submit" value="Salvar">
+    <form action="../php/update_funcionario.php" method="post">
+    <input type="hidden" name="cod_funcionario" value="<?php echo $_GET['cod_funcionario'];?>">
+        <input type="submit" value="Editar">
         <div class="column-1">
            <label for="nome">Nome</label>
-           <input type="text" name="nome" id="nome"> 
+           <input type="text" name="nome" id="nome" value="<?php echo $funcionario_origin['nome']; ?>"> 
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data nascimento</label>

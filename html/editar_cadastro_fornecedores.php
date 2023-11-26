@@ -13,9 +13,9 @@
 
 
     $id_fornecedor = $_GET['cod_fornecedor'];
-    $rquery = $dbh->prepare('SELECT * FROM fornecedor WHERE cod_fornecedor = :id_fornecedor');
+    $rquery = $dbh->prepare('SELECT * FROM fornecedor WHERE cod_fornecedor = :cod_fornecedor');
     $rquery->execute(array(
-        ':id_fornecedor' => $id_fornecedor
+        ':cod_fornecedor' => $id_fornecedor
     ));
     $fornecedor = $rquery->fetch();
     //print_r($fornecedor);
@@ -36,6 +36,7 @@
 
 <body>
     <form action="../php/update_fornecedor.php" method="post">
+    <input type="hidden" name="cod_fornecedor" value="<?php echo $_GET['cod_fornecedor'];?>">
         <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
