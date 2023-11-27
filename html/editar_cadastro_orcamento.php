@@ -41,6 +41,7 @@
 
 <body>
     <form action="../php/update_orcamento.php" method="post">
+    <input type="hidden" name="cod_orcamento" value="<?php echo $_GET['cod_orcamento'];?>">
     <input type="submit" value="Editar">
         <div class="c1">
             <label for="nome_fantasia">Nome/ Fantasia</label>

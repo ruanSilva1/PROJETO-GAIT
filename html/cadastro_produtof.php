@@ -66,11 +66,11 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-7">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao"></textarea>
+            <input name="descricao" id="descricao"></input>
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <textarea name="observacao" id="observacao"></textarea>
+            <input name="observacao" id="observacao"></input>
         </div>
     </form>
 
