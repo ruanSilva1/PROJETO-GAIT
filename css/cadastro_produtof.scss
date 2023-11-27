@@ -244,7 +244,7 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        select[id="status"]:hover{
+        select[id="status_produto"]:hover{
             @extend %input;
         }
     }
@@ -259,7 +259,7 @@ form {
             @extend %label;
         }
 
-        textarea[id="descricao"]{
+        input[id="descricao"]{
             width: 100%;
             height: 25vh;
             border-radius: 10px;
@@ -267,7 +267,7 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        textarea[name="observacao"]:hover{
+        input[name="observacao"]:hover{
             @extend %input;
         }
     }
@@ -282,7 +282,7 @@ form {
             @extend %label;
         }
 
-        textarea[id="observacao"]{
+        input[id="observacao"]{
             width: 97.5%;
             height: 25vh;
             border-radius: 10px;
@@ -290,7 +290,7 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        textarea[name="observacao"]:hover{
+        input[name="observacao"]:hover{
             @extend %input;
         }
     }

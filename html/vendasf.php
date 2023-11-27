@@ -68,9 +68,21 @@ $vendas = $query->fetchAll();
                     echo '<tr>';
                     echo '<td>'.$venda['cod_venda'].'</td>';
                     echo '<td>'.$venda['nome_fantasia'].'</td>';
-                    echo '<td>'.$venda['descricao'].'</td>';
+                    echo '<td>'.$venda['data_nascimento'].'</td>';
+                    echo '<td>'.$venda['cpf'].'</td>';
+                    echo '<td>'.$venda['cnpj'].'</td>';
+                    echo '<td>'.$venda['telefone'].'</td>';
                     echo '<td>'.$venda['email'].'</td>';
-                    echo '<td><a href="telamais.html">...</a></td>';
+                    echo '<td>'.$venda['cep'].'</td>';
+                    echo '<td>'.$venda['endereco'].'</td>';
+                    echo '<td>'.$venda['n_endereco'].'</td>';
+                    echo '<td>'.$venda['forma_pagamento'].'</td>';
+                    echo '<td>'.$venda['tipo_pessoa'].'</td>';
+                    echo '<td>'.$venda['valor'].'</td>';
+                    echo '<td>'.$venda['status_venda'].'</td>';
+                    echo '<td>'.$venda['status_orcamento'].'</td>';
+                    echo '<td>'.$venda['descricao'].'</td>';
+                    echo '<td>'.$venda['data'].'</td>';
                     echo '</tr>';
                 }
                 ?>

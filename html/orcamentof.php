@@ -87,7 +87,7 @@
                     echo '<td>'.$orcamento['descricao'].'</td>';
                     echo '<td>'.$orcamento['pedido'].'</td>';
                     echo '<td>'.$orcamento['data'].'</td>';
-                    echo '<td><a href="editar_cadastro_orcamento.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Editar</a></td>';
+                    echo '<td><a href="editar_orcamentof.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Editar</a></td>';
                     echo '</tr>';
                 }
                 ?>

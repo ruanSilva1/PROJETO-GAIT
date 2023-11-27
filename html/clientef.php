@@ -83,7 +83,7 @@
                     echo '<td>'.$cliente['bairro'].'</td>';
                     echo '<td>'.$cliente['tipo_pessoa'].'</td>';
                     echo '<td>'.$cliente['data'].'</td>';
-                    echo '<td><a href="editar_cadastro_clientes.php?cod_cliente='.$cliente['cod_cliente'].'">Editar</a></td>';
+                    echo '<td><a href="editar_cadastro_clientef.php?cod_cliente='.$cliente['cod_cliente'].'">Editar</a></td>';
                     echo '</tr>';
                 }
                 ?>

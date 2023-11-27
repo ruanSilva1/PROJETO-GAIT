@@ -69,7 +69,7 @@
                     echo '<td>'.$p['categoria'].'</td>';
                     echo '<td>'.$p['observacoes'].'</td>';
                     echo '<td>'.$p['data'].'</td>';
-                    echo '<td><a href="editar_cadastro_produto.php?idProd='.$p['cod_produto'].'">Editar</a></td>';
+                    echo '<td><a href="editar_cadastro_produtof.php?cod_produto='.$p['cod_produto'].'">Editar</a></td>';
                     echo '</tr>';
                 }
                 ?>
