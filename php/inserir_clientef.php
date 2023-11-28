@@ -45,6 +45,7 @@
 
         ));
 
+        echo "<script>alert('Cadastro realizado com sucesso!')</script>";
         header('Location: ../html/clientef.php');
       
     }catch(PDOException $e){

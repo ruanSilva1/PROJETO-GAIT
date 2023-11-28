@@ -5,9 +5,9 @@
     $query->execute();
     $formaPagamento = $query->fetchAll();
 
-    $query1 = $dbh->prepare('SELECT * FROM pTIPO');
+    $query1 = $dbh->prepare('SELECT cod_cliente, nome FROM cliente');
     $query1->execute();
-    $tipoPessoa = $query1->fetchAll();
+    $cliente = $query1->fetchAll();
 
     $query2 = $dbh->prepare('SELECT * FROM vendaSTATUS');
     $query2->execute();
@@ -36,41 +36,23 @@
     <input type="submit" value="Salvar">
         <div class="c1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <input type="text" name="nome_fantasia" id="nome">
+            <select name="nome_fantasia" id="nome_fantasia">
+                <?php
+                    foreach($cliente as $cliente){
+                        echo '<option value="'.$cliente['cod_cliente'].'">'.$cliente['nome'].'</option>';
+                    }
+                ?>
+            </select>
         </div>
-        <div class="cl2">
-            <label for="data_nascimento">Data nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento">
+        <div class="c2">
+            <label for="pedido">Pedido</label>
+            <input name="pedido" id="pedido"></input>
         </div>
-        <div class="cl3">
-            <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf">
+        <div class="c3">
+            <label for="valor">Valor</label>
+            <input type="text" name="valor" id="valor">
         </div>
-        <div class="cl4">
-            <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj">
-        </div>
-        <div class="cl5">
-            <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone">
-        </div>
-        <div class="cl6">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-        </div>
-        <div class="cl7">
-            <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep">
-        </div>
-        <div class="cl8">
-            <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
-        </div>
-        <div class="cl9">
-            <label for="n_endereco">Nº endereço</label>
-            <input type="text" name="n_endereco" id="n_endereco">
-        </div>
-        <div class="cl10">
+        <div class="c4">
             <label for="forma_pagamento">Forma pagamento</label>
             <select name="forma_pagamento" id="forma_pagamento">
                 <?php
@@ -80,21 +62,11 @@
                 ?>
             </select>
         </div>
-        <div class="cl11">
-            <label for="tipo_pessoa">Tipo pessoa</label>
-            <select name="tipo_pessoa" id="tipo_pessoa">
-                <?php
-                    foreach($tipoPessoa as $tipo){
-                        echo '<option value="'.$tipo['cod'].'">'.$tipo['tipo'].'</option>';
-                    }
-                ?>
-            </select>
+        <div class="c5">
+            <label for="descricao">Descrição</label>
+            <textarea name="descricao" id="descricao"></textarea>
         </div>
-        <div class="cl12">
-            <label for="valor">Valor</label>
-            <input type="text" name="valor" id="valor">
-        </div>
-        <div class="cl13">
+        <div class="c6">
             <label for="status_venda">Status venda</label>
             <select name="status_venda" id="status_venda">
                 <?php
@@ -103,7 +75,9 @@
                     }
                 ?>
             </select>
-            <label for="status_orcamento">Status orçamento</label>
+        </div>
+        <div class="c7">
+        <label for="status_orcamento">Status orçamento</label>
             <select name="status_orcamento" id="status_orcamento">
                 <?php
                     foreach($statusOrcamento as $statusOrcamento){
@@ -111,14 +85,6 @@
                     }
                 ?>
             </select>
-        </div>
-        <div class="div-cl14">
-            <label for="pedido">Pedido</label>
-            <input name="pedido" id="pedido"></input>
-        </div>
-        <div class="div-cl15">
-            <label for="descricao">Descrição</label>
-            <input name="descricao" id="descricao"></input>
         </div>
     </form>
 

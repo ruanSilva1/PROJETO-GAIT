@@ -91,23 +91,23 @@ form {
   height: 100vh;
   background-color: #a8a39d;
 }
-form .div-cl15 label[for=descricao], form .div-cl14 label[for=pedido], form .cl13 label[for=status_orcamento], form .cl13 label[for=status_venda], form .cl12 label[for=valor], form .cl11 label[for=tipo_pessoa], form .cl10 label[for=forma_pagamento], form .cl9 label[for=n_endereco], form .cl8 label[for=endereco], form .cl7 label[for=cep], form .cl6 label[for=email], form .cl5 label[for=telefone], form .cl4 label[for=cnpj], form .cl3 label[for=cpf], form .cl2 label[for=data_nascimento], form .c1 label[for=nome_fantasia] {
+form .c7 label[for=status_orcamento], form .c6 label[for=status_venda], form .c5 label[for=descricao], form .c4 label[for=forma_pagamento], form .c3 label[for=valor], form .c2 label[for=pedido], form .c1 label[for=nome_fantasia] {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
 }
-form .div-cl15 input[name=descricao]:hover, form .div-cl14 input[name=pedido]:hover, form .cl13 select[name=status_venda]:hover, form .cl12 input[name=valor]:hover, form .cl11 select[name=tipo_pessoa]:hover, form .cl10 select[name=forma_pagamento]:hover, form .cl9 input[name=n_endereco]:hover, form .cl8 input[name=endereco]:hover, form .cl7 input[name=cep]:hover, form .cl6 input[name=email]:hover, form .cl5 input[name=telefone]:hover, form .cl4 input[name=cnpj]:hover, form .cl3 input[name=cpf]:hover, form .cl2 input[name=data_nascimento]:hover, form .c1 input[name=nome_fantasia]:hover {
+form .c7 select[name=status_orcamento]:hover, form .c6 select[name=status_venda]:hover, form .c5 textarea[name=descricao]:hover, form .c4 select[name=forma_pagamento]:hover, form .c3 input[name=valor]:hover, form .c2 input[name=pedido]:hover, form .c1 select[name=nome_fantasia]:hover {
   transition: 0.4s;
   background-color: rgb(237, 235, 233);
 }
 form .c1 {
-  width: 25%;
+  width: 40%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 170px);
   margin-left: 5%;
 }
-form .c1 input[name=nome_fantasia] {
+form .c1 select[name=nome_fantasia] {
   width: 100%;
   height: 4vh;
   border-radius: 10px;
@@ -115,14 +115,14 @@ form .c1 input[name=nome_fantasia] {
   border-color: gray;
   padding-left: 10px;
 }
-form .cl2 {
-  width: 20%;
+form .c2 {
+  width: 44%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(450px, 105px);
+  transform: translate(700px, 105px);
   margin-left: 5%;
 }
-form .cl2 input[name=data_nascimento] {
+form .c2 input[name=pedido] {
   width: 100%;
   height: 4vh;
   border-radius: 10px;
@@ -130,14 +130,14 @@ form .cl2 input[name=data_nascimento] {
   border-color: gray;
   padding-left: 10px;
 }
-form .cl3 {
-  width: 15%;
+form .c3 {
+  width: 40%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(820px, 40px);
+  transform: translate(0, 180px);
   margin-left: 5%;
 }
-form .cl3 input[name=cpf] {
+form .c3 input[name=valor] {
   width: 100%;
   height: 4vh;
   border-radius: 10px;
@@ -145,14 +145,14 @@ form .cl3 input[name=cpf] {
   border-color: gray;
   padding-left: 10px;
 }
-form .cl4 {
-  width: 17%;
+form .c4 {
+  width: 44%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(1120px, -25px);
+  transform: translate(700px, 115px);
   margin-left: 5%;
 }
-form .cl4 input[name=cnpj] {
+form .c4 select[name=forma_pagamento] {
   width: 100%;
   height: 4vh;
   border-radius: 10px;
@@ -160,133 +160,28 @@ form .cl4 input[name=cnpj] {
   border-color: gray;
   padding-left: 10px;
 }
-form .cl5 {
-  width: 15%;
-  height: 9vh;
-  background-color: transparent;
-  margin: -1.5% 5%;
-  transform: translate(0, 45px);
-}
-form .cl5 input[name=telefone] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl6 {
-  width: 29.5%;
-  height: 9vh;
-  background-color: transparent;
-  margin: -4% 25%;
-  transform: translate(0, 40px);
-}
-form .cl6 input[name=email] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl7 {
-  width: 15%;
-  height: 9vh;
-  background-color: transparent;
-  margin: -4% 58.5%;
-  transform: translate(0, 35px);
-}
-form .cl7 input[name=cep] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl8 {
-  width: 17%;
-  height: 9vh;
-  background-color: transparent;
-  margin: -4% 78%;
-  transform: translate(0, 30px);
-}
-form .cl8 input[name=endereco] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl9 {
-  width: 15%;
-  height: 9vh;
-  background-color: transparent;
-  margin: 7% 5%;
-  transform: translate(0, 35px);
-}
-form .cl9 input[name=n_endereco] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl10 {
-  width: 20%;
-  height: 9vh;
-  background-color: transparent;
-  margin: -11% 25%;
-  transform: translate(0, 30px);
-}
-form .cl10 select[name=forma_pagamento] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl11 {
-  width: 20%;
-  height: 9vh;
-  background-color: transparent;
-  margin: 7% 50%;
-  transform: translate(0, 25px);
-}
-form .cl11 select[name=tipo_pessoa] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl12 {
-  width: 20%;
-  height: 9vh;
-  background-color: transparent;
-  margin: -11% 75%;
-  transform: translate(0, 20px);
-}
-form .cl12 input[name=valor] {
-  width: 100%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl13 {
-  width: 15%;
+form .c5 {
+  width: 40%;
   height: 25vh;
   background-color: transparent;
-  transform: translate(80px, 225px);
+  margin: -1.5% 5%;
+  transform: translate(0, 200px);
 }
-form .cl13 select[name=status_venda] {
+form .c5 textarea[name=descricao] {
+  width: 100%;
+  height: 21vh;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: gray;
+  padding-left: 10px;
+}
+form .c6 {
+  width: 20%;
+  height: 9vh;
+  background-color: transparent;
+  transform: translate(780px, 100px);
+}
+form .c6 select[name=status_venda] {
   width: 100%;
   height: 4vh;
   border-radius: 10px;
@@ -294,44 +189,15 @@ form .cl13 select[name=status_venda] {
   border-color: gray;
   padding-left: 10px;
 }
-form .cl13 label[for=status_orcamento] {
-  margin-top: 20%;
+form .c7 {
+  width: 20%;
+  height: 9vh;
+  background-color: transparent;
+  transform: translate(1150px, 35px);
 }
-form .cl13 select[name=status_orcamento] {
+form .c7 select[name=status_orcamento] {
   width: 100%;
   height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .cl13 select[name=status_orcamento]:hover {
-  transition: 0.4s;
-  background-color: rgb(237, 235, 233);
-}
-form .div-cl14 {
-  width: 30%;
-  height: 20vh;
-  background-color: transparent;
-  margin: 3% 25%;
-}
-form .div-cl14 input[name=pedido] {
-  width: 100%;
-  height: 20vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
-form .div-cl15 {
-  width: 35%;
-  height: 5vh;
-  background-color: transparent;
-  margin: -12% 60%;
-}
-form .div-cl15 input[name=descricao] {
-  width: 100%;
-  height: 20vh;
   border-radius: 10px;
   border-style: solid;
   border-color: gray;
@@ -378,68 +244,24 @@ h1 {
     background-color: transparent;
     transform: translate(-70px, -3.5px);
   }
-  form .c1 {
-    width: 23%;
-    background-color: transparent;
+  form .c2 {
+    transform: translate(650px, 105px);
+  }
+  form .c3 {
     transform: translate(0, 150px);
   }
-  form .cl2 {
-    width: 19%;
-    background-color: transparent;
-    transform: translate(400px, 80px);
+  form .c4 {
+    transform: translate(650px, 80px);
   }
-  form .cl3 {
-    width: 16%;
-    background-color: transparent;
-    transform: translate(740px, 10px);
+  form .c5 {
+    transform: translate(0, 170px);
   }
-  form .cl4 {
-    background-color: transparent;
-    transform: translate(1030px, -60px);
+  form .c6 {
+    transform: translate(730px, 60px);
   }
-  form .cl5 {
-    background-color: transparent;
-    transform: translate(0, -5px);
-  }
-  form .cl6 {
-    background-color: transparent;
-    transform: translate(-15px, -15px);
-  }
-  form .cl7 {
-    background-color: transparent;
-    transform: translate(-15px, -25px);
-  }
-  form .cl8 {
-    background-color: transparent;
-    transform: translate(-15px, -35px);
-  }
-  form .cl9 {
-    background-color: transparent;
-    transform: translate(0, -40px);
-  }
-  form .cl10 {
-    background-color: transparent;
-    transform: translate(0, -50px);
-  }
-  form .cl11 {
-    background-color: transparent;
-    transform: translate(0, -60px);
-  }
-  form .cl12 {
-    background-color: transparent;
-    transform: translate(-15px, -70px);
-  }
-  form .cl13 {
-    background-color: transparent;
-    transform: translate(70px, 120px);
-  }
-  form .div-cl14 {
-    background-color: transparent;
-    transform: translate(0, -110px);
-  }
-  form .div-cl15 {
-    background-color: transparent;
-    transform: translate(-15px, -135px);
+  form .c7 {
+    width: 20%;
+    transform: translate(1060px, -10px);
   }
   form .i-sub {
     background-color: transparent;
@@ -465,69 +287,21 @@ h1 {
     transform: translate(-70px, -5px);
   }
   form .c1 {
-    width: 23%;
-    background-color: transparent;
-    transform: translate(0, 145px);
+    width: 40%;
+    transform: translate(0, 160px);
   }
-  form .cl2 {
-    width: 19%;
-    background-color: transparent;
-    transform: translate(370px, 85px);
+  form .c2 {
+    transform: translate(625px, 105px);
   }
-  form .cl3 {
-    width: 19%;
-    background-color: transparent;
-    transform: translate(680px, 25px);
+  form .c4 {
+    transform: translate(625px, 90px);
   }
-  form .cl4 {
-    background-color: transparent;
-    transform: translate(990px, -35px);
+  form .c6 {
+    transform: translate(700px, 80px);
   }
-  form .cl5 {
-    background-color: transparent;
-    transform: translate(0, 25px);
-  }
-  form .cl6 {
-    background-color: transparent;
-    width: 27%;
-    transform: translate(-15px, 20px);
-  }
-  form .cl7 {
-    background-color: transparent;
-    width: 19%;
-    transform: translate(-45px, 15px);
-  }
-  form .cl8 {
-    background-color: transparent;
-    transform: translate(0px, 10px);
-  }
-  form .cl9 {
-    background-color: transparent;
-    transform: translate(0, 5px);
-  }
-  form .cl10 {
-    background-color: transparent;
-    transform: translate(0, 0px);
-  }
-  form .cl11 {
-    background-color: transparent;
-    transform: translate(0, -5px);
-  }
-  form .cl12 {
-    background-color: transparent;
-    transform: translate(-5px, -10px);
-  }
-  form .cl13 {
-    background-color: transparent;
-    transform: translate(70px, 165px);
-  }
-  form .div-cl14 {
-    background-color: transparent;
-    transform: translate(0, -40px);
-  }
-  form .div-cl15 {
-    background-color: transparent;
-    transform: translate(-5px, -50px);
+  form .c7 {
+    width: 20%;
+    transform: translate(1015px, 20px);
   }
   form input[type=submit] {
     transform: translate(0, 140px);

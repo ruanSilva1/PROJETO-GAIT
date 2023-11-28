@@ -8,5 +8,6 @@ try{
     $dbh = new PDO($dsn, $user, $password);
 }catch(PDOException $e){
     echo "Erro de conexao com o banco de dados";
+    echo $e;
 }
 ?>
