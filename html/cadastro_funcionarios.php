@@ -25,7 +25,7 @@
         <input type="submit" value="Salvar">
         <div class="column-1">
            <label for="nome">Nome</label>
-           <input type="text" name="nome" id="nome"> 
+           <input type="text" name="nome" id="nome" minlength="3" maxlength="60"> 
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data nascimento</label>
@@ -33,31 +33,31 @@
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf">
+            <input type="number" name="cpf" id="cpf" minlength="11" maxlength="11">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone">
+            <input type="tel" name="telefone" id="telefone" minlength="11" maxlength="11">
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" minlength="1" maxlength="30">
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep">
+            <input type="number" name="cep" id="cep" minlength="8" maxlength="8">
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg">
+            <input type="number" name="rg" id="rg" minlength="7" maxlength="7">
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
+            <input type="text" name="endereco" id="endereco" minlength="1" maxlength="50">
         </div>
         <div class="column-9">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade"x>
+            <input type="text" name="cidade" id="cidade" minlength="1" maxlength="50">
         </div>
         <div class="column-10">
             <label for="n_endereco">Nº endereço</label>
@@ -65,7 +65,7 @@
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro">
+            <input type="text" name="bairro" id="bairro" minlength="1" maxlength="50">
         </div>
         <div class="column-12">
             <label for="status_funcionario">Status funcionário</label>
@@ -79,11 +79,11 @@
         </div>
         <div class="column-13">
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" id="usuario">
+            <input type="text" name="usuario" id="usuario" minlength="1" maxlength="25">
         </div>
         <div class="column-14">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha" minlength="1" maxlength="6">
         </div>
     </form>
 

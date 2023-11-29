@@ -36,21 +36,17 @@ $produtos = $query_origin->fetch();
     <form action="../php/update_produtof.php" method="post">
     <input type="hidden" name="cod_produto" value="<?php echo $_GET['cod_produto'];?>">
         <input type="submit" value="Editar">
-        <div class="column-1">
-            <label for="imagem">Imagem</label>
-            <input type="file" name="image">
-        </div>
         <div class="column-2">
             <label for="nome_produto">Nome produto</label>
-            <input type="text" name="nome_produto" id="nome_produto" value="<?php echo $produtos['nome']; ?>">
+            <input type="text" name="nome_produto" id="nome_produto" value="<?php echo $produtos['nome']; ?>" minlength="1" maxlength="50">
         </div>
         <div class="column-3">
             <label for="valor">Valor</label>
-            <input type="number" name="valor" id="valor" value="<?php echo $produtos['valor']; ?>">
+            <input type="number" name="valor" id="valor" value="<?php echo $produtos['valor']; ?>" minlength="1">
         </div>
         <div class="column-4">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade" value="<?php echo $produtos['quantidade']; ?>">
+            <input type="number" name="quantidade" id="quantidade" value="<?php echo $produtos['quantidade']; ?>" minlength="1">
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
@@ -82,11 +78,11 @@ $produtos = $query_origin->fetch();
         </div>
         <div class="column-7">
             <label for="descricao">Descrição</label>
-            <input name="descricao" id="descricao" value="<?php echo $produtos['descricao']; ?>"></input>
+            <input name="descricao" id="descricao" value="<?php echo $produtos['descricao']; ?>" minlength="1" maxlength="200"></input>
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <input name="observacao" id="observacao" value="<?php echo $produtos['observacoes']; ?>"></input>
+            <input name="observacao" id="observacao" value="<?php echo $produtos['observacoes']; ?>" maxlength="200"></input>
         </div>
     </form>
 

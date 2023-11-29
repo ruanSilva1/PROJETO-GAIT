@@ -32,6 +32,7 @@ div .conteudo .formulario form {
   border-radius: 4vh;
   border-style: solid;
   border-color: gray;
+  box-shadow: 10px 10px 5px 5px gray;
 }
 div .conteudo .formulario form .u-usuario .icone-usuario {
   width: 8%;

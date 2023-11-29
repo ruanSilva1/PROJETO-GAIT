@@ -28,21 +28,17 @@ $categoria = $query->fetchAll();
 <body>
     <form action="../php/inserir_produto.php" method="post">
         <input type="submit" value="Salvar">
-        <div class="column-1">
-            <label for="imagem">Imagem</label>
-            <input type="file" name="image">
-        </div>
         <div class="column-2">
             <label for="nome_produto">Nome produto</label>
-            <input type="text" name="nome_produto" id="nome_produto">
+            <input type="text" name="nome_produto" id="nome_produto" minlength="1" maxlength="50">
         </div>
         <div class="column-3">
             <label for="valor">Valor</label>
-            <input type="number" name="valor" id="valor">
+            <input type="tell" name="valor" id="valor" minlength="1">
         </div>
         <div class="column-4">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade">
+            <input type="number" name="quantidade" id="quantidade" minlength="1">
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
@@ -66,11 +62,11 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-7">
             <label for="descricao">Descrição</label>
-            <input name="descricao" id="descricao"></input>
+            <input name="descricao" id="descricao" minlength="1" maxlength="200"></input>
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <input name="observacao" id="observacao"></input>
+            <input name="observacao" id="observacao" maxlength="200"></input>
         </div>
     </form>
 

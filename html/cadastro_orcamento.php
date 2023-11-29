@@ -46,11 +46,11 @@
         </div>
         <div class="c2">
             <label for="pedido">Pedido</label>
-            <input name="pedido" id="pedido"></input>
+            <input name="pedido" id="pedido" minlength="1" maxlength="200"></input>
         </div>
         <div class="c3">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" id="valor">
+            <input type="tell" name="valor" id="valor" minlength="1">
         </div>
         <div class="c4">
             <label for="forma_pagamento">Forma pagamento</label>
@@ -64,7 +64,7 @@
         </div>
         <div class="c5">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao"></textarea>
+            <textarea name="descricao" id="descricao" minlength="1" maxlength="200"></textarea>
         </div>
         <div class="c6">
             <label for="status_venda">Status venda</label>

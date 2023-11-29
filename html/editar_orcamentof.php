@@ -5,9 +5,9 @@
     $query->execute();
     $formaPagamento = $query->fetchAll();
 
-    $query1 = $dbh->prepare('SELECT * FROM pTIPO');
+    $query1 = $dbh->prepare('SELECT * FROM cliente');
     $query1->execute();
-    $tipoPessoa = $query1->fetchAll();
+    $cliente = $query1->fetchAll();
 
     $query2 = $dbh->prepare('SELECT * FROM vendaSTATUS');
     $query2->execute();
@@ -17,13 +17,9 @@
     $query3->execute();
     $statusOrcamento = $query3->fetchAll();
 
-    $cod_orcamento = $_GET['cod_orcamento'];
-    $query_origin = $dbh->prepare('SELECT * FROM orcamento WHERE cod_orcamento = :cod_orcamento');
-
-    $query_origin->execute(array(
-        ':cod_orcamento' => $cod_orcamento
-    ));
-    $orcamento = $query_origin->fetch();
+    $tbl = $dbh->prepare('SELECT * FROM orcamento');
+    $tbl->execute();
+    $resultadoTBL = $tbl->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -48,14 +44,14 @@
             <select name="id_cliente" id="nome_fantasia">
                 <?php
                     foreach($cliente as $cliente){
-                        echo '<option value="'.$cliente['cod_cliente'].'">'.$cliente['nome'].'</option>';
+                        echo '<option value="'.$cliente['cod_cliente'].'" '.$n.'>'.$cliente['nome'].'</option>';
                     }
                 ?>
             </select>
         </div>
         <div class="c2">
             <label for="pedido">Pedido</label>
-            <input name="pedido" id="pedido"></input>
+            <input name="pedido" id="pedido" ></input>
         </div>
         <div class="c3">
             <label for="valor">Valor</label>
@@ -80,7 +76,11 @@
             <select name="status_venda" id="status_venda">
                 <?php
                     foreach($statusVenda as $statusVenda){
-                        echo '<option value="'.$statusVenda['cod'].'">'.$statusVenda['sts'].'</option>';
+                        $sts = '';
+                        if($statusVenda['cod'] == $orcamento['status_venda']){
+                            $sts = 'selected';
+                        }
+                        echo '<option value="'.$statusVenda['cod'].'" '.$sts.'>'.$statusVenda['sts'].'</option>';
                     }
                 ?>
             </select>

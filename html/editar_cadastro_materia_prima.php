@@ -35,19 +35,19 @@
         <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome">Nome matéria</label>
-            <input type="text" name="nome" id="nome" value="<?php echo $materia_prima['nome']; ?>">
+            <input type="text" name="nome" id="nome" value="<?php echo $materia_prima['nome']; ?>" minlength="1" maxlength="50">
         </div>
         <div class="column-2">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" id="valor" value="<?php echo $materia_prima['valor']; ?>">
+            <input type="text" name="valor" id="valor" value="<?php echo $materia_prima['valor']; ?>" minlength="1">
         </div>
         <div class="column-3">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade" value="<?php echo $materia_prima['quantidade']; ?>">
+            <input type="number" name="quantidade" id="quantidade" value="<?php echo $materia_prima['quantidade']; ?>" minlength="1">
         </div>
         <div class="column-4">
             <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" id="descricao" value="<?php echo $materia_prima['descricao']; ?>">
+            <input type="text" name="descricao" id="descricao" value="<?php echo $materia_prima['descricao']; ?>" minlength="1" maxlength="50">
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>

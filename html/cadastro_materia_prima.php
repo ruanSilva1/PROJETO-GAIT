@@ -28,19 +28,19 @@
         <input type="submit" value="Salvar">
         <div class="column-1">
             <label for="nome">Nome matéria</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" minlength="1" maxlength="50">
         </div>
         <div class="column-2">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" id="valor">
+            <input type="tell" name="valor" id="valor" minlength="1">
         </div>
         <div class="column-3">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade">
+            <input type="number" name="quantidade" id="quantidade" minlength="1">
         </div>
         <div class="column-4">
             <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" id="descricao">
+            <input type="text" name="descricao" id="descricao" minlength="1" maxlength="50">
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>

@@ -35,7 +35,7 @@
         <input type="submit" value="Editar">
         <div class="column-1">
            <label for="nome">Nome</label>
-           <input type="text" name="nome" id="nome" value="<?php echo $funcionario_origin['nome']; ?>"> 
+           <input type="text" name="nome" id="nome" value="<?php echo $funcionario_origin['nome']; ?>" minlength="3" maxlength="60"> 
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data nascimento</label>
@@ -43,31 +43,31 @@
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf" value="<?php echo $funcionario_origin['cpf']; ?>">
+            <input type="number" name="cpf" id="cpf" value="<?php echo $funcionario_origin['cpf']; ?>" minlength="11" maxlength="11">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone" value="<?php echo $funcionario_origin['telefone']; ?>">
+            <input type="tel" name="telefone" id="telefone" value="<?php echo $funcionario_origin['telefone']; ?>" minlength="11" maxlength="11">
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="<?php echo $funcionario_origin['email']; ?>">
+            <input type="email" name="email" id="email" value="<?php echo $funcionario_origin['email']; ?>" minlength="1" maxlength="30">
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep" value="<?php echo $funcionario_origin['cep']; ?>">
+            <input type="number" name="cep" id="cep" value="<?php echo $funcionario_origin['cep']; ?>" minlength="8" maxlength="8">
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg" value="<?php echo $funcionario_origin['rg']; ?>">
+            <input type="number" name="rg" id="rg" value="<?php echo $funcionario_origin['rg']; ?>" minlength="7" maxlength="7">
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco" value="<?php echo $funcionario_origin['endereco']; ?>">
+            <input type="text" name="endereco" id="endereco" value="<?php echo $funcionario_origin['endereco']; ?>" minlength="1" maxlength="50">
         </div>
         <div class="column-9">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade" value="<?php echo $funcionario_origin['cidade']; ?>">
+            <input type="text" name="cidade" id="cidade" value="<?php echo $funcionario_origin['cidade']; ?>" minlength="1" maxlength="50">
         </div>
         <div class="column-10">
             <label for="n_endereco">Nº endereço</label>
@@ -75,7 +75,7 @@
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro" value="<?php echo $funcionario_origin['bairro']; ?>">
+            <input type="text" name="bairro" id="bairro" value="<?php echo $funcionario_origin['bairro']; ?>" minlength="1" maxlength="50">
         </div>
         <div class="column-12">
             <label for="status_funcionario">Status funcionário</label>
@@ -93,11 +93,11 @@
         </div>
         <div class="column-13">
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" id="usuario" value="<?php echo $funcionario_origin['usuario']; ?>">
+            <input type="text" name="usuario" id="usuario" value="<?php echo $funcionario_origin['usuario']; ?>" minlength="1" maxlength="25">
         </div>
         <div class="column-14">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha" value="<?php echo $funcionario_origin['senha']; ?>">
+            <input type="password" name="senha" id="senha" value="<?php echo $funcionario_origin['senha']; ?>" minlength="1" maxlength="6">
         </div>
     </form>
 

@@ -91,36 +91,21 @@ form {
   height: 100vh;
   background-color: #a8a39d;
 }
-form .column-8 label[for=observacao], form .column-7 label[for=descricao], form .column-6 label[for=status_produto], form .column-5 label[for=categoria], form .column-4 label[for=quantidade], form .column-3 label[for=valor], form .column-2 label[for=nome_produto], form .column-1 label[for=imagem] {
+form .column-8 label[for=observacao], form .column-7 label[for=descricao], form .column-6 label[for=status_produto], form .column-5 label[for=categoria], form .column-4 label[for=quantidade], form .column-3 label[for=valor], form .column-2 label[for=nome_produto] {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
 }
-form .column-8 input[name=observacao]:hover, form .column-7 input[name=observacao]:hover, form .column-6 select[id=status_produto]:hover, form .column-5 select[name=categoria]:hover, form .column-4 input[name=quantidade]:hover, form .column-3 input[name=valor]:hover, form .column-2 input[name=nome_produto]:hover, form .column-1 input[name=imagem]:hover {
+form .column-8 input[name=observacao]:hover, form .column-7 input[name=observacao]:hover, form .column-6 select[id=status]:hover, form .column-5 select[name=categoria]:hover, form .column-4 input[name=quantidade]:hover, form .column-3 input[name=valor]:hover, form .column-2 input[name=nome_produto]:hover {
   transition: 0.4s;
   background-color: rgb(237, 235, 233);
 }
-form .column-1 {
-  width: 25%;
-  height: 9vh;
-  background-color: transparent;
-  transform: translate(0, 170px);
-  margin-left: 5%;
-}
-form .column-1 input[name=imagem] {
-  width: 97%;
-  height: 4vh;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  padding-left: 10px;
-}
 form .column-2 {
-  width: 33%;
+  width: 47%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(0, 105px);
-  margin-left: 33%;
+  transform: translate(0, 150px);
+  margin-left: 5%;
 }
 form .column-2 input[name=nome_produto] {
   width: 97%;
@@ -131,11 +116,11 @@ form .column-2 input[name=nome_produto] {
   padding-left: 10px;
 }
 form .column-3 {
-  width: 25.8%;
+  width: 40%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(0, 40px);
-  margin-left: 70%;
+  transform: translate(0, 85px);
+  margin-left: 56%;
 }
 form .column-3 input[name=valor] {
   width: 97%;
@@ -149,7 +134,7 @@ form .column-4 {
   width: 24%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(0, 110px);
+  transform: translate(0, 140px);
   margin-left: 5%;
 }
 form .column-4 input[id=quantidade] {
@@ -164,7 +149,7 @@ form .column-5 {
   width: 33%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(0, 45px);
+  transform: translate(0, 75px);
   margin-left: 33%;
 }
 form .column-5 select[id=categoria] {
@@ -179,7 +164,7 @@ form .column-6 {
   width: 26%;
   height: 9vh;
   background-color: transparent;
-  transform: translate(0, -20px);
+  transform: translate(0, 10px);
   margin-left: 70%;
 }
 form .column-6 select[id=status_produto] {
@@ -194,7 +179,7 @@ form .column-7 {
   width: 43%;
   height: 25vh;
   background-color: transparent;
-  transform: translate(0, 40px);
+  transform: translate(0, 80px);
   margin-left: 5%;
 }
 form .column-7 input[id=descricao] {
@@ -209,7 +194,7 @@ form .column-8 {
   width: 43%;
   height: 25vh;
   background-color: transparent;
-  transform: translate(0, -135px);
+  transform: translate(0, -95px);
   margin-left: 53%;
 }
 form .column-8 input[id=observacao] {
@@ -256,25 +241,25 @@ form input[type=submit]:hover {
     transform: translate(-70px, -1px);
   }
   form .column-2 {
-    transform: translate(0, 100px);
+    transform: translate(0, 150px);
   }
   form .column-3 {
-    transform: translate(0, 30px);
-  }
-  form .column-4 {
     transform: translate(0, 80px);
   }
+  form .column-4 {
+    transform: translate(0, 130px);
+  }
   form .column-5 {
-    transform: translate(0, 10px);
+    transform: translate(0, 60px);
   }
   form .column-6 {
-    transform: translate(0, -60px);
+    transform: translate(0, -10px);
   }
   form .column-7 {
-    transform: translate(0, -30px);
+    transform: translate(0, 40px);
   }
   form .column-8 {
-    transform: translate(0, -220px);
+    transform: translate(0, -150px);
   }
 }
 @media screen and (max-width: 1370px) {
@@ -295,29 +280,26 @@ form input[type=submit]:hover {
     background-color: transparent;
     transform: translate(-70px, -6px);
   }
-  form .column-1 {
-    transform: translate(0, 150px);
-  }
   form .column-2 {
-    transform: translate(0, 90px);
+    transform: translate(0, 160px);
   }
   form .column-3 {
-    transform: translate(0, 30px);
+    transform: translate(0, 100px);
   }
   form .column-4 {
-    transform: translate(0, 80px);
+    transform: translate(0, 140px);
   }
   form .column-5 {
-    transform: translate(0, 20px);
+    transform: translate(0, 80px);
   }
   form .column-6 {
-    transform: translate(0, -40px);
+    transform: translate(0, 20px);
   }
   form .column-7 {
-    transform: translate(0, 10px);
+    transform: translate(0, 70px);
   }
   form .column-8 {
-    transform: translate(0, -150px);
+    transform: translate(0, -90px);
   }
   form input[type=submit] {
     transform: translate(0, 140px);

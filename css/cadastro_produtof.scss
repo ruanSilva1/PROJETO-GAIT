@@ -113,35 +113,12 @@ form {
         transition: .4s;
         background-color: rgb(237, 235, 233);
     }
-    .column-1{
-        width: 25%;
-        height: 9vh;
-       background-color: $colorfuncionarios;
-        transform: translate(0, 170px);
-        margin-left: 5%;
-
-        label[for="imagem"]{
-            @extend %label;
-        }
-
-        input[name="imagem"] {
-            width: 97%;
-            height: 4vh;
-            border-radius: 10px;
-            border-style: solid;
-            border-color: gray;
-            padding-left:$paddinginput;
-        }
-        input[name="imagem"]:hover{
-            @extend %input;
-        }
-    }
     .column-2{
-        width: 33%;
+        width: 47%;
         height: 9vh;
         background-color: $colorfuncionarios;
-        transform: translate(0, 105px);
-        margin-left: 33%;
+        transform: translate(0, 150px);
+        margin-left: 5%;
     
         label[for="nome_produto"]{
             @extend %label;
@@ -159,11 +136,11 @@ form {
         }
     }
     .column-3{
-        width: 25.8%;
+        width: 40%;
         height: 9vh;
         background-color: $colorfuncionarios;
-        transform: translate(0, 40px);
-        margin-left: 70%;
+        transform: translate(0, 85px);
+        margin-left: 56%;
 
         label[for="valor"]{
             @extend %label;
@@ -185,7 +162,7 @@ form {
         width: 24%;
         height: 9vh;
         background-color: $colorfuncionarios;
-        transform: translate(0, 110px);
+        transform: translate(0, 140px);
         margin-left: 5%;
 
         label[for="quantidade"]{
@@ -208,7 +185,7 @@ form {
         width: 33%;
         height: 9vh;
         background-color: $colorfuncionarios;
-        transform: translate(0, 45px);
+        transform: translate(0, 75px);
         margin-left: 33%;
 
         label[for="categoria"]{
@@ -230,7 +207,7 @@ form {
         width: 26%;
         height: 9vh;
         background-color: $colorfuncionarios;
-        transform: translate(0, -20px);
+        transform: translate(0, 10px);
         margin-left: 70%;
 
         label[for="status_produto"]{
@@ -244,7 +221,7 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        select[id="status_produto"]:hover{
+        select[id="status"]:hover{
             @extend %input;
         }
     }
@@ -252,7 +229,7 @@ form {
         width: 43%;
         height: 25vh;
         background-color: $colorfuncionarios;
-        transform: translate(0, 40px);
+        transform: translate(0, 80px);
         margin-left: 5%;
 
         label[for="descricao"]{
@@ -275,7 +252,7 @@ form {
         width: 43%;
         height: 25vh;
         background-color: $colorfuncionarios;
-        transform: translate(0, -135px);
+        transform: translate(0, -95px);
         margin-left: 53%;
 
         label[for="observacao"]{
@@ -335,25 +312,25 @@ form {
 
     form{
         .column-2{
-            transform: translate(0, 100px);
+            transform: translate(0, 150px);
         }
         .column-3{
-            transform: translate(0, 30px);
-        }
-        .column-4{
             transform: translate(0, 80px);
         }
+        .column-4{
+            transform: translate(0, 130px);
+        }
         .column-5{
-            transform: translate(0, 10px);
+            transform: translate(0, 60px);
         }
         .column-6{
-            transform: translate(0, -60px);
+            transform: translate(0, -10px);
         }
         .column-7{
-            transform: translate(0, -30px);
+            transform: translate(0, 40px);
         }
         .column-8{
-            transform: translate(0, -220px);
+            transform: translate(0, -150px);
         }
     }
 }
@@ -379,29 +356,26 @@ form {
     }
 
     form {
-        .column-1{
-            transform: translate(0, 150px);
-        }
         .column-2{
-            transform: translate(0, 90px);
+            transform: translate(0, 160px);
         }
         .column-3{
-            transform: translate(0, 30px);
+            transform: translate(0, 100px);
         }
         .column-4{
-            transform: translate(0, 80px);
+            transform: translate(0, 140px);
         }
         .column-5{
-            transform: translate(0, 20px);
+            transform: translate(0, 80px);
         }
         .column-6{
-            transform: translate(0, -40px);
+            transform: translate(0, 20px);
         }
         .column-7{
-            transform: translate(0, 10px);
+            transform: translate(0, 70px);
         }
         .column-8{
-            transform: translate(0, -150px);
+            transform: translate(0, -90px);
         }
     
         input[type="submit"]{
