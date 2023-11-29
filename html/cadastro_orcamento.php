@@ -36,7 +36,7 @@
     <input type="submit" value="Salvar">
         <div class="c1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <select name="nome_fantasia" id="nome_fantasia">
+            <select name="id_cliente" id="nome_fantasia">
                 <?php
                     foreach($cliente as $cliente){
                         echo '<option value="'.$cliente['cod_cliente'].'">'.$cliente['nome'].'</option>';
@@ -107,7 +107,6 @@
                             Acessar Tabelas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="vendas.php">Vendas</a></li>
                             <li><a class="dropdown-item" href="orcamentos.php">Orcamento</a></li>
                             <li><a class="dropdown-item" href="estoque.php">Estoque</a></li>
                             <li><a class="dropdown-item" href="clientes.php">Clientes</a></li>

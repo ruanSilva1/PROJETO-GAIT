@@ -2,16 +2,17 @@
     include('../php/conexao.php');
 
     $fantasia = '';
-    if(isset($_POST['nome_fantasia']))
+    if(isset($_POST['nome']))
     {
-        $fantasia = $_POST['nome_fantasia'];
+        $fantasia = $_POST['nome'];
     }
-    $query = $dbh->prepare('SELECT * FROM orcamento WHERE nome_fantasia LIKE :nome_fantasia;');
+    $query = $dbh->prepare('SELECT * FROM vw_orcamentos WHERE nome LIKE :nome;');
     $query->execute(array(
-        'nome_fantasia' => "%$fantasia%"
+        'nome' => "%$fantasia%"
     ));
 
-    $orcamento = $query->fetchAll();
+    $orcamentos = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +32,7 @@
     <div class="main-conteudo">
         <div class="pesquisa">
             <form action="" method="post">
-                <input type="text" name="nome_fantasia" id="pesquisar" placeholder="Pesquisar clientes">
+                <input type="text" name="nome" id="pesquisar" placeholder="Pesquisar clientes">
                 <input type="submit" class="bt-pesquisa" value="Pesquisar"></input>
             </form>
         </div>
@@ -44,7 +45,7 @@
             <table>
                 <thead>
                     <tr>
-                    <th>Cód</th>
+                        <th>Cód</th>
                         <th>Nome/ Fantasia</th>
                         <th>Pedido</th>
                         <th>Valor</th>
@@ -58,25 +59,16 @@
                 </thead>
                 <tbody>
                 <?php
-                foreach($orcamento as $orcamento){
+                foreach($orcamentos as $orcamento){
                     echo '<tr>';
                     echo '<td>'.$orcamento['cod_orcamento'].'</td>';
-                    echo '<td>'.$orcamento['nome_fantasia'].'</td>';
-                    echo '<td>'.$orcamento['data_nascimento'].'</td>';
-                    echo '<td>'.$orcamento['cpf'].'</td>';
-                    echo '<td>'.$orcamento['cnpj'].'</td>';
-                    echo '<td>'.$orcamento['telefone'].'</td>';
-                    echo '<td>'.$orcamento['email'].'</td>';
-                    echo '<td>'.$orcamento['cep'].'</td>';
-                    echo '<td>'.$orcamento['endereco'].'</td>';
-                    echo '<td>'.$orcamento['n_endereco'].'</td>';
-                    echo '<td>'.$orcamento['forma_pagamento'].'</td>';
-                    echo '<td>'.$orcamento['tipo_pessoa'].'</td>';
+                    echo '<td>'.$orcamento['nome'].'</td>';
+                    echo '<td>'.$orcamento['pedido'].'</td>';
                     echo '<td>'.$orcamento['valor'].'</td>';
+                    echo '<td>'.$orcamento['forma_pagamento'].'</td>';
+                    echo '<td>'.$orcamento['descricao'].'</td>';
                     echo '<td>'.$orcamento['status_venda'].'</td>';
                     echo '<td>'.$orcamento['status_orcamento'].'</td>';
-                    echo '<td>'.$orcamento['descricao'].'</td>';
-                    echo '<td>'.$orcamento['pedido'].'</td>';
                     echo '<td>'.$orcamento['data'].'</td>';
                     echo '<td><a href="editar_orcamentof.php?cod_orcamento='.$orcamento['cod_orcamento'].'">Editar</a></td>';
                     echo '</tr>';
@@ -97,7 +89,6 @@
             </div>
             <nav>
                 <a class="link" href="iniciof.html">Inicio</a>
-                <a class="link" href="vendasf.php">Vendas</a>
                 <a class="link" href="orcamentof.php">Orçamento</a>
                 <a class="link" href="estoquef.php">Estoque</a>
                 <a class="link" href="clientef.php">Clientes</a>

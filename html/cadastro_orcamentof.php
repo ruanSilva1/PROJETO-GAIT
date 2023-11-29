@@ -5,9 +5,9 @@
     $query->execute();
     $formaPagamento = $query->fetchAll();
 
-    $query1 = $dbh->prepare('SELECT * FROM pTIPO');
+    $query1 = $dbh->prepare('SELECT cod_cliente, nome FROM cliente');
     $query1->execute();
-    $tipoPessoa = $query1->fetchAll();
+    $cliente = $query1->fetchAll();
 
     $query2 = $dbh->prepare('SELECT * FROM vendaSTATUS');
     $query2->execute();
@@ -36,7 +36,7 @@
     <input type="submit" value="Salvar">
         <div class="c1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <select name="nome_fantasia" id="nome_fantasia">
+            <select name="id_cliente" id="nome_fantasia">
                 <?php
                     foreach($cliente as $cliente){
                         echo '<option value="'.$cliente['cod_cliente'].'">'.$cliente['nome'].'</option>';
@@ -96,7 +96,6 @@
             </div>
             <nav>
                 <a class="link" href="iniciof.html">Inicio</a>
-                <a class="link" href="vendasf.php">Vendas</a>
                 <a class="link" href="orcamentof.php">Orçamento</a>
                 <a class="link" href="estoquef.php">Estoque</a>
                 <a class="link" href="clientef.php">Clientes</a>

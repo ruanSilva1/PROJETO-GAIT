@@ -41,8 +41,8 @@
 
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
-        header('Location: ../html/fornecedores.php');
+        //echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        header('Location: ../html/fornecedores.php?cadastrado');
 
     }catch(PDOException $e){
         echo "<script>alert('Cadastro não realizado')</script>";

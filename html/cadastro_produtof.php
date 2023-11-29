@@ -82,7 +82,6 @@ $categoria = $query->fetchAll();
             </div>
             <nav>
                 <a class="link" href="iniciof.html">Inicio</a>
-                <a class="link" href="vendasf.php">Vendas</a>
                 <a class="link" href="orcamentof.php">Orçamento</a>
                 <a class="link" href="estoquef.php">Estoque</a>
                 <a class="link" href="clientef.php">Clientes</a>

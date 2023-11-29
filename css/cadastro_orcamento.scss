@@ -127,7 +127,7 @@ form {
             @extend %label;
         }
 
-        select[name="nome_fantasia"] {
+        select[name="id_cliente"] {
             width: 100%;
             height: 4vh;
             border-radius: 10px;
@@ -136,7 +136,7 @@ form {
             padding-left:$paddinginput;
         }
 
-        select[name="nome_fantasia"]:hover{
+        select[name="id_cliente"]:hover{
             @extend %input;
         }
     }

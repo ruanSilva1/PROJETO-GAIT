@@ -1,5 +1,6 @@
 <?php
     include('../php/conexao.php');
+    
 
     $fantasia = '';
     if(isset($_POST['fantasia'])){
@@ -112,7 +113,6 @@
                             Acessar Tabelas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="vendas.php">Vendas</a></li>
                             <li><a class="dropdown-item" href="orcamentos.php">Orcamento</a></li>
                             <li><a class="dropdown-item" href="estoque.php">Estoque</a></li>
                             <li><a class="dropdown-item" href="clientes.php">Clientes</a></li>
@@ -133,3 +133,8 @@
 </body>
 
 </html>
+<?php
+if(isset($_GET['cadastrado'])){
+        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+    }
+?>
