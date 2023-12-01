@@ -8,6 +8,5 @@
         ':cod_fornecedor' => $cod_fornecedor
     )); 
 
-    header('Location: ../html/fornecedores.php');
-    echo "<script>alert('Excluido com sucesso!')</script>";
+    header('Location: ../html/fornecedores.php?deletado');
 ?>

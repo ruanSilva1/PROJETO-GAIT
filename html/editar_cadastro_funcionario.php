@@ -21,7 +21,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cadastro_funcionarios.css">
+    <link rel="stylesheet" href="../css/editar_funcionario.css">
     <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,7 +35,7 @@
         <input type="submit" value="Editar">
         <div class="column-1">
            <label for="nome">Nome</label>
-           <input type="text" name="nome" id="nome" value="<?php echo $funcionario_origin['nome']; ?>" minlength="3" maxlength="60"> 
+           <input type="text" name="nome" id="nome" value="<?php echo $funcionario_origin['nome']; ?>" minlength="0" maxlength="0"> 
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data nascimento</label>
@@ -43,7 +43,7 @@
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf" value="<?php echo $funcionario_origin['cpf']; ?>" minlength="11" maxlength="11">
+            <input type="tel" name="cpf" id="cpf" value="<?php echo $funcionario_origin['cpf']; ?>" minlength="0" maxlength="0">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
@@ -59,7 +59,7 @@
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg" value="<?php echo $funcionario_origin['rg']; ?>" minlength="7" maxlength="7">
+            <input type="tel" name="rg" id="rg" value="<?php echo $funcionario_origin['rg']; ?>" minlength="0" maxlength="0">
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>

@@ -8,6 +8,5 @@
         ':cod_funcionario' => $cod_funcionario
     ));
 
-    header('Location: ../html/funcionarios.php');
-    echo "<script>alert('Excluido com sucesso!')</script>";
+    header('Location: ../html/funcionarios.php?deletado');
 ?>

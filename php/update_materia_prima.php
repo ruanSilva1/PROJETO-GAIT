@@ -26,12 +26,13 @@
             ':cod_materia' => $cod_materia
 
         ));
-
-        header('Location: ../html/materiaprima.php');
+        
+        header('Location: ../html/materiaprima.php?editado');
 
     }catch(PDOException $e){
 
-        throw new MyDatabaseException($Exception -> getMessage(), (int)$Exception -> getCode());
+        //throw new MyDatabaseException($Exception -> getMessage(), (int)$Exception -> getCode());
+        header('Location: ../html/editar_cadastro_materia_prima.php?comentario');
     }
 
 ?>

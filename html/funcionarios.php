@@ -135,3 +135,21 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['cadastrado'])){
+        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+    }
+?>
+
+<?php
+if(isset($_GET['editado'])){
+    echo "<script>alert('Cadastro atualizado!')</script>";
+}
+?>
+
+<?php
+if(isset($_GET['deletado'])){
+    echo "<script>alert('Cadastro excluido!')</script>";
+}
+?>

@@ -32,6 +32,7 @@
 
 <body>
     <form action="../php/update_materia_prima.php" method="post">
+    <input type="hidden" name="cod_materia" value="<?php echo $_GET['cod_materia'];?>">
         <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome">Nome matéria</label>
@@ -123,3 +124,9 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['comentario'])){
+    echo "<script>alert('Verifique se os campos foram preenchidos corretamente.')</script>";
+}
+?>

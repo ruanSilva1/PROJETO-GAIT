@@ -12,7 +12,7 @@
         $observacao = $_POST['observacao'];
 
     }else{
-        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
+        header('Location: ../html/cadastro_materia_prima.php?comentario');
         die();
     }
 
@@ -30,10 +30,9 @@
             ':observacao' => $observacao
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
-        header('Location: ../html/materiaprima.php');
+        header('Location: ../html/materiaprima.php?cadastrado');
 
     }catch(PDOException $e){
-        echo "<script>alert('Cadastro não realizado')</script>";
+        header('Location: ../html/cadastro_materia_prima.php?comentario');
     }
 ?>

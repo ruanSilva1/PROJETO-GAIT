@@ -8,6 +8,5 @@
         ':cod_materia' => $cod_materia
     ));
 
-    header('Location: ../html/materiaprima.php');
-    echo "<script>alert('Excluido com sucesso!')</script>";
+    header('Location: ../html/materiaprima.php?deletado');
 ?>

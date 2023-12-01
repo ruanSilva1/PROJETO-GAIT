@@ -120,3 +120,27 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['cadastrado'])){
+        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+    }
+?>
+
+<?php
+if(isset($_GET['editado'])){
+    echo "<script>alert('Cadastro atualizado!')</script>";
+}
+?>
+
+<?php
+if(isset($_GET['deletado'])){
+    echo "<script>alert('Cadastro excluido!')</script>";
+}
+?>
+
+<?php
+if(isset($_GET['comentario'])){
+    echo "<script>alert('Erro ao realizar comandos.\x0AVerifique se os campos foram preenchidos corretamente.')</script>";
+}
+?>

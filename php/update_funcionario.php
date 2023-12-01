@@ -1,13 +1,13 @@
 <?php
     include('conexao.php');
 
-        $nome = $_POST['nome'];
+        //$nome = $_POST['nome'];
         $data_nascimento = $_POST['data_nascimento'];
-        $cpf = $_POST['cpf'];
+        //$cpf = $_POST['cpf'];
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
         $cep = $_POST['cep'];
-        $rg = $_POST['rg'];
+        //$rg = $_POST['rg'];
         $endereco = $_POST['endereco'];
         $cidade = $_POST['cidade'];
         $n_endereco = $_POST['n_endereco'];
@@ -19,17 +19,17 @@
 
     try{
 
-        $query = $dbh->prepare('UPDATE funcionario SET nome=:nome, data_nascimento=:data_nascimento, cpf=:cpf, telefone=:telefone, email=:email, cep=:cep, rg=:rg, endereco=:endereco, cidade=:cidade, n_endereco=:n_endereco, bairro=:bairro, status_funcionario=:status_funcionario, usuario=:usuario, senha=:senha WHERE cod_funcionario=:cod_funcionario');
+        $query = $dbh->prepare('UPDATE funcionario SET data_nascimento=:data_nascimento, telefone=:telefone, email=:email, cep=:cep, endereco=:endereco, cidade=:cidade, n_endereco=:n_endereco, bairro=:bairro, status_funcionario=:status_funcionario, usuario=:usuario, senha=:senha WHERE cod_funcionario=:cod_funcionario');
 
         $query->execute(array(
 
-            ':nome' => $nome,
+            //':nome' => $nome,
             ':data_nascimento' => $data_nascimento,
-            ':cpf' => $cpf,
+            //':cpf' => $cpf,
             ':telefone' => $telefone,
             ':email' => $email,
             ':cep' => $cep,
-            ':rg' => $rg,
+            //':rg' => $rg,
             ':endereco' => $endereco,
             ':cidade' => $cidade,
             ':n_endereco' => $n_endereco,
@@ -41,7 +41,7 @@
 
         ));
 
-        header('Location: ../html/funcionarios.php');
+        header('Location: ../html/funcionarios.php?editado');
 
     }catch(PDOException $e){
 

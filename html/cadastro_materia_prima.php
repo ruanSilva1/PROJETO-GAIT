@@ -107,3 +107,9 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['comentario'])){
+    echo "<script>alert('Verifique se os campos foram preenchidos corretamente.')</script>";
+}
+?>

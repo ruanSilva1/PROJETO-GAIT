@@ -138,3 +138,15 @@ if(isset($_GET['cadastrado'])){
         echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
     }
 ?>
+
+<?php
+if(isset($_GET['atualizado'])){
+    echo "<script>alert('Seu cadastro foi atualizado com sucesso!')</script>";
+}
+?>
+
+<?php
+if(isset($_GET['deletado'])){
+    echo "<script>alert('Excluido com sucesso!')</script>";
+}
+?>

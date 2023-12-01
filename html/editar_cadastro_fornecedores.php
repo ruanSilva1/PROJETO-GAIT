@@ -26,7 +26,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cadastro_fornecedores.css">
+    <link rel="stylesheet" href="../css/edit_fornecedor.css">
     <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -40,7 +40,7 @@
         <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <input type="text" name="nome_fantasia" id="nome_fantasia" value="<?php echo $fornecedor['nome_fantasia']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="nome_fantasia" id="nome_fantasia" value="<?php echo $fornecedor['nome_fantasia']; ?>" minlength="0" maxlength="0">
         </div>
         <div class="column-2">
             <label for="razao_social">Razão social</label>
@@ -48,7 +48,7 @@
         </div>
         <div class="column-3">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj" value="<?php echo $fornecedor['cnpj']; ?>" minlength="14" maxlength="14">
+            <input type="tel" name="cnpj" id="cnpj" value="<?php echo $fornecedor['cnpj']; ?>" minlength="0" maxlength="0">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
