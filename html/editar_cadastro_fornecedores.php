@@ -95,8 +95,15 @@
         <div class="column-12">
             <label for="status_fornecedor">Status fornecedor</label>
             <select name="status_fornecedor" id="status_fornecedor">
-                <option value="ativo">Ativo</option>
-                <option value="desativado">Desativado</option>
+                <?php
+                    foreach($status as $status){
+                        $sf = '';
+                        if($status['cod'] == $fornecedor['status_fornecedor']){
+                            $sf = 'selected';
+                        }
+                        echo '<option value="'.$status['cod'].'" '.$sf.'>'.$status['sts'].'</option>';
+                    }
+                ?>
             </select>
         </div>
     </form>
