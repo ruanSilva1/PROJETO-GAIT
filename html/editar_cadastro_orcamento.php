@@ -48,7 +48,11 @@
             <select name="id_cliente" id="nome_fantasia">
                 <?php
                     foreach($cliente as $cliente){
-                        echo '<option value="'.$cliente['cod_cliente'].'">'.$cliente['nome'].'</option>';
+                        $co = ''; // --> Cliente || Cadastro Orçamento
+                        if($cliente['cod_cliente'] == $orcamento['id_cliente']){
+                            $co = 'selected';
+                        }
+                        echo '<option value="'.$cliente['cod_cliente'].'" '.$co.'>'.$cliente['nome'].'</option>';
                     }
                 ?>
             </select>
@@ -66,7 +70,12 @@
             <select name="forma_pagamento" id="forma_pagamento">
                 <?php
                     foreach($formaPagamento as $forma){
-                        echo '<option value="'.$forma['cod'].'">'.$forma['forma'].'</option>';
+                        $fp = ''; // Forma pagamento
+
+                        if($forma['cod'] == $orcamento['forma_pagamento']){
+                            $fp = 'selected';
+                        }
+                        echo '<option value="'.$forma['cod'].'" '.$fp.'>'.$forma['forma'].'</option>';
                     }
                 ?>
             </select>
