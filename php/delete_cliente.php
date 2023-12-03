@@ -8,6 +8,5 @@
     ':cod_cliente' => $cod_cliente
 ));
     
-    header('Location: ../html/clientes.php');
-    echo "<script>alert('Excluido com sucesso!')</script>";
+    header('Location: ../html/clientes.php?deletado');
 ?>

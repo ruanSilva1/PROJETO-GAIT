@@ -96,7 +96,7 @@ form .column-14 label[for=senha], form .column-13 label[for=usuario], form .colu
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
 }
-form .column-14 input[id=senha]:hover, form .column-13 input[id=usuario]:hover, form .column-12 select[id=status_funcionario]:hover, form .column-11 input[id=bairro]:hover, form .column-10 input[id=n_endereco]:hover, form .column-9 input[name=cidade]:hover, form .column-8 input[name=endereco]:hover, form .column-6 input[name=cep]:hover, form .column-5 input[name=email]:hover, form .column-4 input[name=telefone]:hover, form .column-2 input[name=data_nascimento]:hover {
+form .column-14 input[id=senha]:hover, form .column-13 input[id=usuario]:hover, form .column-12 select[id=status_funcionario]:hover, form .column-11 input[id=bairro]:hover, form .column-10 input[id=n_endereco]:hover, form .column-9 input[name=cidade]:hover, form .column-8 input[name=endereco]:hover, form .column-6 input[name=cep]:hover, form .column-5 input[name=email]:hover, form .column-4 input[name=telefone]:hover, form .column-1 input[name=nome]:hover {
   transition: 0.4s;
   background-color: rgb(237, 235, 233);
 }
@@ -114,10 +114,9 @@ form .column-1 input[name=nome] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
-  background-color: gray;
 }
 form .column-2 {
-  width: 29%;
+  width: 24%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 105px);
@@ -132,11 +131,11 @@ form .column-2 input[name=data_nascimento] {
   padding-left: 10px;
 }
 form .column-3 {
-  width: 25.8%;
+  width: 30%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 40px);
-  margin-left: 70%;
+  margin-left: 65%;
 }
 form .column-3 input[name=cpf] {
   width: 97%;
@@ -145,10 +144,9 @@ form .column-3 input[name=cpf] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
-  background-color: gray;
 }
 form .column-4 {
-  width: 24%;
+  width: 30%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 110px);
@@ -163,11 +161,11 @@ form .column-4 input[id=telefone] {
   padding-left: 10px;
 }
 form .column-5 {
-  width: 28%;
+  width: 24%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 45px);
-  margin-left: 32%;
+  margin-left: 38%;
 }
 form .column-5 input[id=email] {
   width: 97%;
@@ -178,11 +176,11 @@ form .column-5 input[id=email] {
   padding-left: 10px;
 }
 form .column-6 {
-  width: 15%;
+  width: 13%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, -20px);
-  margin-left: 63%;
+  margin-left: 65%;
 }
 form .column-6 input[id=cep] {
   width: 95%;
@@ -206,7 +204,6 @@ form .column-7 input[id=rg] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
-  background-color: gray;
 }
 form .column-8 {
   width: 30%;

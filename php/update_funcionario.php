@@ -1,8 +1,8 @@
 <?php
     include('conexao.php');
 
-        //$nome = $_POST['nome'];
-        $data_nascimento = $_POST['data_nascimento'];
+        $nome = $_POST['nome'];
+        //$data_nascimento = $_POST['data_nascimento'];
         //$cpf = $_POST['cpf'];
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
@@ -19,12 +19,12 @@
 
     try{
 
-        $query = $dbh->prepare('UPDATE funcionario SET data_nascimento=:data_nascimento, telefone=:telefone, email=:email, cep=:cep, endereco=:endereco, cidade=:cidade, n_endereco=:n_endereco, bairro=:bairro, status_funcionario=:status_funcionario, usuario=:usuario, senha=:senha WHERE cod_funcionario=:cod_funcionario');
+        $query = $dbh->prepare('UPDATE funcionario SET nome =:nome, telefone=:telefone, email=:email, cep=:cep, endereco=:endereco, cidade=:cidade, n_endereco=:n_endereco, bairro=:bairro, status_funcionario=:status_funcionario, usuario=:usuario, senha=:senha WHERE cod_funcionario=:cod_funcionario');
 
         $query->execute(array(
 
-            //':nome' => $nome,
-            ':data_nascimento' => $data_nascimento,
+            ':nome' => $nome,
+            //':data_nascimento' => $data_nascimento,
             //':cpf' => $cpf,
             ':telefone' => $telefone,
             ':email' => $email,
@@ -45,7 +45,7 @@
 
     }catch(PDOException $e){
 
-        throw new MyDatabaseException($Exception -> getMessage(), (int)$Exception -> getCode());
+        echo $e;
     }
 
 ?>

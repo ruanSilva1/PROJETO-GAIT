@@ -112,10 +112,10 @@ form .column-1 input[id=nome_fantasia] {
   padding-left: 10px;
 }
 form .column-2 {
-  width: 25%;
+  width: 28%;
   height: 9vh;
   transform: translate(0, 105px);
-  margin-left: 40%;
+  margin-left: 38.5%;
   background-color: transparent;
 }
 form .column-2 input[id=razao_social] {
@@ -142,7 +142,7 @@ form .column-3 input[id=cnpj] {
   padding-left: 10px;
 }
 form .column-4 {
-  width: 25%;
+  width: 30%;
   height: 9vh;
   transform: translate(0, 110px);
   margin-left: 5%;
@@ -157,10 +157,10 @@ form .column-4 input[id=telefone] {
   padding-left: 10px;
 }
 form .column-5 {
-  width: 30%;
+  width: 28%;
   height: 9vh;
   transform: translate(0, 45px);
-  margin-left: 35%;
+  margin-left: 38.5%;
   background-color: transparent;
 }
 form .column-5 input[id=email] {
@@ -187,7 +187,7 @@ form .column-6 input[id=cep] {
   padding-left: 10px;
 }
 form .column-7 {
-  width: 25%;
+  width: 30%;
   height: 9vh;
   transform: translate(0, 50px);
   margin-left: 5%;
@@ -202,10 +202,10 @@ form .column-7 input[id=endereco] {
   padding-left: 10px;
 }
 form .column-8 {
-  width: 30%;
+  width: 28%;
   height: 9vh;
   transform: translate(0, -15px);
-  margin-left: 35%;
+  margin-left: 38.5%;
   background-color: transparent;
 }
 form .column-8 input[id=cidade] {
@@ -265,7 +265,7 @@ form .column-12 {
   width: 20%;
   height: 9vh;
   transform: translate(0, -140px);
-  margin-left: 40%;
+  margin-left: 38.5%;
   background-color: transparent;
 }
 form .column-12 select[id=status_fornecedor] {

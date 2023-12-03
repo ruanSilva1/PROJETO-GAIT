@@ -116,7 +116,7 @@ form .column-1 input[name=nome] {
   padding-left: 10px;
 }
 form .column-2 {
-  width: 26.5%;
+  width: 26%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 125px);
@@ -131,11 +131,11 @@ form .column-2 input[name=data_nascimento] {
   padding-left: 10px;
 }
 form .column-3 {
-  width: 12%;
+  width: 15%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 60px);
-  margin-left: 68%;
+  margin-left: 66.5%;
 }
 form .column-3 input[name=cpf] {
   width: 93%;
@@ -161,7 +161,7 @@ form .column-3-2 input[name=cnpj] {
   padding-left: 10px;
 }
 form .column-4 {
-  width: 24%;
+  width: 30%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, 45px);
@@ -176,11 +176,11 @@ form .column-4 input[id=telefone] {
   padding-left: 10px;
 }
 form .column-5 {
-  width: 28%;
+  width: 26%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, -20px);
-  margin-left: 32%;
+  margin-left: 38%;
 }
 form .column-5 input[id=email] {
   width: 97%;
@@ -191,11 +191,11 @@ form .column-5 input[id=email] {
   padding-left: 10px;
 }
 form .column-6 {
-  width: 15%;
+  width: 14.5%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, -85px);
-  margin-left: 63%;
+  margin-left: 66.5%;
 }
 form .column-6 input[id=cep] {
   width: 95%;
@@ -206,11 +206,11 @@ form .column-6 input[id=cep] {
   padding-left: 10px;
 }
 form .column-7 {
-  width: 15%;
+  width: 13%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, -150px);
-  margin-left: 81%;
+  margin-left: 83%;
 }
 form .column-7 input[id=rg] {
   width: 95%;
@@ -236,7 +236,7 @@ form .column-8 input[id=endereco] {
   padding-left: 10px;
 }
 form .column-9 {
-  width: 24%;
+  width: 26%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, -160px);
@@ -251,11 +251,11 @@ form .column-9 input[id=cidade] {
   padding-left: 10px;
 }
 form .column-10 {
-  width: 13%;
+  width: 14.5%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, -225px);
-  margin-left: 65%;
+  margin-left: 66.5%;
 }
 form .column-10 input[id=n_endereco] {
   width: 94%;
@@ -266,11 +266,11 @@ form .column-10 input[id=n_endereco] {
   padding-left: 10px;
 }
 form .column-11 {
-  width: 15%;
+  width: 13%;
   height: 9vh;
   background-color: transparent;
   transform: translate(0, -290px);
-  margin-left: 81%;
+  margin-left: 83%;
 }
 form .column-11 input[id=bairro] {
   width: 95%;
@@ -396,7 +396,7 @@ h1 {
 }
 @media screen and (max-width: 1370px) {
   .navbar {
-    transform: translate(0, -643px);
+    transform: translate(0, -645.5px);
   }
   .navbar .logo {
     background-color: transparent;

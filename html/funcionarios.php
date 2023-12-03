@@ -137,9 +137,9 @@
 </html>
 
 <?php
-if(isset($_GET['cadastrado'])){
+/*if(isset($_GET['cadastrado'])){
         echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
-    }
+    }*/
 ?>
 
 <?php

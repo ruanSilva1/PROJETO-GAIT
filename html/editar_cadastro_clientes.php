@@ -39,55 +39,55 @@
         <input type="submit" value="Editar">
         <div class="column-1">
            <label for="nome">Nome/ Fantasia</label>
-           <input type="text" name="nome" id="nome" value="<?php echo $cliente['nome']; ?>" minlength="3" maxlength="60"> 
+           <input type="text" name="nome" id="nome" value="<?php echo $cliente['nome']; ?>" required> 
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data Nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $cliente['data_nascimento']; ?>">
+            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $cliente['data_nascimento']; ?>" required>
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf" value="<?php echo $cliente['cpf']; ?>" minlength="11" maxlength="11">
+            <input type="number" name="cpf" id="cpf" value="<?php echo $cliente['cpf']; ?>" required>
         </div>
         <div class="column-3-2">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj" value="<?php echo $cliente['cnpj']; ?>" minlength="0" maxlength="14">
+            <input type="number" name="cnpj" id="cnpj" value="<?php echo $cliente['cnpj']; ?>" required>
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone" value="<?php echo $cliente['telefone']; ?>" minlength="11" maxlength="11">
+            <input type="tel" name="telefone" id="telefone" value="<?php echo $cliente['telefone']; ?>" minlength="11" maxlength="11" required>
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="<?php echo $cliente['email']; ?>" minlength="1" maxlength="30">
+            <input type="email" name="email" id="email" value="<?php echo $cliente['email']; ?>" minlength="1" maxlength="30" required>
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep" value="<?php echo $cliente['cep']; ?>" minlength="8" maxlength="8">
+            <input type="number" name="cep" id="cep" value="<?php echo $cliente['cep']; ?>" minlength="8" maxlength="8" required>
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg" value="<?php echo $cliente['rg']; ?>" minlength="7" maxlength="7">
+            <input type="number" name="rg" id="rg" value="<?php echo $cliente['rg']; ?>" minlength="7" maxlength="7" required>
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco" value="<?php echo $cliente['endereco']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="endereco" id="endereco" value="<?php echo $cliente['endereco']; ?>" minlength="1" maxlength="50" required>
         </div>
         <div class="column-9">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade" value="<?php echo $cliente['cidade']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="cidade" id="cidade" value="<?php echo $cliente['cidade']; ?>" minlength="1" maxlength="50" required>
         </div>
         <div class="column-10">
             <label for="n_endereco">Nº endereço</label>
-            <input type="text" name="n_endereco" id="n_endereco" value="<?php echo $cliente['n_endereco']; ?>">
+            <input type="text" name="n_endereco" id="n_endereco" value="<?php echo $cliente['n_endereco']; ?>" required>
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro" value="<?php echo $cliente['bairro']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="bairro" id="bairro" value="<?php echo $cliente['bairro']; ?>" minlength="1" maxlength="50" required>
         </div>
         <div class="column-12">
             <label for="status_cliente">Status cliente</label>
-            <select name="status_cliente" id="status_cliente">
+            <select name="status_cliente" id="status_cliente" required>
                 <?php
                     foreach($status as $status){
                         $sts = '';
@@ -102,14 +102,14 @@
         </div>
         <div class="column-13">
             <label for="tipo_pessoa">Tipo Pessoa</label>
-            <select name="tipo_pessoa" id="tipo_pessoa">
+            <select name="tipo_pessoa" id="tipo_pessoa" required>
                 <?php
                     foreach($tipoPessoa as $tipoPessoa){
                         $tip = '';
                         if($tipoPessoa['cod'] == $cliente['tipo_pessoa']){
                             $tip = 'selected';
                         }
-                        echo '<option value="'.$tipoPessoa['cod'].'">'.$tipoPessoa['tipo'].'</option>';
+                        echo '<option value="'.$tipoPessoa['cod'].'" '.$tip.'>'.$tipoPessoa['tipo'].'</option>';
                     }
                 ?>
             </select>

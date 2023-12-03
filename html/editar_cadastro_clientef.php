@@ -25,7 +25,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cadastro_clientesf.css">
+    <link rel="stylesheet" href="../css/editar_clientef.css">
     <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -43,15 +43,15 @@
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data Nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $cliente['data_nascimento']; ?>">
+            <input type="date" readonly name="data_nascimento" id="data_nascimento" value="<?php echo $cliente['data_nascimento']; ?>">
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf" value="<?php echo $cliente['cpf']; ?>" minlength="11" maxlength="11">
+            <input type="number" readonly name="cpf" id="cpf" value="<?php echo $cliente['cpf']; ?>">
         </div>
         <div class="column-3-2">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj" value="<?php echo $cliente['cnpj']; ?>" minlength="0" maxlength="14">
+            <input type="number" readonly name="cnpj" id="cnpj" value="<?php echo $cliente['cnpj']; ?>">
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
@@ -67,7 +67,7 @@
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg" value="<?php echo $cliente['rg']; ?>" minlength="7" maxlength="7">
+            <input type="number" readonly name="rg" id="rg" value="<?php echo $cliente['rg']; ?>">
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>
@@ -102,14 +102,14 @@
         </div>
         <div class="column-13">
             <label for="tipo_pessoa">Tipo Pessoa</label>
-            <select name="tipo_pessoa" id="tipo_pessoa">
+            <select name="tipo_pessoa" disabled id="tipo_pessoa">
                 <?php
                     foreach($tipoPessoa as $tipoPessoa){
                         $tip = '';
                         if($tipoPessoa['cod'] == $cliente['tipo_pessoa']){
                             $tip = 'selected';
                         }
-                        echo '<option value="'.$tipoPessoa['cod'].'">'.$tipoPessoa['tipo'].'</option>';
+                        echo '<option value="'.$tipoPessoa['cod'].'" '.$tip.'>'.$tipoPessoa['tipo'].'</option>';
                     }
                 ?>
             </select>

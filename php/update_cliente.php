@@ -36,7 +36,6 @@
             ':cod_cliente' => $cod_cliente
         ));
 
-        echo 'Atualizado com sucesso';
         header('Location: ../html/clientes.php');
 
     }catch(PDOException $e){

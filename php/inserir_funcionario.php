@@ -19,15 +19,13 @@
         $senha = $_POST['senha'];
 
     }else{
-        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
-        die();
+        return die('Preencha os campos corretamente');
     }
 
     try{
         $query = $dbh->prepare('INSERT INTO funcionario(nome, data_nascimento, cpf, telefone, email, cep, rg, endereco, cidade, n_endereco, bairro, status_funcionario, usuario, senha)VALUES(:nome, :data_nascimento, :cpf, :telefone, :email, :cep, :rg, :endereco, :cidade, :n_endereco, :bairro, :status_funcionario, :usuario, :senha)');
 
         $query->execute(array(
-
             ':nome' => $nome,
             ':data_nascimento' => $data_nascimento,
             ':cpf' => $cpf,
@@ -42,13 +40,12 @@
             ':status_funcionario' => $status_funcionario,
             ':usuario' => $usuario,
             ':senha' => $senha
-
         ));
 
-        //echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
-        header('Location: ../html/funcionarios.php?cadastrado');
+        header('Location: ../html/funcionarios.php?');
 
     }catch(PDOException $e){
-        echo "<script>alert('Cadastro não realizado')</script>";
+        //header('Location: ../html/cadastro_funcionarios.php?message');
+        echo $e;
     }
 ?>

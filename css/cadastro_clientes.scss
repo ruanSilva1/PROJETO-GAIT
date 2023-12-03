@@ -140,7 +140,7 @@ form {
         }
     }
     .column-2{
-        width: 26.5%;
+        width: 26%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, 125px);
@@ -162,11 +162,11 @@ form {
         }
     }
     .column-3{
-        width: 12%;
+        width: 15%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, 60px);
-        margin-left: 68%;
+        margin-left: 66.5%;
 
         label[for="cpf"]{
             @extend %label;
@@ -206,7 +206,7 @@ form {
         }
     }
     .column-4{
-        width: 24%;
+        width: 30%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, 45px);
@@ -229,11 +229,11 @@ form {
         }
     }
     .column-5{
-        width: 28%;
+        width: 26%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, -20px);
-        margin-left: 32%;
+        margin-left: 38%;
 
         label[for="email"]{
             @extend %label;
@@ -251,11 +251,11 @@ form {
         }
     }
     .column-6{
-        width: 15%;
+        width: 14.5%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, -85px);
-        margin-left: 63%;
+        margin-left: 66.5%;
 
         label[for="cep"]{
             @extend %label;
@@ -274,11 +274,11 @@ form {
         }
     }
     .column-7{
-        width: 15%;
+        width: 13%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, -150px);
-        margin-left: 81%;
+        margin-left: 83%;
 
         label[for="rg"]{
             @extend %label;
@@ -320,7 +320,7 @@ form {
         }
     }
     .column-9{
-        width: 24%;
+        width: 26%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, -160px);
@@ -343,11 +343,11 @@ form {
         }
     }
     .column-10{
-        width: 13%;
+        width: 14.5%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, -225px);
-        margin-left: 65%;
+        margin-left: 66.5%;
 
         label[for="n_endereco"]{
             @extend %label;
@@ -366,11 +366,11 @@ form {
         }
     }
     .column-11{
-        width: 15%;
+        width: 13%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, -290px);
-        margin-left: 81%;
+        margin-left: 83%;
 
         label[for="bairro"]{
             @extend %label;
@@ -526,7 +526,7 @@ h1 {
 
 @media screen and (max-width: 1370px){
     .navbar {
-        transform: translate(0, -643px);
+        transform: translate(0, -645.5px);
     
         .logo{
             background-color: transparent;

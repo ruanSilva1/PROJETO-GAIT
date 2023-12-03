@@ -134,11 +134,13 @@ form {
             border-style: solid;
             border-color: gray;
             padding-left:$paddinginput;
-            background-color: gray;
+        }
+        input[name="nome"]:hover{
+            @extend %input;
         }
     }
     .column-2{
-        width: 29%;
+        width: 24%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, 105px);
@@ -155,16 +157,13 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        input[name="data_nascimento"]:hover{
-            @extend %input;
-        }
     }
     .column-3{
-        width: 25.8%;
+        width: 30%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, 40px);
-        margin-left: 70%;
+        margin-left: 65%;
 
         label[for="cpf"]{
             @extend %label;
@@ -176,11 +175,10 @@ form {
             border-style: solid;
             border-color: gray;
             padding-left:$paddinginput;
-            background-color: gray;
         }
     }
     .column-4{
-        width: 24%;
+        width: 30%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, 110px);
@@ -203,11 +201,11 @@ form {
         }
     }
     .column-5{
-        width: 28%;
+        width: 24%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, 45px);
-        margin-left: 32%;
+        margin-left: 38%;
 
         label[for="email"]{
             @extend %label;
@@ -225,11 +223,11 @@ form {
         }
     }
     .column-6{
-        width: 15%;
+        width: 13%;
         height: 9vh;
         background-color: $colorfuncionarios;
         transform: translate(0, -20px);
-        margin-left: 63%;
+        margin-left: 65%;
 
         label[for="cep"]{
             @extend %label;
@@ -265,7 +263,6 @@ form {
             border-style: solid;
             border-color: gray;
             padding-left:$paddinginput;
-            background-color: gray;
         }
     }
     .column-8{

@@ -25,51 +25,51 @@
         <input type="submit" value="Salvar">
         <div class="column-1">
            <label for="nome">Nome</label>
-           <input type="text" name="nome" id="nome" minlength="3" maxlength="60"> 
+           <input type="text" name="nome" id="nome" minlength="3" maxlength="60" required> 
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento">
+            <input type="date" name="data_nascimento" id="data_nascimento" required>
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf" minlength="11" maxlength="11">
+            <input type="number" name="cpf" id="cpf" minlength="11" maxlength="11" required>
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone" minlength="11" maxlength="11">
+            <input type="tel" name="telefone" id="telefone" minlength="11" maxlength="11" required>
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" minlength="1" maxlength="30">
+            <input type="email" name="email" id="email" minlength="1" maxlength="30" required>
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep" minlength="8" maxlength="8">
+            <input type="number" name="cep" id="cep" minlength="8" maxlength="8" required>
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg" minlength="7" maxlength="7">
+            <input type="number" name="rg" id="rg" minlength="7" maxlength="7" required>
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco" minlength="1" maxlength="50">
+            <input type="text" name="endereco" id="endereco" minlength="1" maxlength="50" required>
         </div>
         <div class="column-9">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade" minlength="1" maxlength="50">
+            <input type="text" name="cidade" id="cidade" minlength="1" maxlength="50" required>
         </div>
         <div class="column-10">
             <label for="n_endereco">Nº endereço</label>
-            <input type="text" name="n_endereco" id="n_endereco">
+            <input type="text" name="n_endereco" id="n_endereco" required>
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro" minlength="1" maxlength="50">
+            <input type="text" name="bairro" id="bairro" minlength="1" maxlength="50" required>
         </div>
         <div class="column-12">
             <label for="status_funcionario">Status funcionário</label>
-            <select name="status_funcionario" id="status_funcionario">
+            <select name="status_funcionario" id="status_funcionario" required>
                 <?php
                     foreach($funcionario as $f){
                         echo '<option value="'.$f['cod'].'">'.$f['sts'].'</option>';
@@ -79,11 +79,11 @@
         </div>
         <div class="column-13">
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" id="usuario" minlength="1" maxlength="25">
+            <input type="text" name="usuario" id="usuario" minlength="1" maxlength="25" required>
         </div>
         <div class="column-14">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha" minlength="1" maxlength="6">
+            <input type="password" name="senha" id="senha" minlength="1" maxlength="6" required>
         </div>
     </form>
 
@@ -126,3 +126,9 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['message'])){
+    echo "<script>alert('Cadastro não realizado!')</script>";
+}
+?>

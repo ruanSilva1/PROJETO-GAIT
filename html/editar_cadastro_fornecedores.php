@@ -40,43 +40,43 @@
         <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <input type="text" name="nome_fantasia" id="nome_fantasia" value="<?php echo $fornecedor['nome_fantasia']; ?>" minlength="0" maxlength="0">
+            <input type="text" name="nome_fantasia" id="nome_fantasia" value="<?php echo $fornecedor['nome_fantasia']; ?>" disabled>
         </div>
         <div class="column-2">
             <label for="razao_social">Razão social</label>
-            <input type="text" name="razao_social" id="razao_social" value="<?php echo $fornecedor['razao_social']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="razao_social" id="razao_social" value="<?php echo $fornecedor['razao_social']; ?>" minlength="1" maxlength="50" disabled>
         </div>
         <div class="column-3">
             <label for="cnpj">CNPJ</label>
-            <input type="tel" name="cnpj" id="cnpj" value="<?php echo $fornecedor['cnpj']; ?>" minlength="0" maxlength="0">
+            <input type="tel" name="cnpj" id="cnpj" value="<?php echo $fornecedor['cnpj']; ?>" minlength="14" maxlength="14" disabled>
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone" value="<?php echo $fornecedor['telefone']; ?>" minlength="1" maxlength="11">
+            <input type="tel" name="telefone" id="telefone" value="<?php echo $fornecedor['telefone']; ?>" minlength="1" maxlength="11" required>
         </div>
         <div class="column-5">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="<?php echo $fornecedor['email']; ?>" minlength="1" maxlength="30">
+            <input type="email" name="email" id="email" value="<?php echo $fornecedor['email']; ?>" minlength="1" maxlength="30" required>
         </div>
         <div class="column-6">
             <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep" value="<?php echo $fornecedor['cep']; ?>" minlength="1" maxlength="8">
+            <input type="number" name="cep" id="cep" value="<?php echo $fornecedor['cep']; ?>" minlength="1" maxlength="8" required>
         </div>
         <div class="column-7">
             <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco" value="<?php echo $fornecedor['endereco']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="endereco" id="endereco" value="<?php echo $fornecedor['endereco']; ?>" minlength="1" maxlength="50" required>
         </div>
         <div class="column-8">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade" value="<?php echo $fornecedor['cidade']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="cidade" id="cidade" value="<?php echo $fornecedor['cidade']; ?>" minlength="1" maxlength="50" required>
         </div>
         <div class="column-9">
             <label for="n_endereco">Nº endereço</label>
-            <input type="number" name="n_endereco" id="n_endereco" value="<?php echo $fornecedor['n_endereco']; ?>">
+            <input type="number" name="n_endereco" id="n_endereco" value="<?php echo $fornecedor['n_endereco']; ?>" required>
         </div>
         <div class="column-10">
         <label for="uf">UF</label>
-        <select name="uf" id="uf">
+        <select name="uf" id="uf" required>
                 <?php
                     foreach($sigla as $sigla){
                         $estado = '';
@@ -90,11 +90,11 @@
         </div>
         <div class="column-11">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro" value="<?php echo $fornecedor['bairro']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="bairro" id="bairro" value="<?php echo $fornecedor['bairro']; ?>" minlength="1" maxlength="50" required>
         </div>
         <div class="column-12">
             <label for="status_fornecedor">Status fornecedor</label>
-            <select name="status_fornecedor" id="status_fornecedor">
+            <select name="status_fornecedor" id="status_fornecedor" required>
                 <?php
                     foreach($status as $status){
                         $sf = '';

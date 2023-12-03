@@ -8,5 +8,5 @@
         ':cod_fornecedor' => $cod_fornecedor
     )); 
 
-    header('Location: ../html/fornecedores.php?deletado');
+    header('Location: ../html/fornecedores.php');
 ?>

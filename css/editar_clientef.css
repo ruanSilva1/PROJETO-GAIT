@@ -96,7 +96,7 @@ form .column-13 label[for=tipo_pessoa], form .column-12 label[for=status_cliente
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
 }
-form .column-13 select[id=tipo_pessoa]:hover, form .column-12 select[id=status_cliente]:hover, form .column-11 input[id=bairro]:hover, form .column-10 input[id=n_endereco]:hover, form .column-9 input[name=cidade]:hover, form .column-8 input[name=endereco]:hover, form .column-7 input[name=rg]:hover, form .column-6 input[name=cep]:hover, form .column-5 input[name=email]:hover, form .column-4 input[name=telefone]:hover, form .column-3-2 input[name=cnpj]:hover, form .column-3 input[name=cpf]:hover, form .column-2 input[name=data_nascimento]:hover, form .column-1 input[name=nome]:hover {
+form .column-12 select[id=status_cliente]:hover, form .column-11 input[id=bairro]:hover, form .column-10 input[id=n_endereco]:hover, form .column-9 input[name=cidade]:hover, form .column-8 input[name=endereco]:hover, form .column-6 input[name=cep]:hover, form .column-5 input[name=email]:hover, form .column-4 input[name=telefone]:hover, form .column-1 input[name=nome]:hover {
   transition: 0.4s;
   background-color: rgb(237, 235, 233);
 }
@@ -129,6 +129,7 @@ form .column-2 input[name=data_nascimento] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
+  background-color: #d3d2d2;
 }
 form .column-3 {
   width: 15%;
@@ -144,6 +145,7 @@ form .column-3 input[name=cpf] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
+  background-color: #d3d2d2;
 }
 form .column-3-2 {
   width: 13%;
@@ -159,6 +161,7 @@ form .column-3-2 input[name=cnpj] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
+  background-color: #d3d2d2;
 }
 form .column-4 {
   width: 30%;
@@ -219,6 +222,7 @@ form .column-7 input[id=rg] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
+  background-color: #d3d2d2;
 }
 form .column-8 {
   width: 30%;
@@ -309,6 +313,7 @@ form .column-13 select[id=tipo_pessoa] {
   border-style: solid;
   border-color: gray;
   padding-left: 10px;
+  background-color: #d3d2d2;
 }
 form input[type=submit] {
   width: 10%;
@@ -454,4 +459,4 @@ h1 {
   form .column-13 {
     transform: translate(0, -315px);
   }
-}/*# sourceMappingURL=cadastro_clientesf.css.map */
+}/*# sourceMappingURL=editar_clientef.css.map */
