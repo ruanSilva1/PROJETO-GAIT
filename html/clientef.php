@@ -119,3 +119,9 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['cadastrado'])){
+    echo "<script>alert('Cadastrado com sucesso!')</script>";
+}
+?>

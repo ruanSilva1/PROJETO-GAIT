@@ -9,6 +9,10 @@
     $query1->execute();
     $cliente = $query1->fetchAll();
 
+    $query1 = $dbh->prepare('SELECT * FROM pTIPO');
+    $query1->execute();
+    $tipoPessoa = $query1->fetchAll();
+
     $query2 = $dbh->prepare('SELECT * FROM vendaSTATUS');
     $query2->execute();
     $statusVenda = $query2->fetchAll();
@@ -17,9 +21,13 @@
     $query3->execute();
     $statusOrcamento = $query3->fetchAll();
 
-    $tbl = $dbh->prepare('SELECT * FROM orcamento');
-    $tbl->execute();
-    $resultadoTBL = $tbl->fetchAll();
+    $cod_orcamento = $_GET['cod_orcamento'];    
+    $query_origin = $dbh->prepare('SELECT * FROM orcamento WHERE cod_orcamento = :cod_orcamento');
+
+    $query_origin->execute(array(
+        ':cod_orcamento' => $cod_orcamento
+    ));
+    $orcamento = $query_origin->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -44,43 +52,48 @@
             <select name="id_cliente" id="nome_fantasia">
                 <?php
                     foreach($cliente as $cliente){
-                        echo '<option value="'.$cliente['cod_cliente'].'" '.$n.'>'.$cliente['nome'].'</option>';
+                        $co = ''; // --> Cliente || Cadastro Orçamento
+                        if($cliente['cod_cliente'] == $orcamento['id_cliente']){
+                            $co = 'selected';
+                        }
+                        echo '<option value="'.$cliente['cod_cliente'].'" '.$co.'>'.$cliente['nome'].'</option>';
                     }
                 ?>
             </select>
         </div>
         <div class="c2">
             <label for="pedido">Pedido</label>
-            <input name="pedido" id="pedido" ></input>
+            <input name="pedido" id="pedido" value="<?php echo $orcamento['pedido']; ?>" minlength="1" maxlength="200">
         </div>
         <div class="c3">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" id="valor">
+            <input type="text" name="valor" id="valor" value="<?php echo $orcamento['valor']; ?>" minlength="1">
         </div>
         <div class="c4">
             <label for="forma_pagamento">Forma pagamento</label>
             <select name="forma_pagamento" id="forma_pagamento">
                 <?php
                     foreach($formaPagamento as $forma){
-                        echo '<option value="'.$forma['cod'].'">'.$forma['forma'].'</option>';
+                        $fp = ''; // Forma pagamento
+
+                        if($forma['cod'] == $orcamento['forma_pagamento']){
+                            $fp = 'selected';
+                        }
+                        echo '<option value="'.$forma['cod'].'" '.$fp.'>'.$forma['forma'].'</option>';
                     }
                 ?>
             </select>
         </div>
         <div class="c5">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao"></textarea>
+            <textarea name="descricao" id="descricao" innerHTML="<?php echo $orcamento['descricao']; ?>" minlength="1" maxlength="200"></textarea>
         </div>
         <div class="c6">
             <label for="status_venda">Status venda</label>
             <select name="status_venda" id="status_venda">
                 <?php
                     foreach($statusVenda as $statusVenda){
-                        $sts = '';
-                        if($statusVenda['cod'] == $orcamento['status_venda']){
-                            $sts = 'selected';
-                        }
-                        echo '<option value="'.$statusVenda['cod'].'" '.$sts.'>'.$statusVenda['sts'].'</option>';
+                        echo '<option value="'.$statusVenda['cod'].'">'.$statusVenda['sts'].'</option>';
                     }
                 ?>
             </select>

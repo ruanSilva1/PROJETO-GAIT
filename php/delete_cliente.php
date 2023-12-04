@@ -5,8 +5,8 @@
     $query = $dbh->prepare('DELETE FROM cliente WHERE cod_cliente = :cod_cliente');
 
     $query->execute(array(
-    ':cod_cliente' => $cod_cliente
-));
+        ':cod_cliente' => $cod_cliente
+    ));
     
     header('Location: ../html/clientes.php?deletado');
 ?>

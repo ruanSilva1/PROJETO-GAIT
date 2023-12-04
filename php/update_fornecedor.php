@@ -40,6 +40,6 @@ include('conexao.php');
         header('Location: ../html/fornecedores.php?atualizado');
 
     }catch(PDOException $e){
-        echo 'erro ao executar query : -> ' .$e;
+        header('Location: ../html/editar_cadastro_fornecedores.php');
     }
 ?>

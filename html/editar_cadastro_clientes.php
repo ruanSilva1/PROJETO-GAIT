@@ -43,15 +43,15 @@
         </div>
         <div class="column-2">
             <label for="data_nascimento">Data Nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $cliente['data_nascimento']; ?>" required>
+            <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $cliente['data_nascimento']; ?>" disabled>
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf" value="<?php echo $cliente['cpf']; ?>" required>
+            <input type="number" name="cpf" id="cpf" value="<?php echo $cliente['cpf']; ?>" disabled>
         </div>
         <div class="column-3-2">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj" value="<?php echo $cliente['cnpj']; ?>" required>
+            <input type="number" name="cnpj" id="cnpj" value="<?php echo $cliente['cnpj']; ?>" disabled>
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
@@ -67,7 +67,7 @@
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg" value="<?php echo $cliente['rg']; ?>" minlength="7" maxlength="7" required>
+            <input type="number" name="rg" id="rg" value="<?php echo $cliente['rg']; ?>" minlength="7" maxlength="7" disabled>
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>

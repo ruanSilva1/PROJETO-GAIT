@@ -52,7 +52,7 @@
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
-            <select name="categoria" id="categoria">
+            <select name="categoria" id="categoria" disabled>
                 <?php
                     foreach($categoria as $c){
                         $cat = '';

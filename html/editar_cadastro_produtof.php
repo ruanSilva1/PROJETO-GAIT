@@ -38,7 +38,7 @@ $produtos = $query_origin->fetch();
         <input type="submit" value="Editar">
         <div class="column-2">
             <label for="nome_produto">Nome produto</label>
-            <input type="text" name="nome_produto" id="nome_produto" value="<?php echo $produtos['nome']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="nome_produto" id="nome_produto" value="<?php echo $produtos['nome']; ?>" minlength="1" maxlength="50" disabled>
         </div>
         <div class="column-3">
             <label for="valor">Valor</label>
@@ -50,7 +50,7 @@ $produtos = $query_origin->fetch();
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
-            <select name="categoria" id="categoria">
+            <select name="categoria" id="categoria" disabled>
             <?php
                 foreach($categoria as $categoria){
                     $cat = '';

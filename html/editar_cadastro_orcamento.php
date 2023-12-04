@@ -5,6 +5,10 @@
     $query->execute();
     $formaPagamento = $query->fetchAll();
 
+    $query1 = $dbh->prepare('SELECT * FROM cliente');
+    $query1->execute();
+    $cliente = $query1->fetchAll();
+
     $query1 = $dbh->prepare('SELECT * FROM pTIPO');
     $query1->execute();
     $tipoPessoa = $query1->fetchAll();
@@ -17,7 +21,7 @@
     $query3->execute();
     $statusOrcamento = $query3->fetchAll();
 
-    $cod_orcamento = $_GET['cod_orcamento'];
+    $cod_orcamento = $_GET['cod_orcamento'];    
     $query_origin = $dbh->prepare('SELECT * FROM orcamento WHERE cod_orcamento = :cod_orcamento');
 
     $query_origin->execute(array(

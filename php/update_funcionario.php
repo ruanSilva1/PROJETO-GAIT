@@ -44,9 +44,7 @@
         header('Location: ../html/funcionarios.php?editado');
 
     }catch(PDOException $e){
-
-        echo $e;
+        header('Location: ../html/editar_cadastro_funcionario.php');
     }
 
 ?>
-

@@ -157,9 +157,6 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        input[name="data_nascimento"]:hover{
-            @extend %input;
-        }
     }
     .column-3{
         width: 15%;
@@ -179,9 +176,6 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        input[name="cpf"]:hover{
-            @extend %input;
-        }
     }
     .column-3-2{
         width: 13%;
@@ -200,9 +194,6 @@ form {
             border-style: solid;
             border-color: gray;
             padding-left:$paddinginput;
-        }
-        input[name="cnpj"]:hover{
-            @extend %input;
         }
     }
     .column-4{
@@ -292,9 +283,7 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        input[name="rg"]:hover{
-            @extend %input;
-        }
+
     }
     .column-8{
         width: 30%;

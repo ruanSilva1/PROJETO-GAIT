@@ -30,7 +30,7 @@
             ':observacao' => $observacao
         ));
 
-        header('Location: ../html/materiaprima.php?cadastrado');
+        header('Location: ../html/materiaprima.php');
 
     }catch(PDOException $e){
         header('Location: ../html/cadastro_materia_prima.php?comentario');

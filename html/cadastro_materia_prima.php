@@ -28,23 +28,23 @@
         <input type="submit" value="Salvar">
         <div class="column-1">
             <label for="nome">Nome matéria</label>
-            <input type="text" name="nome" id="nome" minlength="1" maxlength="50">
+            <input type="text" name="nome" id="nome" minlength="1" maxlength="50" required>
         </div>
         <div class="column-2">
             <label for="valor">Valor</label>
-            <input type="tell" name="valor" id="valor" minlength="1">
+            <input type="tell" name="valor" id="valor" minlength="1" required>
         </div>
         <div class="column-3">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade" minlength="1">
+            <input type="number" name="quantidade" id="quantidade" minlength="1" required>
         </div>
         <div class="column-4">
             <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" id="descricao" minlength="1" maxlength="50">
+            <input type="text" name="descricao" id="descricao" minlength="1" maxlength="50" required>
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
-            <select name="categoria" id="categoria">
+            <select name="categoria" id="categoria" required>
                 <?php
                     foreach($categoria as $c){
                         echo '<option value="'.$c['cod'].'">'.$c['categoria_materia'].'</option>';
@@ -54,7 +54,7 @@
         </div>
         <div class="column-6">
             <label for="status">Status matéria</label>
-            <select name="status" id="status">
+            <select name="status" id="status" required>
                 <?php
                     foreach($status as $status){
                         echo '<option value="'.$status['cod'].'">'.$status['sts'].'</option>';
@@ -64,7 +64,7 @@
         </div>
         <div class="column-7">
             <label for="observacao">Observações</label>
-            <input name="observacao" id="observacao"></input>
+            <input name="observacao" id="observacao" required>
         </div>
     </form>
 

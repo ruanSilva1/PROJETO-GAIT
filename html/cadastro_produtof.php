@@ -30,19 +30,19 @@ $categoria = $query->fetchAll();
         <input type="submit" value="Salvar">
         <div class="column-2">
             <label for="nome_produto">Nome produto</label>
-            <input type="text" name="nome_produto" id="nome_produto" minlength="1" maxlength="50">
+            <input type="text" name="nome_produto" id="nome_produto" minlength="1" maxlength="50" required>
         </div>
         <div class="column-3">
             <label for="valor">Valor</label>
-            <input type="number" name="valor" id="valor" minlength="1">
+            <input type="number" name="valor" id="valor" minlength="1" required>
         </div>
         <div class="column-4">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade" minlength="1">
+            <input type="number" name="quantidade" id="quantidade" minlength="1" required>
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
-            <select name="categoria" id="categoria">
+            <select name="categoria" id="categoria" required>
                 <?php
                     foreach($categoria as $categoria){
                         echo '<option value="'.$categoria['cod'].'">'.$categoria['cat'].'</option>';
@@ -52,7 +52,7 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-6">
             <label for="status_produto">Status produto</label>
-            <select name="status_produto" id="status_produto">
+            <select name="status_produto" id="status_produto" required>
             <?php
                 foreach($status_produto as $status){
                     echo '<option value="'.$status['cod'].'">'.$status['sts'].'</option>';
@@ -62,11 +62,11 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-7">
             <label for="descricao">Descrição</label>
-            <input name="descricao" id="descricao" minlength="1" maxlength="200"></input>
+            <input name="descricao" id="descricao" minlength="1" maxlength="200" required></input>
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <input name="observacao" id="observacao"></input>
+            <input name="observacao" id="observacao" required></input>
         </div>
     </form>
 

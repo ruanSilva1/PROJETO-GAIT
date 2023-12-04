@@ -135,6 +135,12 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['cadastrado'])){
+    echo "<script>alert('Cadastrado com sucesso!')</script>";
+}
+?>
 <?php
 if(isset($_GET['deletado'])){
     echo "<script>alert('Excluido com sucesso!')</script>";

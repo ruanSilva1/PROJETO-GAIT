@@ -2,8 +2,8 @@
     include('conexao.php');
 
             $nome = $_POST['nome'];
-            $data_nascimento = $_POST['data_nascimento'];
-            $cnpj = $_POST['cnpj'];
+            //$data_nascimento = $_POST['data_nascimento'];
+            //$cnpj = $_POST['cnpj'];
             $telefone = $_POST['telefone'];
             $email = $_POST['email'];
             $cep = $_POST['cep'];
@@ -17,13 +17,13 @@
 
     try{
 
-        $query = $dbh->prepare('UPDATE cliente SET nome=:nome, data_nascimento=:data_nascimento, cnpj=:cnpj, telefone=:telefone, email=:email, 
+        $query = $dbh->prepare('UPDATE cliente SET nome=:nome, telefone=:telefone, email=:email, 
         cep=:cep, endereco=:endereco, cidade=:cidade, n_endereco=:n_endereco, status_cliente=:status_cliente, bairro=:bairro, tipo_pessoa=:tipo_pessoa WHERE cod_cliente=:cod_cliente');
 
         $query->execute(array(
             ':nome' => $nome,
-            ':data_nascimento' => $data_nascimento,
-            ':cnpj' => $cnpj,
+            //':data_nascimento' => $data_nascimento,
+            //':cnpj' => $cnpj,
             ':telefone' => $telefone,
             ':email' => $email,
             ':cep' => $cep,
