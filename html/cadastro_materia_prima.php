@@ -64,7 +64,7 @@
         </div>
         <div class="column-7">
             <label for="observacao">Observações</label>
-            <input name="observacao" id="observacao" required>
+            <textarea name="observacao" id="observacao" required></textarea>
         </div>
     </form>
 

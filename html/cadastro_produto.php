@@ -62,11 +62,11 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-7">
             <label for="descricao">Descrição</label>
-            <input name="descricao" id="descricao" minlength="1" maxlength="200" required></input>
+            <textarea name="descricao" id="descricao" minlength="1" maxlength="200" required></textarea>
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <input name="observacao" id="observacao" maxlength="200" required></input>
+            <textarea name="observacao" id="observacao" maxlength="200" required></textarea>
         </div>
     </form>
 

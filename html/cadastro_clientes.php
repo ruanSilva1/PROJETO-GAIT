@@ -44,7 +44,7 @@
         </div>
         <div class="column-3-2">
             <label for="cnpj">CNPJ</label>
-            <input type="number" name="cnpj" id="cnpj" minlength="0" maxlength="14" required>
+            <input type="number" name="cnpj" id="cnpj" minlength="0" maxlength="14" >
         </div>
         <div class="column-4">
             <label for="telefone">Telefone *</label>

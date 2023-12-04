@@ -45,6 +45,7 @@
         header('Location: ../html/fornecedores.php?cadastrado');
 
     }catch(PDOException $e){
-        echo "<script>alert('Cadastro não realizado')</script>";
+        //echo "<script>alert('Cadastro não realizado')</script>";
+        echo $e;
     }
 ?>

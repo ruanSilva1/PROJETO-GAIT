@@ -36,7 +36,7 @@
         <input type="submit" value="Editar">
         <div class="column-1">
             <label for="nome">Nome matéria</label>
-            <input type="text" name="nome" id="nome" value="<?php echo $materia_prima['nome']; ?>" minlength="1" maxlength="50">
+            <input type="text" name="nome" id="nome" value="<?php echo $materia_prima['nome']; ?>" minlength="0" maxlength="50" disabled>
         </div>
         <div class="column-2">
             <label for="valor">Valor</label>
@@ -81,7 +81,7 @@
         </div>
         <div class="column-7">
             <label for="observacao">Observações</label>
-            <input name="observacao" id="observacao" value="<?php echo $materia_prima['observacao'] ?>"></input>
+            <textarea name="observacao" id="observacao" value="<?php echo $materia_prima['observacao'] ?>"></textarea>
         </div>
     </form>
 
