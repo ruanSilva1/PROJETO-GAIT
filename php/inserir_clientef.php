@@ -19,8 +19,8 @@
         $tipo_pessoa = $_POST['tipo_pessoa'];
 
     }else{
-        echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
-        die();
+        //echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
+        return die("Error");
     }
 
     try{

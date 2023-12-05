@@ -81,7 +81,7 @@
         </div>
         <div class="column-7">
             <label for="observacao">Observações</label>
-            <textarea name="observacao" id="observacao" value="<?php echo $materia_prima['observacao'] ?>"></textarea>
+            <input name="observacao" id="observacao" value="<?php echo $materia_prima['observacao'] ?>"></input>
         </div>
     </form>
 

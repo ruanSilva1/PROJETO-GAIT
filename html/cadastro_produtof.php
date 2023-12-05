@@ -66,7 +66,7 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <textarea name="observacao" id="observacao" disabled></textarea>
+            <textarea name="observacao" id="observacao"></textarea>
         </div>
     </form>
 

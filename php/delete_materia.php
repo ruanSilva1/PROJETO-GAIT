@@ -8,5 +8,5 @@
         ':cod_materia' => $cod_materia
     ));
 
-    header('Location: ../html/materiaprima.php?deletado');
+    header('Location: ../html/materiaprima.php');
 ?>

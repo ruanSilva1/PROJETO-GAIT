@@ -8,5 +8,5 @@
         ':cod_funcionario' => $cod_funcionario
     ));
 
-    header('Location: ../html/funcionarios.php?deletado');
+    header('Location: ../html/funcionarios.php');
 ?>

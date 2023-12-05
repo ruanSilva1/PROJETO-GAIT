@@ -64,7 +64,7 @@
         </div>
         <div class="column-7">
             <label for="observacao">Observações</label>
-            <textarea name="observacao" id="observacao" required></textarea>
+            <input name="observacao" id="observacao" required></input>
         </div>
     </form>
 
@@ -107,6 +107,11 @@
 </body>
 
 </html>
+<?php
+if(isset($_GET['msm'])){
+    echo "<script>alert('Cadastro realizado com sucesso!')</script>";
+}
+?>
 
 <?php
 if(isset($_GET['comentario'])){

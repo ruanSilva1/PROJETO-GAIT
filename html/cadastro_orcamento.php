@@ -64,7 +64,7 @@
         </div>
         <div class="c5">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao" minlength="1" maxlength="200" required></textarea>
+            <input name="descricao" id="descricao" minlength="1" maxlength="200" required></input>
         </div>
         <div class="c6">
             <label for="status_venda">Status venda</label>
@@ -126,3 +126,9 @@
 </body>
 
 </html>
+
+<?php
+    if(isset($_GET['cadastrado'])){
+        echo "<script>alert('Cadastrado com sucesso!')</script>";
+    }
+?>

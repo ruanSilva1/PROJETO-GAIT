@@ -141,3 +141,13 @@ if(isset($_GET['deletado'])){
     echo "<script>alert('Excluido com sucesso!')</script>";
 }
 ?>
+
+<?php
+if(isset($_GET['dl'])){
+    echo "<script>alert('Este cliente possui orçamentos cadastrados, você deve exclui-los')</script>";
+}
+?>
+
+<?php
+    
+?>

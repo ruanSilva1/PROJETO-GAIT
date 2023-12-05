@@ -10,7 +10,7 @@ include('conexao.php');
         $status_venda = $_POST['status_venda'];
         $status_orcamento = $_POST['status_orcamento'];
     }else{
-
+        return die("Campos vazios");
     }
 
     try{
@@ -27,8 +27,7 @@ include('conexao.php');
             ':status_orcamento' => $status_orcamento
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
-        //header('Location: ../html/orcamentos.php');
+        header('Location: ../html/cadastro_orcamento.php?cadastrado');
 
     }catch(PDOException $e){
         echo $e;

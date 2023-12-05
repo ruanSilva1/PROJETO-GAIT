@@ -133,7 +133,7 @@
 </html>
 
 <?php
-if(isset($_GET['message'])){
-    echo "<script>alert('Cadastro não realizado!')</script>";
+if(isset($_GET['cadastrado'])){
+    echo "<script>alert('Cadastro realizado!')</script>";
 }
 ?>

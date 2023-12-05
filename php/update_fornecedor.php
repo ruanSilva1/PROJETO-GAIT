@@ -37,9 +37,10 @@ include('conexao.php');
             ':cod_fornecedor' => $cod_fornecedor
         ));
 
-        header('Location: ../html/fornecedores.php?atualizado');
+        header('Location: ../html/fornecedores.php');
 
     }catch(PDOException $e){
-        header('Location: ../html/editar_cadastro_fornecedores.php');
+        //header('Location: ../html/editar_cadastro_fornecedores.php');
+        echo "<script>alert('Cadastro não atualizado')</script>";
     }
 ?>
