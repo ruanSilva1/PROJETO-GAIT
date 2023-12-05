@@ -45,9 +45,9 @@
 
         ));
 
-        header('Location: ../html/clientes.php');
+        header('Location: ../html/cadastro_clientes.php?cadastro');
       
     }catch(PDOException $e){
-        echo $e;  
+        header('Location: ../html/clientes.php?message'); 
     }
 ?>

@@ -18,12 +18,12 @@
                     <div class="u-usuario">
                         <img class="icone-usuario" src="../imagem/usuario-de-perfil.png" alt="usuario">
                         <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" id="usuario" minlength="1" maxlength="20">
+                        <input type="text" name="usuario" id="usuario" minlength="1" maxlength="20" required>
                     </div>
                     <div class="u-senha">
                         <img class="icone-senha" src="../imagem/trancar.png" alt="senha">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" minlength="1" maxlength="6">
+                        <input type="password" name="senha" id="senha" minlength="1" maxlength="15" required>
                     </div>
                     <div class="div-submit">
                         <input type="submit" value="Entrar">
@@ -34,3 +34,9 @@
     </div>
 </body>
 </html>
+
+<?php
+if(isset($_GET['message'])){
+    echo "<script>alert('Login ou senha incorreta')</script>";
+}
+?>

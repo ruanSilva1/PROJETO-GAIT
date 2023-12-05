@@ -42,7 +42,7 @@
             ':senha' => $senha
         ));
 
-        header('Location: ../html/funcionarios.php?');
+        header('Location: ../html/cadastro_funcionarios.php?cadastrado');
 
     }catch(PDOException $e){
         //header('Location: ../html/cadastro_funcionarios.php?message');

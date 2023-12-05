@@ -82,7 +82,7 @@
         <div class="navbar">
             <div class="logo">
                 <button>
-                    <a href="index.html"><img class="imagem-logo" src="../imagem/SOFTWARE-GAIT-LOGO.png"
+                    <a href="index.php"><img class="imagem-logo" src="../imagem/SOFTWARE-GAIT-LOGO.png"
                             alt=""></a>
                         </button>
             </div>

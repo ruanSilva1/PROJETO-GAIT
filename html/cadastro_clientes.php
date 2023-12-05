@@ -103,7 +103,7 @@
     <div class="main">
         <div class="navbar">
             <div class="logo">
-                <button><a href="index.html"><img class="imagem-logo" src="../imagem/SOFTWARE-GAIT-LOGO.png"
+                <button><a href="index.php"><img class="imagem-logo" src="../imagem/SOFTWARE-GAIT-LOGO.png"
                             alt=""></a></button>
             </div>
             <nav>
@@ -139,3 +139,15 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_GET['cadastro'])){
+    echo "<script>alert('Cadastrado com sucesso')</script>";
+}
+?>
+
+<?php
+if(isset($_GET['message'])){
+    echo "<script>alert('Cadastro não realizado')</script>";
+}
+?>

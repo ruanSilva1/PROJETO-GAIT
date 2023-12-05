@@ -19,7 +19,8 @@
             $sresultado = $squery->fetch();
 
             if(empty($sresultado)){
-                echo "<script>alert('Usuarios e/ou senha invalidos')</script>";
+                //echo "<script>alert('Usuarios e/ou senha invalidos')</script>";
+                header('Location: ../html/index.php?message');
             }else{
                 header('location: ../html/inicio.html');
             }
