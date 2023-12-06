@@ -1,4 +1,6 @@
 <?php
+
+session_start();
     include ('conexao.php');
     
     //$nome = $_POST['nome_produto'];
@@ -24,8 +26,10 @@
             ':cod_produto' => $cod_produto
         ));
 
+        $_SESSION['update_sucesso'] = "Cadastro atualizado com sucesso!";
         header('Location: ../html/estoquef.php');
     }catch(PDOException $e){
-        echo $e;
+        $_SESSION['update_erro'] = "Cadastro não atualizado!";
+        header('Location: ../html/estoquef.php');
     }
 ?>

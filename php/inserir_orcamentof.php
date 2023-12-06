@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include('conexao.php');
 
     if(isset($_POST['pedido'], $_POST['valor'], $_POST['forma_pagamento'], $_POST['descricao'], $_POST['status_venda'], $_POST['status_orcamento']) && ($_POST['pedido']!='') && ($_POST['valor']!='') && ($_POST['forma_pagamento']!='') && ($_POST['descricao']!='') && ($_POST['status_venda']!='') && ($_POST['status_orcamento'])){
@@ -27,10 +29,12 @@ include('conexao.php');
             ':status_orcamento' => $status_orcamento
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
-        //header('Location: ../html/orcamentos.php');
+        $_SESSION['inserir_sucesso'] = "Cadastrado com sucesso!";
+        header('Location: ../html/orcamentof.php');
 
     }catch(PDOException $e){
-        echo $e;
+        
+        $_SESSION['inserir_erro'] = "Cadastro não realizado!";
+        header('Location: ../html/orcamentof.php');
     }
 ?>

@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include('conexao.php');
 
     try{
@@ -40,10 +42,12 @@ include('conexao.php');
 
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        $_SESSION['inserir_sucesso'] = "Cadastrado com sucesso!";
         header('Location: ../html/estoquef.php');
 
     }catch(PDOException $e){
-        echo "<script>alert('Cadastro não realizado')</script>";
+
+        $_SESSION['inserir_erro'] = "Cadastro não realizado!";
+        header('Location: ../html/estoquef.php');
     }
 ?>

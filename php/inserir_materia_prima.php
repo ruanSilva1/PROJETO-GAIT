@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('conexao.php');
 
     if(isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['valor'], $_POST['status'], $_POST['categoria'], $_POST['observacao']) &&($_POST['nome']!='') && ($_POST['descricao']!='') && ($_POST['quantidade']!='') && ($_POST['valor']!='') && ($_POST['status']!='') && ($_POST['categoria']!='')){
@@ -30,9 +32,12 @@
             ':observacao' => $observacao
         ));
 
-        header('Location: ../html/cadastro_materia_prima.php?msm');
+        $_SESSION['inserir_sucesso'] = "Cadastrado com sucesso!";
+        header('Location: ../html/materiaprima.php');
 
     }catch(PDOException $e){
-        header('Location: ../html/cadastro_materia_prima.php?comentario');
+
+        $_SESSION['inserir_erro'] = "Cadastro não realizado!";
+        header('Location: ../html/materiaprima.php');
     }
 ?>

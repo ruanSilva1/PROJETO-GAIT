@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('conexao.php');
 
         $nome = $_POST['nome'];
@@ -41,10 +43,13 @@
 
         ));
 
-        header('Location: ../html/funcionarios.php?editado');
+        $_SESSION['sucesso_cadastro'] = "Cadastro atualizado com sucesso!";
+        header('Location: ../html/funcionarios.php');
 
     }catch(PDOException $e){
-        header('Location: ../html/editar_cadastro_funcionario.php');
+
+        $_SESSION['erro_update'] = "Cadastro não atualizado!";
+        header('Location: ../html/funcionarios.php');
     }
 
 ?>

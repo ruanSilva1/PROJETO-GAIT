@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('conexao.php');
 
     if(isset($_POST['nome_fantasia'], $_POST['razao_social'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['endereco'], $_POST['cidade'], $_POST['uf'], $_POST['n_endereco'], $_POST['bairro'], $_POST['status_fornecedor']) && ($_POST['nome_fantasia']!='') && ($_POST['razao_social']!='') && ($_POST['cnpj']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='')){
@@ -41,11 +42,12 @@
 
         ));
 
-        //echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
-        header('Location: ../html/cadastro_fornecedores.php?cadastrado');
+        $_SESSION['cadastrado'] = "Cadastro inserido com sucesso!";
+        header('Location: ../html/fornecedores.php');
 
     }catch(PDOException $e){
-        //echo "<script>alert('Cadastro não realizado')</script>";
-        echo $e;
+
+        $_SESSION['erro_cadastro'] = "Cadastro não realizado!";
+        header('Location: ../html/fornecedores.php');
     }
 ?>

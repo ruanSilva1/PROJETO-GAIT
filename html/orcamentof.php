@@ -1,4 +1,6 @@
 <?php
+
+session_start();
     include('../php/conexao.php');
 
     $fantasia = '';
@@ -13,6 +15,30 @@
 
     $orcamentos = $query->fetchAll();
 
+
+    if(empty($_SESSION['inserir_sucesso'])){
+    
+    }else{
+        $mensagem = $_SESSION['inserir_sucesso'];
+    }
+
+    if(empty($_SESSION['inserir_erro'])){
+    
+    }else{
+        $mensagem = $_SESSION['inserir_erro'];
+    }
+
+    if(empty($_SESSION['update_sucesso'])){
+    
+    }else{
+        $mensagem = $_SESSION['update_sucesso'];
+    }
+
+    if(empty($_SESSION['update_erro'])){
+    
+    }else{
+        $mensagem = $_SESSION['update_erro'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -99,9 +125,79 @@
             </div>
         </div>
     </div>
+
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 220px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['inserir_sucesso'])){
+
+        }else{
+            echo "<div id='insert_sucesso' class='error'>".$_SESSION['inserir_sucesso']."</div>";
+            unset($_SESSION['inserir_sucesso']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 200px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['inserir_erro'])){
+
+        }else{
+            echo "<div id='insert_error' class='error'>".$_SESSION['inserir_erro']."</div>";
+            unset($_SESSION['inserir_erro']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 180px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['update_sucesso'])){
+
+        }else{
+            echo "<div id='sucess_update' class='error'>".$_SESSION['update_sucesso']."</div>";
+            unset($_SESSION['update_sucesso']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 158px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['update_erro'])){
+
+        }else{
+            echo "<div id='erro_update' class='error'>".$_SESSION['update_erro']."</div>";
+            unset($_SESSION['update_erro']);
+        }
+        ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#insert_sucesso').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#insert_error').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#sucess_update').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#erro_update').fadeOut('fast');
+                }, 3000);
+            });
+        </script>
 </body>
 
 </html>

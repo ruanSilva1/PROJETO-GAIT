@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('conexao.php');
 
     $cod_cliente = $_GET['cod_cliente'];
@@ -8,9 +10,13 @@
         $query->execute(array(
             ':cod_cliente' => $cod_cliente
         ));
-    
-        header('Location: ../html/clientes.php?deletado');
+
+        $_SESSION['msm'] = "Cadastro excluído com sucesso!";
+        header('Location: ../html/clientes.php');
+
     }catch(PDOException $e){
-        header('Location: ../html/clientes.php?dl');
+
+        $_SESSION['mensagem'] = "Este cliente possui orçamentos cadastrados, você deve exclui-los";
+        header('Location: ../html/clientes.php');
     }
 ?>

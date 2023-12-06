@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include('conexao.php');
 
     //$nome = $_POST['id_cliente'];
@@ -23,9 +25,12 @@ include('conexao.php');
             ':cod_orcamento' => $cod_orcamento
         ));
         
+        $_SESSION['update_sucesso'] = "Cadastro atualizado com sucesso!";
         header('Location: ../html/orcamentos.php');
     }catch(PDOException $e){
-        echo $e;
+
+        $_SESSION['update_erro'] = "Cadastro não atualizado!";
+        header('Location: ../html/orcamentos.php');
     }
 ?>
 

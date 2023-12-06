@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include('conexao.php');
 
         if(isset($_POST['nome_produto'], $_POST['descricao'], $_POST['quantidade'], $_POST['valor'], $_POST['status_produto'], $_POST['categoria'], $_POST['observacao']) && ($_POST['nome_produto']!='') && ($_POST['descricao']!='') && ($_POST['quantidade']!='') && ($_POST['valor']!='')){
@@ -31,10 +33,12 @@ include('conexao.php');
 
         ));
 
-        echo "<script>alert('Seu cadastro foi realizado com sucesso!')</script>";
+        $_SESSION['inserir_sucesso'] = "Cadastrado com sucesso!";
         header('Location: ../html/estoque.php');
 
     }catch(PDOException $e){
-        echo $e;
+        
+        $_SESSION['inserir_erro'] = "Cadastro não realizado!";
+        header('Location: ../html/estoque.php');
     }
 ?>

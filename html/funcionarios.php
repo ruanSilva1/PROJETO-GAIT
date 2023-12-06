@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('../php/conexao.php');
 
     $name = '';
@@ -12,6 +14,43 @@
     ));
 
     $funcionario = $query->fetchAll();
+
+
+    if(empty($_SESSION['sucesso_cadastro'])){
+    
+    }else{
+        $mensagem = $_SESSION['sucesso_cadastro'];
+    }
+
+    if(empty($_SESSION['erro_cadastro'])){
+
+    }else{
+        $mensagem = $_SESSION['erro_cadastro'];
+    }
+
+    if(empty($_SESSION['sucesso_update'])){
+
+    }else{
+        $mensagem = $_SESSION['sucesso_update'];
+    }
+
+    if(empty($_SESSION['erro_update'])){
+
+    }else{
+        $mensagem = $_SESSION['erro_update'];
+    }
+
+    if(empty($_SESSION['sucesso_excluir'])){
+
+    }else{
+        $mensagem = $_SESSION['sucesso_excluir'];
+    }
+
+    if(empty($_SESSION['erro_excluir'])){
+
+    }else{
+        $mensagem = $_SESSION['erro_excluir'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +64,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Funcionários</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -129,15 +169,111 @@
         </div>
     </div>
 
+
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 220px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['sucesso_cadastro'])){
+
+        }else{
+            echo "<div id='cadastrado' class='error'>".$_SESSION['sucesso_cadastro']."</div>";
+            unset($_SESSION['sucesso_cadastro']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 200px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['erro_cadastro'])){
+
+        }else{
+            echo "<div id='nao_cadastrado' class='error'>".$_SESSION['erro_cadastro']."</div>";
+            unset($_SESSION['erro_cadastro']);
+        }
+        ?>
+    </div>
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 180px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['sucesso_update'])){
+
+        }else{
+            echo "<div id='sucesso_update' class='error'>".$_SESSION['sucesso_update']."</div>";
+            unset($_SESSION['sucesso_update']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 158px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['erro_update'])){
+
+        }else{
+            echo "<div id='update_erro' class='error'>".$_SESSION['erro_update']."</div>";
+            unset($_SESSION['erro_update']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 137px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['sucesso_excluir'])){
+
+        }else{
+            echo "<div id='excluir_sucess' class='error'>".$_SESSION['sucesso_excluir']."</div>";
+            unset($_SESSION['sucesso_excluir']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 117px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['erro_excluir'])){
+
+        }else{
+            echo "<div id='update_sucess' class='error'>".$_SESSION['erro_excluir']."</div>";
+            unset($_SESSION['erro_excluir']);
+        }
+        ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#cadastrado').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#nao_cadastrado').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#sucesso_update').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#update_erro').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#sucesso_excluir').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#erro_excluir').fadeOut('fast');
+                }, 3000);
+            });
+        </script>
 </body>
 
 </html>
-
-<?php
-if(isset($_GET['editado'])){
-    echo "<script>alert('Cadastro atualizado com sucesso!')</script>";
-}
-?>

@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('conexao.php');
 
     if(isset($_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['cnpj'], $_POST['telefone'], $_POST['email'], $_POST['cep'], $_POST['rg'],$_POST['endereco'], $_POST['cidade'], $_POST['n_endereco'], $_POST['bairro']) && ($_POST['nome']!='') && ($_POST['cpf']!='') && ($_POST['telefone']!='') && ($_POST['email']!='') && ($_POST['cep']!='')){
@@ -45,9 +47,12 @@
 
         ));
 
-        header('Location: ../html/cadastro_clientes.php?cadastro');
+        $_SESSION['salvar'] = "Cadastro inserido com sucesso!";
+        header('Location: ../html/clientes.php');
       
     }catch(PDOException $e){
-        header('Location: ../html/clientes.php?message'); 
+        
+        $_SESSION['inserir_error'] = "Ops! cadastro não realizado!";
+        header('Location: ../html/clientes.php');
     }
 ?>

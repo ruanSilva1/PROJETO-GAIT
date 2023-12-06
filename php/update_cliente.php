@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('conexao.php');
 
             $nome = $_POST['nome'];
@@ -36,9 +37,12 @@
             ':cod_cliente' => $cod_cliente
         ));
 
+        $_SESSION['update_cliente'] = "Cadastro atualizado com sucesso!";
         header('Location: ../html/clientes.php');
 
     }catch(PDOException $e){
-        echo 'erro ao executar query : -> ' .$e;
+        //echo 'erro ao executar query : -> ' .$e;
+        $_SESSION['error_edit'] = "Cadastro não atualizado!";
+        header('Location: ../html/clientes.php');
     }
 ?>

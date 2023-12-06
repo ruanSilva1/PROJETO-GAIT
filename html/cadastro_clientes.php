@@ -139,15 +139,3 @@
 </body>
 
 </html>
-
-<?php
-if(isset($_GET['cadastro'])){
-    echo "<script>alert('Cadastrado com sucesso')</script>";
-}
-?>
-
-<?php
-if(isset($_GET['message'])){
-    echo "<script>alert('Cadastro não realizado')</script>";
-}
-?>

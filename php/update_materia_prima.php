@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('conexao.php');
 
         //$nome = $_POST['nome'];
@@ -27,10 +29,13 @@
 
         ));
         
+        $_SESSION['update_sucesso'] = "Cadastro atualizado com sucesso!";
         header('Location: ../html/materiaprima.php');
 
     }catch(PDOException $e){
-        header('Location: ../html/editar_cadastro_materia_prima.php');
+        
+        $_SESSION['update_erro'] = "Cadastro não atualizado!";
+        header('Location: ../html/materiaprima.php');
     }
 
 ?>

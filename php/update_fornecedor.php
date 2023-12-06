@@ -1,9 +1,8 @@
 <?php
+
+session_start();
 include('conexao.php');
 
-    //$nome_fantasia = $_POST['nome_fantasia'];
-    //$razao_social = $_POST['razao_social'];
-    //$cnpj = $_POST['cnpj'];
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
     $cep = $_POST['cep'];
@@ -22,9 +21,6 @@ include('conexao.php');
         bairro=:bairro, status_fornecedor=:status_fornecedor WHERE cod_fornecedor=:cod_fornecedor');
 
         $query->execute(array(
-            //':nome_fantasia' => $nome_fantasia,
-            //':razao_social' => $razao_social,
-            //':cnpj' => $cnpj,
             ':telefone' => $telefone,
             ':email' => $email,
             ':cep' => $cep,
@@ -37,10 +33,11 @@ include('conexao.php');
             ':cod_fornecedor' => $cod_fornecedor
         ));
 
+        $_SESSION['sucesso_update'] = "Cadastro atualizado com sucesso!";
         header('Location: ../html/fornecedores.php');
 
     }catch(PDOException $e){
-        //header('Location: ../html/editar_cadastro_fornecedores.php');
-        echo "<script>alert('Cadastro não atualizado')</script>";
+        $_SESSION['erro_update'] = "Cadastro não atualizado!";
+        header('Location: ../html/fornecedores.php');
     }
 ?>

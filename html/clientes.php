@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('../php/conexao.php');
 
     $nome = '';
@@ -12,6 +14,42 @@
     ));
 
     $clientes = $query->fetchAll();
+
+    if(empty($_SESSION['mensagem'])){
+    
+    }else{
+        $mensagem = $_SESSION['mensagem'];
+    }
+
+    if(empty($_SESSION['msm'])){
+
+    }else{
+        $mensagem = $_SESSION['msm'];
+    }
+
+    if(empty($_SESSION['salvar'])){
+
+    }else{
+        $mensagem = $_SESSION['salvar'];
+    }
+
+    if(empty($_SESSION['inserir_error'])){
+
+    }else{
+        $mensagem = $_SESSION['inserir_error'];
+    }
+
+    if(empty($_SESSION['update_cliente'])){
+
+    }else{
+        $mensagem = $_SESSION['update_cliente'];
+    }
+
+    if(empty($_SESSION['error_edit'])){
+
+    }else{
+        $mensagem = $_SESSION['error_edit'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +63,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Clientes</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -128,26 +167,110 @@
             </div>
         </div>
     </div>
+    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 220px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['mensagem'])){
+
+        }else{
+            echo "<div id='error' class='error'>".$_SESSION['mensagem']."</div>";
+            unset($_SESSION['mensagem']);
+        }
+        ?>
+    </div>
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 200px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['msm'])){
+
+        }else{
+            echo "<div id='sucess' class='error'>".$_SESSION['msm']."</div>";
+            unset($_SESSION['msm']);
+        }
+        ?>
+    </div>
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 180px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['salvar'])){
+
+        }else{
+            echo "<div id='save' class='error'>".$_SESSION['salvar']."</div>";
+            unset($_SESSION['salvar']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 158px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['inserir_error'])){
+
+        }else{
+            echo "<div id='insert_erro' class='error'>".$_SESSION['inserir_error']."</div>";
+            unset($_SESSION['inserir_error']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 139px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['update_cliente'])){
+
+        }else{
+            echo "<div id='update_sucess' class='error'>".$_SESSION['update_cliente']."</div>";
+            unset($_SESSION['update_cliente']);
+        }
+        ?>
+    </div>
+
+    <div  style="color: green; font-size: 18px; z-index:999;transform:translate(100px, 117px);width:65vh;height:3vh;">
+        <?php
+        if(empty($_SESSION['error_edit'])){
+
+        }else{
+            echo "<div id='editerror' class='error'>".$_SESSION['error_edit']."</div>";
+            unset($_SESSION['error_edit']);
+        }
+        ?>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#error').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#sucess').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#save').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#insert_erro').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#update_sucess').fadeOut('fast');
+                }, 3000);
+            });
+
+            $(document).ready(function(){
+                setTimeout(function() {
+                    $('#editerror').fadeOut('fast');
+                }, 3000);
+            });
+        </script>
 </body>
 
 </html>
-
-<?php
-if(isset($_GET['deletado'])){
-    echo "<script>alert('Excluido com sucesso!')</script>";
-}
-?>
-
-<?php
-if(isset($_GET['dl'])){
-    echo "<script>alert('Este cliente possui orçamentos cadastrados, você deve exclui-los')</script>";
-}
-?>
-
-<?php
-    
-?>

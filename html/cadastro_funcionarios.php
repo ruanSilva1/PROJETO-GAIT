@@ -126,15 +126,3 @@
 </body>
 
 </html>
-
-<?php
-    if(isset($_GET['cadastrado'])){
-        echo "<script>alert('Cadastro realizado com sucesso!')</script>";
-    }
-?>
-
-<?php
-if(isset($_GET['message'])){
-    echo "<script>alert('Cadastro não realizado!')</script>";
-}
-?>
