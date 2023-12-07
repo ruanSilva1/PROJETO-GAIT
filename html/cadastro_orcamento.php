@@ -5,7 +5,7 @@
     $query->execute();
     $formaPagamento = $query->fetchAll();
 
-    $query1 = $dbh->prepare('SELECT cod_cliente, nome FROM cliente');
+    $query1 = $dbh->prepare('SELECT cod_cliente, nome FROM cliente WHERE status_cliente = "Ativo"');
     $query1->execute();
     $cliente = $query1->fetchAll();
 
@@ -126,9 +126,3 @@
 </body>
 
 </html>
-
-<?php
-    if(isset($_GET['cadastrado'])){
-        echo "<script>alert('Cadastrado com sucesso!')</script>";
-    }
-?>

@@ -167,7 +167,7 @@
             </div>
         </div>
     </div>
-    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 220px);width:65vh;height:3vh;">
+    <div  style="color: red; font-size: 18px; z-index:999;transform:translate(100px, 220px);width:75vh;height:3vh;">
         <?php
         if(empty($_SESSION['mensagem'])){
 

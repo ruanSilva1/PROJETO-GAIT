@@ -107,14 +107,3 @@
 </body>
 
 </html>
-<?php
-if(isset($_GET['msm'])){
-    echo "<script>alert('Cadastro realizado com sucesso!')</script>";
-}
-?>
-
-<?php
-if(isset($_GET['comentario'])){
-    echo "<script>alert('Verifique se os campos foram preenchidos corretamente.')</script>";
-}
-?>
