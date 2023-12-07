@@ -20,10 +20,32 @@ session_start();
         $bairro = $_POST['bairro'];
         $tipo_pessoa = $_POST['tipo_pessoa'];
 
-    }else{
-        //echo "<script>alert('Campos obrigatórios não preenchidos!')</script>";
-        return die("Error");
-    }
+        if (!ctype_digit($cpf)) {
+            echo "<script>alert('O CPF só pode conter números!')</script>";
+            die();
+          }
+        
+          // Verifica se o telefone contém somente números
+          if (!ctype_digit($telefone)) {
+            echo "<script>alert('O telefone só pode conter números!')</script>";
+            die();
+          }
+        
+          // Verifica se o CEP contém somente números
+          if (!ctype_digit($cep)) {
+            echo "<script>alert('O CEP só pode conter números!')</script>";
+            die();
+          }
+
+          if (!ctype_digit($rg)) {
+            echo "<script>alert('O RG só pode conter números!')</script>";
+            die();
+          }
+
+          if (!ctype_digit($n_endereco)) {
+            echo "<script>alert('O Nº endereço só pode conter números!')</script>";
+            die();
+          }
 
     try{
         $query = $dbh->prepare('INSERT INTO cliente(nome, data_nascimento, cpf, cnpj, telefone, email, cep, rg, endereco, cidade, n_endereco,status_cliente, bairro, tipo_pessoa)VALUES(:nome, :data_nascimento, :cpf, :cnpj, :telefone, :email, :cep, :rg, :endereco, :cidade, :n_endereco,:status_cliente, :bairro, :tipo_pessoa)');
@@ -55,4 +77,6 @@ session_start();
         $_SESSION['inserir_erro'] = "Cadastro não realizado!";
         header('Location: ../html/clientef.php');
     }
+
+}
 ?>

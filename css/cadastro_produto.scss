@@ -131,9 +131,6 @@ form {
             border-color: gray;
             padding-left:$paddinginput;
         }
-        input[name="nome_produto"]:hover{
-            @extend %input;
-        }
     }
     .column-3{
         width: 40%;

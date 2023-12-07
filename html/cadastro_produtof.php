@@ -34,11 +34,11 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-3">
             <label for="valor">Valor</label>
-            <input type="number" name="valor" id="valor" minlength="1" required>
+            <input type="tel" name="valor" id="valor" minlength="1" required>
         </div>
         <div class="column-4">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade" minlength="1" required>
+            <input type="tel" name="quantidade" id="quantidade" minlength="1" required>
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
@@ -62,11 +62,11 @@ $categoria = $query->fetchAll();
         </div>
         <div class="column-7">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao" minlength="1" maxlength="200" required></textarea>
+            <input name="descricao" id="descricao" minlength="1" maxlength="200" required></input>
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <textarea name="observacao" id="observacao"></textarea>
+            <input name="observacao" id="observacao"></input>
         </div>
     </form>
 

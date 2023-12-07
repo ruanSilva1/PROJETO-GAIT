@@ -78,11 +78,11 @@ $produtos = $query_origin->fetch();
         </div>
         <div class="column-7">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao" value="<?php echo $produtos['descricao']; ?>" minlength="1" maxlength="200"></textarea>
+            <input name="descricao" id="descricao" value="<?php echo $produtos['descricao']; ?>" minlength="1" maxlength="200"></input>
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <textarea name="observacao" id="observacao" value="<?php echo $produtos['observacoes']; ?>" maxlength="200"></textarea>
+            <input name="observacao" id="observacao" value="<?php echo $produtos['observacoes']; ?>" maxlength="200"></input>
         </div>
     </form>
 

@@ -51,7 +51,7 @@
                         if(empty($_SESSION['falha'])){
 
                         }else{
-                            echo "<div id='falha_login' class='error'>".$_SESSION['falha']."</div>";
+                            echo "<div id='falha_login' style='transform:translate(9px, 0);' class='error'>".$_SESSION['falha']."</div>";
                             unset($_SESSION['falha']);
                         }
                     ?>
