@@ -224,7 +224,7 @@ form {
             @extend %label;
         }
 
-        textarea[name="descricao"] {
+        input[name="descricao"] {
             width: 100%;
             height: 21vh;
             border-radius: 10px;

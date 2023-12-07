@@ -33,7 +33,7 @@
         </div>
         <div class="column-3">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf" minlength="11" maxlength="11" required>
+            <input type="tel" name="cpf" id="cpf" minlength="11" maxlength="11" required>
         </div>
         <div class="column-4">
             <label for="telefone">Telefone</label>
@@ -44,12 +44,12 @@
             <input type="email" name="email" id="email" minlength="1" maxlength="60" required>
         </div>
         <div class="column-6">
-            <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep" minlength="8" maxlength="8" required>
+            <label for="cep">CEP *</label>
+            <input type="tel" name="cep" id="cep" minlength="8" maxlength="8" required>
         </div>
         <div class="column-7">
             <label for="rg">RG</label>
-            <input type="number" name="rg" id="rg" minlength="7" maxlength="7" required>
+            <input type="tel" name="rg" id="rg" minlength="7" maxlength="7" required>
         </div>
         <div class="column-8">
             <label for="endereco">Endereço</label>

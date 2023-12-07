@@ -12,6 +12,16 @@
         $observacao = $_POST['observacao'];
         $cod_materia = $_POST['cod_materia'];
 
+        if (!ctype_digit($quantidade)) {
+            echo "<script>alert('A quantidade só pode conter números!')</script>";
+            die();
+          }
+        
+          if (!preg_match('/[0-9.]+/', $valor)) {
+            echo "<script>alert('O valor só pode conter números ou ponto!')</script>";
+            die();
+          }
+
     try{
 
         $query = $dbh->prepare('UPDATE materia_prima SET descricao=:descricao, quantidade=:quantidade, valor=:valor, status=:status, observacao=:observacao WHERE cod_materia=:cod_materia;');

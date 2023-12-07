@@ -13,10 +13,16 @@
         $categoria = $_POST['categoria'];
         $observacao = $_POST['observacao'];
 
-    }else{
-        header('Location: ../html/cadastro_materia_prima.php?comentario');
-        die();
-    }
+    // Verifica se o CNPJ contém somente números
+  if (!ctype_digit($quantidade)) {
+    echo "<script>alert('A quantidade só pode conter números!')</script>";
+    die();
+  }
+
+  if (!preg_match('/[0-9.]+/', $valor)) {
+    echo "<script>alert('O valor só pode conter números ou ponto!')</script>";
+    die();
+  }
 
     try{
         $query = $dbh->prepare('INSERT INTO materia_prima(nome, descricao, quantidade, valor, status, categoria, observacao)VALUES(
@@ -40,4 +46,5 @@
         $_SESSION['inserir_erro'] = "Cadastro não realizado!";
         header('Location: ../html/materiaprima.php');
     }
+}
 ?>

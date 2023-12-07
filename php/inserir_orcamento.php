@@ -11,9 +11,11 @@ include('conexao.php');
         $descricao = $_POST['descricao'];
         $status_venda = $_POST['status_venda'];
         $status_orcamento = $_POST['status_orcamento'];
-    }else{
-        return die("Campos vazios");
-    }
+
+        if (!preg_match('/[0-9.]+/', $valor)) {
+            echo "<script>alert('O valor só pode conter números ou ponto!')</script>";
+            die();
+          }
 
     try{
         $query = $dbh->prepare('INSERT INTO orcamento (id_cliente, forma_pagamento, valor, status_venda, status_orcamento, descricao, pedido) 
@@ -37,4 +39,6 @@ include('conexao.php');
         $_SESSION['inserir_erro'] = "Cadastro não realizado!";
         header('Location: ../html/orcamentos.php');
     }
+}
+
 ?>

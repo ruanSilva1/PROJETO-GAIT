@@ -14,6 +14,19 @@ include('conexao.php');
     $status_fornecedor = $_POST['status_fornecedor'];
     $cod_fornecedor = $_POST['cod_fornecedor'];
 
+
+  // Verifica se o telefone contém somente números
+  if (!ctype_digit($telefone)) {
+    echo "<script>alert('O telefone só pode conter números!')</script>";
+    die();
+  }
+
+  // Verifica se o CEP contém somente números
+  if (!ctype_digit($cep)) {
+    echo "<script>alert('O CEP só pode conter números!')</script>";
+    die();
+  }
+
     try{
 
         $query = $dbh->prepare('UPDATE fornecedor SET 

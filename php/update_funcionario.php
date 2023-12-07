@@ -19,6 +19,16 @@
         $senha = $_POST['senha'];
         $cod_funcionario = $_POST['cod_funcionario'];
 
+        if (!ctype_digit($telefone)) {
+            echo "<script>alert('O telefone só pode conter números!')</script>";
+            die();
+          }
+          
+          if (!ctype_digit($cep)) {
+            echo "<script>alert('O CEP só pode conter números!')</script>";
+            die();
+          }
+
     try{
 
         $query = $dbh->prepare('UPDATE funcionario SET nome =:nome, telefone=:telefone, email=:email, cep=:cep, endereco=:endereco, cidade=:cidade, n_endereco=:n_endereco, bairro=:bairro, status_funcionario=:status_funcionario, usuario=:usuario, senha=:senha WHERE cod_funcionario=:cod_funcionario');

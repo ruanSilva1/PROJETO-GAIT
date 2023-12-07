@@ -11,7 +11,7 @@ if(empty($usuario) || empty($senha)){
 }else{
 
   try{
-    $query = $dbh->prepare("SELECT usuario, senha, status_funcionario, adm FROM funcionario WHERE usuario=:usuario AND senha=:senha;");
+    $query = $dbh->prepare("SELECT cod_funcionario, usuario, senha, status_funcionario, adm FROM funcionario WHERE usuario=:usuario AND senha=:senha;");
     $query->execute(array(
       ':usuario' => $usuario,
       ':senha' => $senha

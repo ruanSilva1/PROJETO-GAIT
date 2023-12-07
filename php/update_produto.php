@@ -12,6 +12,16 @@ session_start();
     $observacao = $_POST['observacao'];
     $cod_produto = $_POST['cod_produto'];
 
+    if (!ctype_digit($quantidade)) {
+        echo "<script>alert('A quantidade só pode conter números!')</script>";
+        die();
+      }
+    
+      if (!preg_match('/[0-9.]+/', $valor)) {
+        echo "<script>alert('O valor só pode conter números ou ponto!')</script>";
+        die();
+      }
+
     try{
         $query = $dbh->prepare('UPDATE produto SET descricao = :descricao, quantidade = :quantidade, valor = :valor, status_produto = :status_produto, observacoes = :observacoes WHERE cod_produto = :cod_produto;');
 

@@ -42,11 +42,11 @@ $produtos = $query_origin->fetch();
         </div>
         <div class="column-3">
             <label for="valor">Valor</label>
-            <input type="number" name="valor" id="valor" value="<?php echo $produtos['valor']; ?>" minlength="1" required>
+            <input type="tel" name="valor" id="valor" value="<?php echo $produtos['valor']; ?>" minlength="1" required>
         </div>
         <div class="column-4">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade" value="<?php echo $produtos['quantidade']; ?>" minlength="1" required>
+            <input type="tel" name="quantidade" id="quantidade" value="<?php echo $produtos['quantidade']; ?>" minlength="1" required>
         </div>
         <div class="column-5">
             <label for="categoria">Categoria</label>
@@ -82,7 +82,7 @@ $produtos = $query_origin->fetch();
         </div>
         <div class="column-8">
             <label for="observacao">observacao</label>
-            <input name="observacao" id="observacao" value="<?php echo $produtos['observacoes']; ?>" maxlength="200" required></input>
+            <input name="observacao" id="observacao" value="<?php echo $produtos['observacoes']; ?>" maxlength="200"></input>
         </div>
     </form>
 

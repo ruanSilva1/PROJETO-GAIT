@@ -20,9 +20,34 @@
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
 
-    }else{
-        return die('Preencha os campos corretamente');
-    }
+
+        // Verifica se o CNPJ contém somente números
+  if (!ctype_digit($cpf)) {
+    echo "<script>alert('O CPF só pode conter números!')</script>";
+    die();
+  }
+
+  // Verifica se o telefone contém somente números
+  if (!ctype_digit($telefone)) {
+    echo "<script>alert('O telefone só pode conter números!')</script>";
+    die();
+  }
+
+  // Verifica se o CEP contém somente números
+  if (!ctype_digit($cep)) {
+    echo "<script>alert('O CEP só pode conter números!')</script>";
+    die();
+  }
+
+  if (!ctype_digit($rg)) {
+    echo "<script>alert('O RG só pode conter números!')</script>";
+    die();
+  }
+
+  if (!ctype_digit($n_endereco)) {
+    echo "<script>alert('O Nº endereço só pode conter números!')</script>";
+    die();
+  }
 
     try{
         $query = $dbh->prepare('INSERT INTO funcionario(nome, data_nascimento, cpf, telefone, email, cep, rg, endereco, cidade, n_endereco, bairro, status_funcionario, usuario, senha)VALUES(:nome, :data_nascimento, :cpf, :telefone, :email, :cep, :rg, :endereco, :cidade, :n_endereco, :bairro, :status_funcionario, :usuario, :senha)');
@@ -52,4 +77,5 @@
         $_SESSION['erro_cadastro'] = "Cadastro não realizado!";
         header('Location: ../html/funcionarios.php');
     }
+}
 ?>

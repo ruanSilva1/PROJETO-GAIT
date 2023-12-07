@@ -59,8 +59,8 @@
             <input type="email" name="email" id="email" value="<?php echo $fornecedor['email']; ?>" minlength="1" maxlength="60" required>
         </div>
         <div class="column-6">
-            <label for="cep">CEP</label>
-            <input type="number" name="cep" id="cep" value="<?php echo $fornecedor['cep']; ?>" minlength="8" maxlength="8" required>
+            <label for="cep">CEP *</label>
+            <input type="tel" name="cep" id="cep" value="<?php echo $fornecedor['cep']; ?>" minlength="8" maxlength="8" required>
         </div>
         <div class="column-7">
             <label for="endereco">Endereço</label>

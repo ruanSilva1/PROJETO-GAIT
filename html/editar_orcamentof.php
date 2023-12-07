@@ -49,7 +49,7 @@
     <input type="submit" value="Editar">
     <div class="c1">
             <label for="nome_fantasia">Nome/ Fantasia</label>
-            <select name="id_cliente" id="nome_fantasia">
+            <select name="id_cliente" id="nome_fantasia" disabled>
                 <?php
                     foreach($cliente as $cliente){
                         $co = ''; // --> Cliente || Cadastro Orçamento
@@ -86,7 +86,7 @@
         </div>
         <div class="c5">
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao" innerHTML="<?php echo $orcamento['descricao']; ?>" minlength="1" maxlength="200"></textarea>
+            <input name="descricao" id="descricao" value="<?php echo $orcamento['descricao']; ?>" minlength="1" maxlength="200"></input>
         </div>
         <div class="c6">
             <label for="status_venda">Status venda</label>

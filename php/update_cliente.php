@@ -15,6 +15,22 @@
             $bairro = $_POST['bairro'];
             $tipo_pessoa = $_POST['tipo_pessoa'];
             $cod_cliente = $_POST['cod_cliente'];
+    
+              if (!ctype_digit($telefone)) {
+                echo "<script>alert('O telefone só pode conter números!')</script>";
+                die();
+              }
+            
+              // Verifica se o CEP contém somente números
+              if (!ctype_digit($cep)) {
+                echo "<script>alert('O CEP só pode conter números!')</script>";
+                die();
+              }
+              
+              if (!ctype_digit($n_endereco)) {
+                echo "<script>alert('O Nº endereço só pode conter números!')</script>";
+                die();
+              }
 
     try{
 

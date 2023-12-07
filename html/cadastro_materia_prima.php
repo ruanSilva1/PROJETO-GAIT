@@ -32,11 +32,11 @@
         </div>
         <div class="column-2">
             <label for="valor">Valor</label>
-            <input type="tell" name="valor" id="valor" minlength="1" required>
+            <input type="tel" name="valor" id="valor" minlength="1" required>
         </div>
         <div class="column-3">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" id="quantidade" minlength="1" required>
+            <input type="tel" name="quantidade" id="quantidade" minlength="1" required>
         </div>
         <div class="column-4">
             <label for="descricao">Descrição</label>

@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include('../php/conexao.php');
 
     $query = $dbh->prepare('SELECT * FROM sigla');
@@ -10,6 +12,7 @@
     $squery->execute();
 
     $status = $squery->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -31,28 +34,30 @@
     <form action="../php/inserir_fornecedor.php" method="post">
         <input type="submit" value="Salvar">
         <div class="column-1">
-            <label for="nome_fantasia">Nome/ Fantasia *</label>
+            <label for="nome_fantasia">Nome/ Fantasia</label>
             <input type="text" name="nome_fantasia" id="nome_fantasia" minlength="1" maxlength="50" required>
         </div>
         <div class="column-2">
-            <label for="razao_social">Razão social *</label>
+            <label for="razao_social">Razão social</label>
             <input type="text" name="razao_social" id="razao_social" minlength="1" maxlength="50" required>
         </div>
         <div class="column-3">
-            <label for="cnpj">CNPJ *</label>
-            <input type="number" name="cnpj" id="cnpj"  minlength="14" maxlength="14" required>
+            <label for="cnpj">CNPJ</label>
+            <input type="tel" name="cnpj" id="cnpj"  minlength="14" maxlength="14" required>
         </div>
+        
         <div class="column-4">
-            <label for="telefone">Telefone *</label>
+            <label for="telefone">Telefone</label>
             <input type="tel" name="telefone" id="telefone" minlength="1" maxlength="11" required>
         </div>
+        
         <div class="column-5">
-            <label for="email">Email *</label>
+            <label for="email">Email</label>
             <input type="email" name="email" id="email" minlength="1" maxlength="60" required>
         </div>
         <div class="column-6">
             <label for="cep">CEP *</label>
-            <input type="number" name="cep" id="cep" minlength="8" maxlength="8" required>
+            <input type="tel" name="cep" id="cep" minlength="8" maxlength="8" required>
         </div>
         <div class="column-7">
             <label for="endereco">Endereço</label>
@@ -124,7 +129,6 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

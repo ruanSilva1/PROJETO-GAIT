@@ -12,6 +12,11 @@ include('conexao.php');
     $descricao = $_POST['descricao'];
     $cod_orcamento = $_POST['cod_orcamento'];
 
+    if (!preg_match('/[0-9.]+/', $valor)) {
+        echo "<script>alert('O valor só pode conter números ou ponto!')</script>";
+        die();
+      }
+
     try{
         $query = $dbh->prepare('UPDATE orcamento SET forma_pagamento=:forma_pagamento, valor=:valor, status_venda=:status_venda, status_orcamento=:status_orcamento, pedido=:pedido, descricao=:descricao WHERE cod_orcamento=:cod_orcamento');
         $query->execute(array(
